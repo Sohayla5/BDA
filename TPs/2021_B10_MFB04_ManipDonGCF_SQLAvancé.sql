@@ -3686,7 +3686,109 @@ FROM CLIENTS C1, CLIENTS C2
 WHERE C1.VILCLI = C2.VILCLI
 AND C1.CODCLI < C2.CODCLI ;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	NOMCLI	PRENCLI	VILCLI	'LIVESINTHESAMECITYAS'	CODCLI	NOMCLI	PRENCLI	VILCLI
+--------------------------------------------------------------------------------------------------------------------------------
+C004	CLEMENCE	EVELYNE	EPINAY-SUR-SEINE	lives in the same city as	C006	LE BON	Clémence	EPINAY-SUR-SEINE
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C007	TRAIFOR	Alice	PARIS
+C004	CLEMENCE	EVELYNE	EPINAY-SUR-SEINE	lives in the same city as	C008	VIVANT	JEAN-BAPTISTE	EPINAY-SUR-SEINE
+C006	LE BON	Clémence	EPINAY-SUR-SEINE	lives in the same city as	C008	VIVANT	JEAN-BAPTISTE	EPINAY-SUR-SEINE
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C009	CLEMENCE	Alexandre	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C009	CLEMENCE	Alexandre	PARIS
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C010	TRAIFOR	Alexandre	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C010	TRAIFOR	Alexandre	PARIS
+C009	CLEMENCE	Alexandre	PARIS	lives in the same city as	C010	TRAIFOR	Alexandre	PARIS
+C016	obsolete	kadym	CARTHAGE	lives in the same city as	C017	RAHYM	Karym	CARTHAGE
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C019	GENIE	GENIALE	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C019	GENIE	GENIALE	PARIS
+C009	CLEMENCE	Alexandre	PARIS	lives in the same city as	C019	GENIE	GENIALE	PARIS
+C010	TRAIFOR	Alexandre	PARIS	lives in the same city as	C019	GENIE	GENIALE	PARIS
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C020	GENIe	GENIAL	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C020	GENIe	GENIAL	PARIS
+C009	CLEMENCE	Alexandre	PARIS	lives in the same city as	C020	GENIe	GENIAL	PARIS
+C010	TRAIFOR	Alexandre	PARIS	lives in the same city as	C020	GENIe	GENIAL	PARIS
+C019	GENIE	GENIALE	PARIS	lives in the same city as	C020	GENIe	GENIAL	PARIS
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C021	LAPARISIENNE	Belle	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C021	LAPARISIENNE	Belle	PARIS
+C009	CLEMENCE	Alexandre	PARIS	lives in the same city as	C021	LAPARISIENNE	Belle	PARIS
+C010	TRAIFOR	Alexandre	PARIS	lives in the same city as	C021	LAPARISIENNE	Belle	PARIS
+C019	GENIE	GENIALE	PARIS	lives in the same city as	C021	LAPARISIENNE	Belle	PARIS
+C020	GENIe	GENIAL	PARIS	lives in the same city as	C021	LAPARISIENNE	Belle	PARIS
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C022	AFRICAINE	Belle	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C022	AFRICAINE	Belle	PARIS
+C009	CLEMENCE	Alexandre	PARIS	lives in the same city as	C022	AFRICAINE	Belle	PARIS
+C010	TRAIFOR	Alexandre	PARIS	lives in the same city as	C022	AFRICAINE	Belle	PARIS
+C019	GENIE	GENIALE	PARIS	lives in the same city as	C022	AFRICAINE	Belle	PARIS
+C020	GENIe	GENIAL	PARIS	lives in the same city as	C022	AFRICAINE	Belle	PARIS
+C021	LAPARISIENNE	Belle	PARIS	lives in the same city as	C022	AFRICAINE	Belle	PARIS
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C119	UNE	Marie	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C119	UNE	Marie	PARIS
+C009	CLEMENCE	Alexandre	PARIS	lives in the same city as	C119	UNE	Marie	PARIS
+C010	TRAIFOR	Alexandre	PARIS	lives in the same city as	C119	UNE	Marie	PARIS
+C019	GENIE	GENIALE	PARIS	lives in the same city as	C119	UNE	Marie	PARIS
+C020	GENIe	GENIAL	PARIS	lives in the same city as	C119	UNE	Marie	PARIS
+C021	LAPARISIENNE	Belle	PARIS	lives in the same city as	C119	UNE	Marie	PARIS
+C022	AFRICAINE	Belle	PARIS	lives in the same city as	C119	UNE	Marie	PARIS
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C120	1	MARIE	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C120	1	MARIE	PARIS
+C009	CLEMENCE	Alexandre	PARIS	lives in the same city as	C120	1	MARIE	PARIS
+C010	TRAIFOR	Alexandre	PARIS	lives in the same city as	C120	1	MARIE	PARIS
+C019	GENIE	GENIALE	PARIS	lives in the same city as	C120	1	MARIE	PARIS
+C020	GENIe	GENIAL	PARIS	lives in the same city as	C120	1	MARIE	PARIS
+C021	LAPARISIENNE	Belle	PARIS	lives in the same city as	C120	1	MARIE	PARIS
+C022	AFRICAINE	Belle	PARIS	lives in the same city as	C120	1	MARIE	PARIS
+C119	UNE	Marie	PARIS	lives in the same city as	C120	1	MARIE	PARIS
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C121	2 PAR 2	Girard	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C121	2 PAR 2	Girard	PARIS
+C009	CLEMENCE	Alexandre	PARIS	lives in the same city as	C121	2 PAR 2	Girard	PARIS
+C010	TRAIFOR	Alexandre	PARIS	lives in the same city as	C121	2 PAR 2	Girard	PARIS
+C019	GENIE	GENIALE	PARIS	lives in the same city as	C121	2 PAR 2	Girard	PARIS
+C020	GENIe	GENIAL	PARIS	lives in the same city as	C121	2 PAR 2	Girard	PARIS
+C021	LAPARISIENNE	Belle	PARIS	lives in the same city as	C121	2 PAR 2	Girard	PARIS
+C022	AFRICAINE	Belle	PARIS	lives in the same city as	C121	2 PAR 2	Girard	PARIS
+C119	UNE	Marie	PARIS	lives in the same city as	C121	2 PAR 2	Girard	PARIS
+C120	1	MARIE	PARIS	lives in the same city as	C121	2 PAR 2	Girard	PARIS
+C122	DE PAR DE	GIRARD	PARIS	lives in the same city as	C123	DE PAR DE	GIRARD	PARIS
+C122	DE PAR DE	GIRARD	PARIS	lives in the same city as	C124	DE PAR DE	Girard	PARIS
+C123	DE PAR DE	GIRARD	PARIS	lives in the same city as	C124	DE PAR DE	Girard	PARIS
+C122	DE PAR DE	GIRARD	PARIS	lives in the same city as	C125	DE PAR DE	Girard	PARIS
+C123	DE PAR DE	GIRARD	PARIS	lives in the same city as	C125	DE PAR DE	Girard	PARIS
+C124	DE PAR DE	Girard	PARIS	lives in the same city as	C125	DE PAR DE	Girard	PARIS
+C127	SMITH	John	LONDON	lives in the same city as	C128	BIDON	Jade	LONDON
+C127	SMITH	John	LONDON	lives in the same city as	C129	STOne	Brakeur	LONDON
+C128	BIDON	Jade	LONDON	lives in the same city as	C129	STOne	Brakeur	LONDON
+C299	BIDON!	Joie	-	lives in the same city as	C296	MOUBARAK	OOObana	-
+C296	MOUBARAK	OOObana	-	lives in the same city as	C297	CLEANTOOON	Hilally	-
+C299	BIDON!	Joie	-	lives in the same city as	C297	CLEANTOOON	Hilally	-
+C296	MOUBARAK	OOObana	-	lives in the same city as	C298	TROMPE.	Ronald	-
+C297	CLEANTOOON	Hilally	-	lives in the same city as	C298	TROMPE.	Ronald	-
+C299	BIDON!	Joie	-	lives in the same city as	C298	TROMPE.	Ronald	-
+C296	MOUBARAK	OOObana	-	lives in the same city as	C300	HOBAAAMA	M'Barek	-
+C297	CLEANTOOON	Hilally	-	lives in the same city as	C300	HOBAAAMA	M'Barek	-
+C298	TROMPE.	Ronald	-	lives in the same city as	C300	HOBAAAMA	M'Barek	-
+C299	BIDON!	Joie	-	lives in the same city as	C300	HOBAAAMA	M'Barek	-
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C009	CLEMENCE	Alexandre	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C010	TRAIFOR	Alexandre	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C019	GENIE	GENIALE	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C020	GENIe	GENIAL	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C021	LAPARISIENNE	Belle	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C022	AFRICAINE	Belle	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C119	UNE	Marie	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C120	1	MARIE	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C121	2 PAR 2	Girard	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C009	CLEMENCE	Alexandre	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C010	TRAIFOR	Alexandre	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C019	GENIE	GENIALE	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C020	GENIe	GENIAL	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C021	LAPARISIENNE	Belle	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C022	AFRICAINE	Belle	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C119	UNE	Marie	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C120	1	MARIE	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C121	2 PAR 2	Girard	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C554	ALIBABA	Mystere	PARIS	lives in the same city as	C555	SMART	Data	PARIS
 */
 
 -- ==== MFB =======================================================================================================================
