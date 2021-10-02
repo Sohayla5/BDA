@@ -1638,11 +1638,193 @@ SELECT * FROM Clients ORDER BY VilCli;
 SELECT * FROM CLIENTS ORDER BY 9;
 SELECT * FROM CLIENTS ORDER BY 9 DESC;
 
+/*
+Requêtes 1, 2 et 3:
+CODCLI	CIVCLI	NOMCLI	PRENCLI	CATCLI	ADNCLI	ADRCLI	CPCLI	VILCLI	PAYSCLI	MAILCLI	TELCLI	DATNAISCLI	DPREMCONTACTCLI	OBSCLI	REMCLI	GENRECLI	GSCLI	KEYWORDSCLI
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+C297	MADAME	CLEANTOOON	Hilally	3	-	-	-	-	-	-	-	15/05/66	20/01/16	-	-	F	B+-	-
+C296	MONSIEUR	MOUBARAK	OOObana	3	-	-	-	-	-	-	-	15/05/65	20/01/08	-	-	F	A	-
+C298	monsieur	TROMPE.	Ronald	-3	-	-	-	-	-	usapresident@labas.com	-	10/10/45	20/01/16	-	-	-	-	NUL, Not authorized, Not allowed, Not permitted
+C299	MONSIEUuR	BIDON!	Joie	3	-	-	-	-	-	-	-	10/10/41	03/11/20	-	-	F	-	-
+C300	MONSIEUR	HOBAAAMA	M'Barek	3	-	-	-	-	-	-	-	10/10/85	20/01/08	-	-	F	o+	BasketBall, Handball, FOOTBALL
+C118	Madame	GENIE	Adam	3	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	17/09/88	-	-	-	F	-	-
+C122	Monsieur	DE PAR DE	GIRARD	1	27	AVENUE D-ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-
+C123	Monsieur	DE PAR DE	GIRARD	1	27	AVENUE D'ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	-	-	-	-	F	-	-
+C124	Monsieur	DE PAR DE	Girard	1	27	AVENUE D_ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-
+C125	Monsieur	DE PAR DE	Girard	1	27	AVENUE D_ITALIE	75013	PARIS	france	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-
+C126	Monsieur	DE PAR DE	Gir@rd	1	27	AVENUE@D_ITALIE/	75013	paris	france	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-
+C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema
+C016	Madame	obsolete	kadym	7	1	rue des anciens	000	CARTHAGE	IFRIQIA	inexistant	inexistant	-	-	-	-	F	A+	PARIS, SUDOKU, Not authorized
+C017	Madame	RAHYM	Karym	1	1	RUE DES GENTILS	1000	CARTHAGE	TUNISIE	karym.rahym@gmail.com	+21624808444	01/01/90	05/01/21	-	-	F	AB+	Plongee sous marine, Voyages, FOOTBALL, Cinema, SUDOKU, Arts martiaux, Voyages, Mangas, BasketBall, Musique, Informatique, Bases de Données, Entrepôts de Données, Data Cleaning, FOOTBALL
+C023	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	DAKAR	-	africaineb@gmail.com	+33777889922	17/09/88	11/11/11	-	-	F	-	-
+C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+C008	Monsieur	VIVANT	JEAN-BAPTISTE	1	13	RUE DE LA PAIX	93800	EPINAY-SUR-SEINE	FRANCE	jeanbaptiste@	0607	17/09/58	17/09/00	-	-	F	A+	Handball, football, BasketBall, FOOTBALL
+C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU
+C004	Madame	CLEMENCE	EVELYNE	4	8 BIS	FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence evelyne@gmail.com	+33777889933	-	-	-	-	F	B+	Mangas, football , Theatre, Cinema, Musique, Plongee sous marine
+C295	MONSIEUr	MOUCHE	Gorge	3	-	-	-	L'Hay-Les-Roses	-	usapresident@labas.com	-	02/02/50	20/01/91	-	-	F	x-	-
+C128	Monsieur	BIDON	Jade	1	-	-	-	LONDON	United-KINGDOM	-	-	17/07/77	-	-	-	F	-	-
+C129	Monsieur	STOne	Brakeur	1	-	-	-	LONDON	United-KINGDOM	-	-	18/08/88	-	-	-	F	-	-
+C127	Monsieur	SMITH	John	1	-	-	-	LONDON	United-Kingdom	-	-	03/03/83	-	-	-	F	-	-
+C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed
+C003	Madame	UNIQUE	Inès	2	77	RUE DE LA LIBERTE	13001	MARCHEILLLE	FRANCE	munique@gmail.com	+33717889922	22/11/69	12/12/12	-	-	F	B+	Cinema, football, Yoga, Mangas, SuDOKU, BASKETbal, Arts Martiaux, Haute couture
+C131	MONsieur	CATS	BiLL	9	-	Maison Planchhhe	-	NEW-YORk	UNITED-STATS-AMERICA	-	-	17/09/78	-	-	-	F	-	-
+C005	Madam	FORT	anne marie	3	55	RUE DU JAPON	94310	ORLY-VILLE	FRANCE	jfort\@hotmail.fr	+33777889944	11/11/00	-	-	-	F	A-	Bandes Dessinees, Handball, Musique, Manga, foot, BasketBall
+C130	MADAM	STOne	Jane	1	-	-	-	Oxford	United KINGDOM	-	-	-	-	-	-	F	-	-
+C121	Monsieur	2 PAR 2	Girard	1	27	AVENUE D ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-
+C120	MADAME	1	MARIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	MARIEUNE@GMAIL.COM	0617586575	01/01/91	-	-	-	F	-	-
+C119	MadamE	UNE	Marie	6	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieune@gmail.com	0617586575	01/01/91	-	-	-	F	-	-
+C022	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	PARIS	-	belle.africaine@hotmail.com	+33777889911	17/09/88	11/11/11	-	-	F	-	-
+C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-
+C020	Madame	GENIe	GENIAL	3	16	AVENUE FOCH	75016	PARIS	FRENCE	genialegenie@gmail.com	0777889900	17/09/88	11/11/11	-	-	F	-	-
+C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning
+C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+C555	Madame	SMART	Data	2	55	RUE DE BELLEVILLE	75019	PARIS	FRANCE	smartdata@gmail.com	+33755555555	-	-	-	-	F	B+	FOOTBALL, SMART DATA
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees
+C554	Monsieur	ALIBABA	Mystere	1	55	Rue De Belleville	75019	PARIS	FRANCE	sezameouvretoi.alibaba.myster@gmail.com	0697837311	12/12/92	-	-	-	F	-	-
+C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema
+C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+
+>>>>>>>> Notes : les valeurs maquantes de villCli s'affichent au début
+
+Requête 4 :
+CODCLI	CIVCLI	NOMCLI	PRENCLI	CATCLI	ADNCLI	ADRCLI	CPCLI	VILCLI	PAYSCLI	MAILCLI	TELCLI	DATNAISCLI	DPREMCONTACTCLI	OBSCLI	REMCLI	GENRECLI	GSCLI	KEYWORDSCLI
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema
+C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema
+C555	Madame	SMART	Data	2	55	RUE DE BELLEVILLE	75019	PARIS	FRANCE	smartdata@gmail.com	+33755555555	-	-	-	-	F	B+	FOOTBALL, SMART DATA
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees
+C554	Monsieur	ALIBABA	Mystere	1	55	Rue De Belleville	75019	PARIS	FRANCE	sezameouvretoi.alibaba.myster@gmail.com	0697837311	12/12/92	-	-	-	F	-	-
+C121	Monsieur	2 PAR 2	Girard	1	27	AVENUE D ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-
+C120	MADAME	1	MARIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	MARIEUNE@GMAIL.COM	0617586575	01/01/91	-	-	-	F	-	-
+C119	MadamE	UNE	Marie	6	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieune@gmail.com	0617586575	01/01/91	-	-	-	F	-	-
+C022	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	PARIS	-	belle.africaine@hotmail.com	+33777889911	17/09/88	11/11/11	-	-	F	-	-
+C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-
+C020	Madame	GENIe	GENIAL	3	16	AVENUE FOCH	75016	PARIS	FRENCE	genialegenie@gmail.com	0777889900	17/09/88	11/11/11	-	-	F	-	-
+C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning
+C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+C130	MADAM	STOne	Jane	1	-	-	-	Oxford	United KINGDOM	-	-	-	-	-	-	F	-	-
+C005	Madam	FORT	anne marie	3	55	RUE DU JAPON	94310	ORLY-VILLE	FRANCE	jfort\@hotmail.fr	+33777889944	11/11/00	-	-	-	F	A-	Bandes Dessinees, Handball, Musique, Manga, foot, BasketBall
+C131	MONsieur	CATS	BiLL	9	-	Maison Planchhhe	-	NEW-YORk	UNITED-STATS-AMERICA	-	-	17/09/78	-	-	-	F	-	-
+C003	Madame	UNIQUE	Inès	2	77	RUE DE LA LIBERTE	13001	MARCHEILLLE	FRANCE	munique@gmail.com	+33717889922	22/11/69	12/12/12	-	-	F	B+	Cinema, football, Yoga, Mangas, SuDOKU, BASKETbal, Arts Martiaux, Haute couture
+C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed
+C127	Monsieur	SMITH	John	1	-	-	-	LONDON	United-Kingdom	-	-	03/03/83	-	-	-	F	-	-
+C128	Monsieur	BIDON	Jade	1	-	-	-	LONDON	United-KINGDOM	-	-	17/07/77	-	-	-	F	-	-
+C129	Monsieur	STOne	Brakeur	1	-	-	-	LONDON	United-KINGDOM	-	-	18/08/88	-	-	-	F	-	-
+C295	MONSIEUr	MOUCHE	Gorge	3	-	-	-	L'Hay-Les-Roses	-	usapresident@labas.com	-	02/02/50	20/01/91	-	-	F	x-	-
+C004	Madame	CLEMENCE	EVELYNE	4	8 BIS	FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence evelyne@gmail.com	+33777889933	-	-	-	-	F	B+	Mangas, football , Theatre, Cinema, Musique, Plongee sous marine
+C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU
+C008	Monsieur	VIVANT	JEAN-BAPTISTE	1	13	RUE DE LA PAIX	93800	EPINAY-SUR-SEINE	FRANCE	jeanbaptiste@	0607	17/09/58	17/09/00	-	-	F	A+	Handball, football, BasketBall, FOOTBALL
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema
+C023	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	DAKAR	-	africaineb@gmail.com	+33777889922	17/09/88	11/11/11	-	-	F	-	-
+C017	Madame	RAHYM	Karym	1	1	RUE DES GENTILS	1000	CARTHAGE	TUNISIE	karym.rahym@gmail.com	+21624808444	01/01/90	05/01/21	-	-	F	AB+	Plongee sous marine, Voyages, FOOTBALL, Cinema, SUDOKU, Arts martiaux, Voyages, Mangas, BasketBall, Musique, Informatique, Bases de Données, Entrepôts de Données, Data Cleaning, FOOTBALL
+C016	Madame	obsolete	kadym	7	1	rue des anciens	000	CARTHAGE	IFRIQIA	inexistant	inexistant	-	-	-	-	F	A+	PARIS, SUDOKU, Not authorized
+C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema
+C126	Monsieur	DE PAR DE	Gir@rd	1	27	AVENUE@D_ITALIE/	75013	paris	france	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-
+C122	Monsieur	DE PAR DE	GIRARD	1	27	AVENUE D-ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-
+C125	Monsieur	DE PAR DE	Girard	1	27	AVENUE D_ITALIE	75013	PARIS	france	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-
+C124	Monsieur	DE PAR DE	Girard	1	27	AVENUE D_ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-
+C123	Monsieur	DE PAR DE	GIRARD	1	27	AVENUE D'ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	-	-	-	-	F	-	-
+C118	Madame	GENIE	Adam	3	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	17/09/88	-	-	-	F	-	-
+C299	MONSIEUuR	BIDON!	Joie	3	-	-	-	-	-	-	-	10/10/41	03/11/20	-	-	F	-	-
+C297	MADAME	CLEANTOOON	Hilally	3	-	-	-	-	-	-	-	15/05/66	20/01/16	-	-	F	B+-	-
+C296	MONSIEUR	MOUBARAK	OOObana	3	-	-	-	-	-	-	-	15/05/65	20/01/08	-	-	F	A	-
+C300	MONSIEUR	HOBAAAMA	M'Barek	3	-	-	-	-	-	-	-	10/10/85	20/01/08	-	-	F	o+	BasketBall, Handball, FOOTBALL
+C298	monsieur	TROMPE.	Ronald	-3	-	-	-	-	-	usapresident@labas.com	-	10/10/45	20/01/16	-	-	-	-	NUL, Not authorized, Not allowed, Not permitted
+
+>>>>>>>> Notes : les valeurs maquantes de villCli s'affichent à la fin
+
+*/
+
 -- B02. Classez les articles de PV < 20, dans l’ordre décroissant du stock
 SELECT NomArt,QsArt FROM Articles WHERE PvArt< 20 ORDER BY QsArt DESC;
+/*
+NOMART	QSART
+-------------------------------
+CACHE PRISE DE COURANT	500
+COINS DE PROTECTION	100
+BONNET PARE-CHOCS	100
+COUVRE ROBINETTERIE	12
+BRETELLE DE SECURITE	8
+STORE DE PROTECTION	5
+BLOQUE PORTE	4
+BANDE DE FERMETURE	4
+*/
 
 -- B03. Calculez la marge pour chaque article (marge = PV – PA !), présentez le résultat par ordre décroissant de la marge
 SELECT REFART || ' ' || NomArt AS Article, PvArt-PaArt AS Marge FROM Articles ORDER BY 2 DESC;
+/*
+ARTICLE	MARGE
+----------------------------------------------------------
+QE55Q80TATXXC SAMSUNG Télévisur QLED 4K (163 cm)	399
+UE75TU7025 SAMSUNG Télévisur LED 4K (189 cm)	319
+HP 17-CD0125NF 15 HP Ordinateur portable	319
+65UN8500 LG Télévisur LED 4K (164 cm)	279
+UE65TU6905 SAMSUNG Télévisur LED 4K (163 cm)	239
+UE58TU6905 SAMSUNG Télévisur LED 4K (146 cm)	199
+S712JA-AU216T ASUS Ordinateur portable	199
+MISCOOT 1S NOIR Trottinette électrique pliable	159
+50P611 TCL Télévisur LED 4K (125)	131
+55F501HK5110 HITACHI Télévisur LED 4K (136 cm)	119
+ROOMBA 113840 Robot Aspirateur robot connecté	115
+DESKJET 2710 HP Imprimante multifonction	99
+MHCV11.CEL SONY Enceinte Heigh Power	56
+F2.005 SIEGE-AUTO COSMOS	55,43
+F2.006 SIEGE-AUTO EUROSEAT	49,86
+WDBU6Y0040BBK-W WD Disque dur Eléments 4To Noir	40
+QA510110 Moulinex Robot pâtissier	40
+RA22ALG HOOVER Aspirateur sans fil multifonction	40
+CH32G6HD-T1 CHANGHONG Télévisur LED 4K (80 cm)	39
+S8980 13 Rasoir électrique	36
+F1.011 BABY PHONE	35
+KST 2 KARCHER Nettoyeur vapeur	32
+MS23F300EEW SAMSUNG Micro-ondes	32
+FLIP ESSENTIAL UBL Enceinte sans fil	28
+V550920 DeLonghi Radiateur bain d'huile	28
+OX484100 Moulinex Mini-four	26
+HP DESKJET 4130 HP Imprimante multifonction	24
+YY3922FD KRUPS Nespresso Vertuo noir mat	24
+WD.002 DVD-TOY STORY 2	22,15
+WD.004 DVD-FRERES DES OURS	22
+F2.002 BARRIERE DE PORTE, EN METAL	20,71
+LM8012_05 PHILIPS Machine à expresso L'OR BRISTA Blanche	20
+PSPARTY61 POSS Enceinte Heigh Power	20
+F1.013 HAUSSE-CHAISE	17,28
+WD.007 K7 VIDEO-LE ROI LION 3	17
+WD.006 K7 VIDEO-LE ROI LION 2	17
+WD.005 K7 VIDEO-LE ROI LION	17
+WD.003 K7 VIDEO-WINNIE L OURSON	13,57
+FB.001 DVD-SPIRIT	12,9
+FB.003 DVD-SPIDER MAN 2	12,9
+FB.002 DVD-SPIDER MAN	12,9
+WD.001 K7 VIDEO-TOY STORY	12
+YY4230FD KRUPS Machine expresso Nescafé Dolce Gusto	12
+STO-SB7+ Bracelet connecté	12
+VOYAGAIR Ecouteur sans fil	12
+F1.009 PROTECTION DE FOUR	11,43
+F2.004 PORTE-BEBE	10,57
+Tune 560 BT Noir UBL Casque sans fil	10
+F1.001 SIEGE DE TABLE	8,57
+F2.003 BARRIERE DE LIT	8
+F1.010 PROTECTION DE CUISINIERE	7,85
+F1.002 CASQUE CYCLISTE PROTECTION	7
+F2.001 BARRIERE DE PORTE, EN BOIS	7
+F1.003 BONNET PARE-CHOCS	5
+F1.012 BRETELLE DE SECURITE	4,14
+F1.014 COUVRE ROBINETTERIE	3,57
+F1.004 STORE DE PROTECTION	3,14
+F1.007 BLOQUE PORTE	2,71
+F1.005 COINS DE PROTECTION	2,29
+F1.006 CACHE PRISE DE COURANT	1,58
+F1.008 BANDE DE FERMETURE	1,58
+*/
 
 -- B04. Calculez la marge pour tous les sièges, présentez le résultat par ordre croissant de la marge
 SELECT NomArt, PvArt-PaArt AS Marge  FROM Articles WHERE NomArt LIKE '%SIeGE%';
@@ -1651,10 +1833,26 @@ SELECT NomArt, PvArt-PaArt AS Marge  FROM Articles WHERE NomArt LIKE '%SIEge%';
 
 SELECT NomArt, PvArt-PaArt AS Marge FROM Articles WHERE UPPER(NomArt) LIKE '%SIEGE%' ORDER BY Marge DESC;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+Requête n°1 et 3 :  aucune donnée n'a été trouvée
+Requête n°2 : 
+NOMART	MARGE
+-----------------------------
+SIEGE DE TABLE	8,57
+SIEGE-AUTO COSMOS	55,43
+SIEGE-AUTO EUROSEAT	49,86
+
+Requête n°4 :
+NOMART	MARGE
+------------------------------
+SIEGE-AUTO COSMOS	55,43
+SIEGE-AUTO EUROSEAT	49,86
+SIEGE DE TABLE	8,57
 */
 
 SELECT NomArt, PvArt-PaArt AS Marge FROM Articles WHERE UPPER(NomArt) LIKE '%SIEGE%' ORDER BY 2 DESC;
+/*
+    Même résultat que la précédente requête
+*/
 
 -- ==== MFB =======================================================================================================================
 /*
