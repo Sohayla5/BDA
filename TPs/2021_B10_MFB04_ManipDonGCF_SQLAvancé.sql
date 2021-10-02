@@ -2522,7 +2522,31 @@ ORLY-VILLE	29,907
 SELECT * FROM Clients, Commandes ;
 SELECT * FROM Commandes, Clients ;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+Requete n°1 (extrait):
+CODCLI	CIVCLI	NOMCLI	PRENCLI	CATCLI	ADNCLI	ADRCLI	CPCLI	VILCLI	PAYSCLI	MAILCLI	TELCLI	DATNAISCLI	DPREMCONTACTCLI	OBSCLI	REMCLI	GENRECLI	GSCLI	KEYWORDSCLI	NUMCOM	CODCLI	DATCOM
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20001AB	C012	17/09/00
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20002AB	C001	17/09/00
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20003AB	C006	16/10/00
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20004AB	C006	24/10/00
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20011RB	C012	22/01/01
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20012RB	C012	13/03/01
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20031FB	C001	14/02/03
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20051FB	C003	07/01/05
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20052FB	C003	12/01/05
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20053FB	C012	10/03/05
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20054FB	C007	14/03/05
+
+Requete n°2 (extrait):
+NUMCOM	CODCLI	DATCOM	CODCLI	CIVCLI	NOMCLI	PRENCLI	CATCLI	ADNCLI	ADRCLI	CPCLI	VILCLI	PAYSCLI	MAILCLI	TELCLI	DATNAISCLI	DPREMCONTACTCLI	OBSCLI	REMCLI	GENRECLI	GSCLI	KEYWORDSCLI
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+20001AB	C012	17/09/00	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20002AB	C001	17/09/00	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20003AB	C006	16/10/00	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20004AB	C006	24/10/00	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20011RB	C012	22/01/01	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20012RB	C012	13/03/01	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20031FB	C001	14/02/03	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F
 */
 
 -- Plusieurs MANIERES pour réaliser une jointure entre table(s) ; Des jointures écrites différemment ! Quelles différences ?
@@ -2532,48 +2556,680 @@ SELECT * FROM Commandes, Clients ;
 -- E02. Jointure entre Clients et commandes : Que les clients qui ont commandé (Colonnes obtenues dans l'ordre CLI, COM)
 SELECT * FROM Clients, Commandes  WHERE Clients.CODCLI = Commandes.codcli;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	CIVCLI	NOMCLI	PRENCLI	CATCLI	ADNCLI	ADRCLI	CPCLI	VILCLI	PAYSCLI	MAILCLI	TELCLI	DATNAISCLI	DPREMCONTACTCLI	OBSCLI	REMCLI	GENRECLI	GSCLI	KEYWORDSCLI	NUMCOM	CODCLI	DATCOM
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20002AB	C001	17/09/00
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20031FB	C001	14/02/03
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20191023-19	C001	23/10/19
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20200611-54	C001	11/06/20
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20200805-35	C001	05/08/20
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20201215-27	C001	15/12/20
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20066FB	C002	14/02/03
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20067FB	C002	14/02/03
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20068FB	C002	14/02/03
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20069FB	C002	30/01/07
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20070FB	C002	30/01/07
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20200425-37	C002	25/04/20
+C003	Madame	UNIQUE	Inès	2	77	RUE DE LA LIBERTE	13001	MARCHEILLLE	FRANCE	munique@gmail.com	+33717889922	22/11/69	12/12/12	-	-	F	B+	Cinema, football, Yoga, Mangas, SuDOKU, BASKETbal, Arts Martiaux, Haute couture	20051FB	C003	07/01/05
+C003	Madame	UNIQUE	Inès	2	77	RUE DE LA LIBERTE	13001	MARCHEILLLE	FRANCE	munique@gmail.com	+33717889922	22/11/69	12/12/12	-	-	F	B+	Cinema, football, Yoga, Mangas, SuDOKU, BASKETbal, Arts Martiaux, Haute couture	20052FB	C003	12/01/05
+C004	Madame	CLEMENCE	EVELYNE	4	8 BIS	FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence evelyne@gmail.com	+33777889933	-	-	-	-	F	B+	Mangas, football , Theatre, Cinema, Musique, Plongee sous marine	20201010-38	C004	10/10/20
+C004	Madame	CLEMENCE	EVELYNE	4	8 BIS	FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence evelyne@gmail.com	+33777889933	-	-	-	-	F	B+	Mangas, football , Theatre, Cinema, Musique, Plongee sous marine	20210105-47	C004	05/01/21
+C005	Madam	FORT	anne marie	3	55	RUE DU JAPON	94310	ORLY-VILLE	FRANCE	jfort\@hotmail.fr	+33777889944	11/11/00	-	-	-	F	A-	Bandes Dessinees, Handball, Musique, Manga, foot, BasketBall	20201009-41	C005	09/10/20
+C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU	20003AB	C006	16/10/00
+C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU	20004AB	C006	24/10/00
+C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU	20191102-33	C006	02/11/19
+C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU	20200924-24	C006	24/09/20
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20054FB	C007	14/03/05
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20065FB	C007	14/02/03
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20201AB	C007	13/11/20
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20200118-21	C007	18/01/20
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20200417-31	C007	17/04/20
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20201123-29	C007	23/11/20
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20210110-59	C007	10/01/21
+C008	Monsieur	VIVANT	JEAN-BAPTISTE	1	13	RUE DE LA PAIX	93800	EPINAY-SUR-SEINE	FRANCE	jeanbaptiste@	0607	17/09/58	17/09/00	-	-	F	A+	Handball, football, BasketBall, FOOTBALL	20200426-42	C008	26/04/20
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20062FB	C009	14/02/03
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20200116-58	C009	16/01/20
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20200818-40	C009	18/08/20
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20200919-16	C009	19/09/20
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20201214-11	C009	14/12/20
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20201226-17	C009	26/12/20
+C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL	20061FB	C010	14/02/03
+C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL	20191214-30	C010	14/12/19
+C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL	20200326-60	C010	26/03/20
+C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL	20200610-56	C010	10/06/20
+C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed	20190922-14	C011	22/09/19
+C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed	20200509-34	C011	09/05/20
+C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed	20201230-32	C011	30/12/20
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20001AB	C012	17/09/00
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20011RB	C012	22/01/01
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20012RB	C012	13/03/01
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20053FB	C012	10/03/05
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20055FB	C012	11/03/05
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20181AB	C012	17/09/18
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20191021-15	C012	21/10/19
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20191113-23	C012	13/11/19
+C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema	20056FB	C013	14/03/05
+C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema	20071FB	C013	30/01/07
+C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema	20072FB	C013	30/01/07
+C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema	20057FB	C014	11/03/05
+C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema	20073FB	C014	30/01/07
+C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema	20074FB	C014	30/01/07
+C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema	20184FB	C014	17/09/18
+C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema	20191223-20	C015	23/12/19
+C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema	20200528-36	C015	28/05/20
+C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema	20201020-43	C015	20/10/20
+C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema	20210109-50	C015	09/01/21
+C016	Madame	obsolete	kadym	7	1	rue des anciens	000	CARTHAGE	IFRIQIA	inexistant	inexistant	-	-	-	-	F	A+	PARIS, SUDOKU, Not authorized	20200627-55	C016	27/06/20
+C017	Madame	RAHYM	Karym	1	1	RUE DES GENTILS	1000	CARTHAGE	TUNISIE	karym.rahym@gmail.com	+21624808444	01/01/90	05/01/21	-	-	F	AB+	Plongee sous marine, Voyages, FOOTBALL, Cinema, SUDOKU, Arts martiaux, Voyages, Mangas, BasketBall, Musique, Informatique, Bases de Données, Entrepôts de Données, Data Cleaning, FOOTBALL	20201002-26	C017	02/10/20
+C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema	20191010-18	C018	10/10/19
+C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema	20200209-48	C018	09/02/20
+C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema	20200829-44	C018	29/08/20
+C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema	20201006-46	C018	06/10/20
+C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning	20191128-52	C019	28/11/19
+C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning	20200222-51	C019	22/02/20
+C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning	20200507-49	C019	07/05/20
+C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning	20200520-57	C019	20/05/20
+C020	Madame	GENIe	GENIAL	3	16	AVENUE FOCH	75016	PARIS	FRENCE	genialegenie@gmail.com	0777889900	17/09/88	11/11/11	-	-	F	-	-	20200525-25	C020	25/05/20
+C020	Madame	GENIe	GENIAL	3	16	AVENUE FOCH	75016	PARIS	FRENCE	genialegenie@gmail.com	0777889900	17/09/88	11/11/11	-	-	F	-	-	20201005-22	C020	05/10/20
+C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-	20190923-13	C021	23/09/19
+C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-	20191007-28	C021	07/10/19
+C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-	20201012-39	C021	12/10/20
+C022	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	PARIS	-	belle.africaine@hotmail.com	+33777889911	17/09/88	11/11/11	-	-	F	-	-	20191116-45	C022	16/11/19
+C022	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	PARIS	-	belle.africaine@hotmail.com	+33777889911	17/09/88	11/11/11	-	-	F	-	-	20200211-53	C022	11/02/20
+C023	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	DAKAR	-	africaineb@gmail.com	+33777889922	17/09/88	11/11/11	-	-	F	-	-	20190928-12	C023	28/09/19
 */
 
 -- E03. Jointure entre commandes et Clients : Que les clients qui ont commandé (Colonnes obtenues dans l'ordre COM, CLI)
 SELECT * FROM Commandes, Clients  WHERE Clients.CODCLI = Commandes.codcli;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+NUMCOM	CODCLI	DATCOM	CODCLI	CIVCLI	NOMCLI	PRENCLI	CATCLI	ADNCLI	ADRCLI	CPCLI	VILCLI	PAYSCLI	MAILCLI	TELCLI	DATNAISCLI	DPREMCONTACTCLI	OBSCLI	REMCLI	GENRECLI	GSCLI	KEYWORDSCLI
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+20002AB	C001	17/09/00	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20031FB	C001	14/02/03	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20191023-19	C001	23/10/19	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20200611-54	C001	11/06/20	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20200805-35	C001	05/08/20	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20201215-27	C001	15/12/20	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20066FB	C002	14/02/03	C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees
+20067FB	C002	14/02/03	C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees
+20068FB	C002	14/02/03	C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees
+20069FB	C002	30/01/07	C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees
+20070FB	C002	30/01/07	C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees
+20200425-37	C002	25/04/20	C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees
+20051FB	C003	07/01/05	C003	Madame	UNIQUE	Inès	2	77	RUE DE LA LIBERTE	13001	MARCHEILLLE	FRANCE	munique@gmail.com	+33717889922	22/11/69	12/12/12	-	-	F	B+	Cinema, football, Yoga, Mangas, SuDOKU, BASKETbal, Arts Martiaux, Haute couture
+20052FB	C003	12/01/05	C003	Madame	UNIQUE	Inès	2	77	RUE DE LA LIBERTE	13001	MARCHEILLLE	FRANCE	munique@gmail.com	+33717889922	22/11/69	12/12/12	-	-	F	B+	Cinema, football, Yoga, Mangas, SuDOKU, BASKETbal, Arts Martiaux, Haute couture
+20201010-38	C004	10/10/20	C004	Madame	CLEMENCE	EVELYNE	4	8 BIS	FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence evelyne@gmail.com	+33777889933	-	-	-	-	F	B+	Mangas, football , Theatre, Cinema, Musique, Plongee sous marine
+20210105-47	C004	05/01/21	C004	Madame	CLEMENCE	EVELYNE	4	8 BIS	FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence evelyne@gmail.com	+33777889933	-	-	-	-	F	B+	Mangas, football , Theatre, Cinema, Musique, Plongee sous marine
+20201009-41	C005	09/10/20	C005	Madam	FORT	anne marie	3	55	RUE DU JAPON	94310	ORLY-VILLE	FRANCE	jfort\@hotmail.fr	+33777889944	11/11/00	-	-	-	F	A-	Bandes Dessinees, Handball, Musique, Manga, foot, BasketBall
+20003AB	C006	16/10/00	C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU
+20004AB	C006	24/10/00	C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU
+20191102-33	C006	02/11/19	C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU
+20200924-24	C006	24/09/20	C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU
+20054FB	C007	14/03/05	C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+20065FB	C007	14/02/03	C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+20201AB	C007	13/11/20	C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+20200118-21	C007	18/01/20	C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+20200417-31	C007	17/04/20	C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+20201123-29	C007	23/11/20	C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+20210110-59	C007	10/01/21	C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+20200426-42	C008	26/04/20	C008	Monsieur	VIVANT	JEAN-BAPTISTE	1	13	RUE DE LA PAIX	93800	EPINAY-SUR-SEINE	FRANCE	jeanbaptiste@	0607	17/09/58	17/09/00	-	-	F	A+	Handball, football, BasketBall, FOOTBALL
+20062FB	C009	14/02/03	C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+20200116-58	C009	16/01/20	C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+20200818-40	C009	18/08/20	C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+20200919-16	C009	19/09/20	C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+20201214-11	C009	14/12/20	C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+20201226-17	C009	26/12/20	C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+20061FB	C010	14/02/03	C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL
+20191214-30	C010	14/12/19	C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL
+20200326-60	C010	26/03/20	C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL
+20200610-56	C010	10/06/20	C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL
+20190922-14	C011	22/09/19	C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed
+20200509-34	C011	09/05/20	C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed
+20201230-32	C011	30/12/20	C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed
+20001AB	C012	17/09/00	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20011RB	C012	22/01/01	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20012RB	C012	13/03/01	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20053FB	C012	10/03/05	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20055FB	C012	11/03/05	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20181AB	C012	17/09/18	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20191021-15	C012	21/10/19	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20191113-23	C012	13/11/19	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20056FB	C013	14/03/05	C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema
+20071FB	C013	30/01/07	C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema
+20072FB	C013	30/01/07	C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema
+20057FB	C014	11/03/05	C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema
+20073FB	C014	30/01/07	C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema
+20074FB	C014	30/01/07	C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema
+20184FB	C014	17/09/18	C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema
+20191223-20	C015	23/12/19	C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema
+20200528-36	C015	28/05/20	C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema
+20201020-43	C015	20/10/20	C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema
+20210109-50	C015	09/01/21	C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema
+20200627-55	C016	27/06/20	C016	Madame	obsolete	kadym	7	1	rue des anciens	000	CARTHAGE	IFRIQIA	inexistant	inexistant	-	-	-	-	F	A+	PARIS, SUDOKU, Not authorized
+20201002-26	C017	02/10/20	C017	Madame	RAHYM	Karym	1	1	RUE DES GENTILS	1000	CARTHAGE	TUNISIE	karym.rahym@gmail.com	+21624808444	01/01/90	05/01/21	-	-	F	AB+	Plongee sous marine, Voyages, FOOTBALL, Cinema, SUDOKU, Arts martiaux, Voyages, Mangas, BasketBall, Musique, Informatique, Bases de Données, Entrepôts de Données, Data Cleaning, FOOTBALL
+20191010-18	C018	10/10/19	C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema
+20200209-48	C018	09/02/20	C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema
+20200829-44	C018	29/08/20	C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema
+20201006-46	C018	06/10/20	C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema
+20191128-52	C019	28/11/19	C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning
+20200222-51	C019	22/02/20	C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning
+20200507-49	C019	07/05/20	C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning
+20200520-57	C019	20/05/20	C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning
+20200525-25	C020	25/05/20	C020	Madame	GENIe	GENIAL	3	16	AVENUE FOCH	75016	PARIS	FRENCE	genialegenie@gmail.com	0777889900	17/09/88	11/11/11	-	-	F	-	-
+20201005-22	C020	05/10/20	C020	Madame	GENIe	GENIAL	3	16	AVENUE FOCH	75016	PARIS	FRENCE	genialegenie@gmail.com	0777889900	17/09/88	11/11/11	-	-	F	-	-
+20190923-13	C021	23/09/19	C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-
+20191007-28	C021	07/10/19	C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-
+20201012-39	C021	12/10/20	C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-
+20191116-45	C022	16/11/19	C022	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	PARIS	-	belle.africaine@hotmail.com	+33777889911	17/09/88	11/11/11	-	-	F	-	-
+20200211-53	C022	11/02/20	C022	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	PARIS	-	belle.africaine@hotmail.com	+33777889911	17/09/88	11/11/11	-	-	F	-	-
+20190928-12	C023	28/09/19	C023	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	DAKAR	-	africaineb@gmail.com	+33777889922	17/09/88	11/11/11
 */
 
 -- E04. Jointure entre Clients et commandes : Que les clients qui ont commandé (Colonnes obtenues dans l'ordre CLI, COM)
 SELECT * FROM Clients JOIN Commandes ON Clients.codcli = Commandes.codcli;
+/*
+Même résultat que cette requete SELECT * FROM Clients, Commandes  WHERE Clients.CODCLI = Commandes.codcli; précédemment testé
+*/
 
 -- E05. Jointure entre commandes et Clients : Que les clients qui ont commandé (Colonnes obtenues dans l'ordre COM, CLI)
 SELECT * FROM Commandes JOIN Clients ON Commandes.codcli = Clients.codcli;
+/*
+Même résultat que cette requete SELECT * FROM Commandes, Clients  WHERE Clients.CODCLI = Commandes.codcli; précédemment testé
+*/
 
 -- E07. Jointure entre Clients et commandes : Les clients qui ont commandé et CEUX qui n'ont pas commandé avec des NULL
 SELECT * FROM Clients FULL OUTER JOIN Commandes ON Clients.codcli = Commandes.codcli;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	CIVCLI	NOMCLI	PRENCLI	CATCLI	ADNCLI	ADRCLI	CPCLI	VILCLI	PAYSCLI	MAILCLI	TELCLI	DATNAISCLI	DPREMCONTACTCLI	OBSCLI	REMCLI	GENRECLI	GSCLI	KEYWORDSCLI	NUMCOM	CODCLI	DATCOM
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20002AB	C001	17/09/00
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20031FB	C001	14/02/03
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20191023-19	C001	23/10/19
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20200611-54	C001	11/06/20
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20200805-35	C001	05/08/20
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20201215-27	C001	15/12/20
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20066FB	C002	14/02/03
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20067FB	C002	14/02/03
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20068FB	C002	14/02/03
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20069FB	C002	30/01/07
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20070FB	C002	30/01/07
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20200425-37	C002	25/04/20
+C003	Madame	UNIQUE	Inès	2	77	RUE DE LA LIBERTE	13001	MARCHEILLLE	FRANCE	munique@gmail.com	+33717889922	22/11/69	12/12/12	-	-	F	B+	Cinema, football, Yoga, Mangas, SuDOKU, BASKETbal, Arts Martiaux, Haute couture	20051FB	C003	07/01/05
+C003	Madame	UNIQUE	Inès	2	77	RUE DE LA LIBERTE	13001	MARCHEILLLE	FRANCE	munique@gmail.com	+33717889922	22/11/69	12/12/12	-	-	F	B+	Cinema, football, Yoga, Mangas, SuDOKU, BASKETbal, Arts Martiaux, Haute couture	20052FB	C003	12/01/05
+C004	Madame	CLEMENCE	EVELYNE	4	8 BIS	FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence evelyne@gmail.com	+33777889933	-	-	-	-	F	B+	Mangas, football , Theatre, Cinema, Musique, Plongee sous marine	20201010-38	C004	10/10/20
+C004	Madame	CLEMENCE	EVELYNE	4	8 BIS	FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence evelyne@gmail.com	+33777889933	-	-	-	-	F	B+	Mangas, football , Theatre, Cinema, Musique, Plongee sous marine	20210105-47	C004	05/01/21
+C005	Madam	FORT	anne marie	3	55	RUE DU JAPON	94310	ORLY-VILLE	FRANCE	jfort\@hotmail.fr	+33777889944	11/11/00	-	-	-	F	A-	Bandes Dessinees, Handball, Musique, Manga, foot, BasketBall	20201009-41	C005	09/10/20
+C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU	20003AB	C006	16/10/00
+C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU	20004AB	C006	24/10/00
+C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU	20191102-33	C006	02/11/19
+C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU	20200924-24	C006	24/09/20
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20054FB	C007	14/03/05
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20065FB	C007	14/02/03
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20201AB	C007	13/11/20
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20200118-21	C007	18/01/20
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20200417-31	C007	17/04/20
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20201123-29	C007	23/11/20
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20210110-59	C007	10/01/21
+C008	Monsieur	VIVANT	JEAN-BAPTISTE	1	13	RUE DE LA PAIX	93800	EPINAY-SUR-SEINE	FRANCE	jeanbaptiste@	0607	17/09/58	17/09/00	-	-	F	A+	Handball, football, BasketBall, FOOTBALL	20200426-42	C008	26/04/20
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20062FB	C009	14/02/03
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20200116-58	C009	16/01/20
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20200818-40	C009	18/08/20
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20200919-16	C009	19/09/20
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20201214-11	C009	14/12/20
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20201226-17	C009	26/12/20
+C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL	20061FB	C010	14/02/03
+C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL	20191214-30	C010	14/12/19
+C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL	20200326-60	C010	26/03/20
+C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL	20200610-56	C010	10/06/20
+C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed	20190922-14	C011	22/09/19
+C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed	20200509-34	C011	09/05/20
+C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed	20201230-32	C011	30/12/20
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20001AB	C012	17/09/00
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20011RB	C012	22/01/01
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20012RB	C012	13/03/01
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20053FB	C012	10/03/05
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20055FB	C012	11/03/05
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20181AB	C012	17/09/18
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20191021-15	C012	21/10/19
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20191113-23	C012	13/11/19
+C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema	20056FB	C013	14/03/05
+C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema	20071FB	C013	30/01/07
+C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema	20072FB	C013	30/01/07
+C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema	20057FB	C014	11/03/05
+C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema	20073FB	C014	30/01/07
+C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema	20074FB	C014	30/01/07
+C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema	20184FB	C014	17/09/18
+C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema	20191223-20	C015	23/12/19
+C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema	20200528-36	C015	28/05/20
+C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema	20201020-43	C015	20/10/20
+C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema	20210109-50	C015	09/01/21
+C016	Madame	obsolete	kadym	7	1	rue des anciens	000	CARTHAGE	IFRIQIA	inexistant	inexistant	-	-	-	-	F	A+	PARIS, SUDOKU, Not authorized	20200627-55	C016	27/06/20
+C017	Madame	RAHYM	Karym	1	1	RUE DES GENTILS	1000	CARTHAGE	TUNISIE	karym.rahym@gmail.com	+21624808444	01/01/90	05/01/21	-	-	F	AB+	Plongee sous marine, Voyages, FOOTBALL, Cinema, SUDOKU, Arts martiaux, Voyages, Mangas, BasketBall, Musique, Informatique, Bases de Données, Entrepôts de Données, Data Cleaning, FOOTBALL	20201002-26	C017	02/10/20
+C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema	20191010-18	C018	10/10/19
+C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema	20200209-48	C018	09/02/20
+C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema	20200829-44	C018	29/08/20
+C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema	20201006-46	C018	06/10/20
+C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning	20191128-52	C019	28/11/19
+C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning	20200222-51	C019	22/02/20
+C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning	20200507-49	C019	07/05/20
+C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning	20200520-57	C019	20/05/20
+C020	Madame	GENIe	GENIAL	3	16	AVENUE FOCH	75016	PARIS	FRENCE	genialegenie@gmail.com	0777889900	17/09/88	11/11/11	-	-	F	-	-	20200525-25	C020	25/05/20
+C020	Madame	GENIe	GENIAL	3	16	AVENUE FOCH	75016	PARIS	FRENCE	genialegenie@gmail.com	0777889900	17/09/88	11/11/11	-	-	F	-	-	20201005-22	C020	05/10/20
+C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-	20190923-13	C021	23/09/19
+C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-	20191007-28	C021	07/10/19
+C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-	20201012-39	C021	12/10/20
+C022	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	PARIS	-	belle.africaine@hotmail.com	+33777889911	17/09/88	11/11/11	-	-	F	-	-	20191116-45	C022	16/11/19
+C022	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	PARIS	-	belle.africaine@hotmail.com	+33777889911	17/09/88	11/11/11	-	-	F	-	-	20200211-53	C022	11/02/20
+C023	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	DAKAR	-	africaineb@gmail.com	+33777889922	17/09/88	11/11/11	-	-	F	-	-	20190928-12	C023	28/09/19
+C118	Madame	GENIE	Adam	3	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	17/09/88	-	-	-	F	-	-	-	-	-
+C119	MadamE	UNE	Marie	6	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieune@gmail.com	0617586575	01/01/91	-	-	-	F	-	-	-	-	-
+C120	MADAME	1	MARIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	MARIEUNE@GMAIL.COM	0617586575	01/01/91	-	-	-	F	-	-	-	-	-
+C121	Monsieur	2 PAR 2	Girard	1	27	AVENUE D ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-	-	-	-
+C122	Monsieur	DE PAR DE	GIRARD	1	27	AVENUE D-ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-	-	-	-
+C123	Monsieur	DE PAR DE	GIRARD	1	27	AVENUE D'ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	-	-	-	-	F	-	-	-	-	-
+C124	Monsieur	DE PAR DE	Girard	1	27	AVENUE D_ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-	-	-	-
+C125	Monsieur	DE PAR DE	Girard	1	27	AVENUE D_ITALIE	75013	PARIS	france	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-	-	-	-
+C126	Monsieur	DE PAR DE	Gir@rd	1	27	AVENUE@D_ITALIE/	75013	paris	france	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-	-	-	-
+C127	Monsieur	SMITH	John	1	-	-	-	LONDON	United-Kingdom	-	-	03/03/83	-	-	-	F	-	-	-	-	-
+C128	Monsieur	BIDON	Jade	1	-	-	-	LONDON	United-KINGDOM	-	-	17/07/77	-	-	-	F	-	-	-	-	-
+C129	Monsieur	STOne	Brakeur	1	-	-	-	LONDON	United-KINGDOM	-	-	18/08/88	-	-	-	F	-	-	-	-	-
+C130	MADAM	STOne	Jane	1	-	-	-	Oxford	United KINGDOM	-	-	-	-	-	-	F	-	-	-	-	-
+C131	MONsieur	CATS	BiLL	9	-	Maison Planchhhe	-	NEW-YORk	UNITED-STATS-AMERICA	-	-	17/09/78	-	-	-	F	-	-	-	-	-
+C295	MONSIEUr	MOUCHE	Gorge	3	-	-	-	L'Hay-Les-Roses	-	usapresident@labas.com	-	02/02/50	20/01/91	-	-	F	x-	-	-	-	-
+C296	MONSIEUR	MOUBARAK	OOObana	3	-	-	-	-	-	-	-	15/05/65	20/01/08	-	-	F	A	-	-	-	-
+C297	MADAME	CLEANTOOON	Hilally	3	-	-	-	-	-	-	-	15/05/66	20/01/16	-	-	F	B+-	-	-	-	-
+C298	monsieur	TROMPE.	Ronald	-3	-	-	-	-	-	usapresident@labas.com	-	10/10/45	20/01/16	-	-	-	-	NUL, Not authorized, Not allowed, Not permitted	-	-	-
+C299	MONSIEUuR	BIDON!	Joie	3	-	-	-	-	-	-	-	10/10/41	03/11/20	-	-	F	-	-	-	-	-
+C300	MONSIEUR	HOBAAAMA	M'Barek	3	-	-	-	-	-	-	-	10/10/85	20/01/08	-	-	F	o+	BasketBall, Handball, FOOTBALL	-	-	-
+C554	Monsieur	ALIBABA	Mystere	1	55	Rue De Belleville	75019	PARIS	FRANCE	sezameouvretoi.alibaba.myster@gmail.com	0697837311	12/12/92	-	-	-	F	-	-	-	-	-
+C555	Madame	SMART	Data	2	55	RUE DE BELLEVILLE	75019	PARIS	FRANCE	smartdata@gmail.com	+33755555555	-	-	-	-	F	B+	FOOTBALL, SMART DATA	-	-	-
 */
 
 -- E08. Jointure entre commandes et Clients : Les clients qui ont commandé et CEUX qui n'ont pas commandé avec des NULL
 SELECT * FROM Commandes FULL OUTER JOIN Clients ON Clients.codcli = Commandes.codcli;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+NUMCOM	CODCLI	DATCOM	CODCLI	CIVCLI	NOMCLI	PRENCLI	CATCLI	ADNCLI	ADRCLI	CPCLI	VILCLI	PAYSCLI	MAILCLI	TELCLI	DATNAISCLI	DPREMCONTACTCLI	OBSCLI	REMCLI	GENRECLI	GSCLI	KEYWORDSCLI
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+20002AB	C001	17/09/00	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20031FB	C001	14/02/03	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20191023-19	C001	23/10/19	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20200611-54	C001	11/06/20	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20200805-35	C001	05/08/20	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20201215-27	C001	15/12/20	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20066FB	C002	14/02/03	C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees
+20067FB	C002	14/02/03	C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees
+20068FB	C002	14/02/03	C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees
+20069FB	C002	30/01/07	C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees
+20070FB	C002	30/01/07	C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees
+20200425-37	C002	25/04/20	C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees
+20051FB	C003	07/01/05	C003	Madame	UNIQUE	Inès	2	77	RUE DE LA LIBERTE	13001	MARCHEILLLE	FRANCE	munique@gmail.com	+33717889922	22/11/69	12/12/12	-	-	F	B+	Cinema, football, Yoga, Mangas, SuDOKU, BASKETbal, Arts Martiaux, Haute couture
+20052FB	C003	12/01/05	C003	Madame	UNIQUE	Inès	2	77	RUE DE LA LIBERTE	13001	MARCHEILLLE	FRANCE	munique@gmail.com	+33717889922	22/11/69	12/12/12	-	-	F	B+	Cinema, football, Yoga, Mangas, SuDOKU, BASKETbal, Arts Martiaux, Haute couture
+20201010-38	C004	10/10/20	C004	Madame	CLEMENCE	EVELYNE	4	8 BIS	FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence evelyne@gmail.com	+33777889933	-	-	-	-	F	B+	Mangas, football , Theatre, Cinema, Musique, Plongee sous marine
+20210105-47	C004	05/01/21	C004	Madame	CLEMENCE	EVELYNE	4	8 BIS	FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence evelyne@gmail.com	+33777889933	-	-	-	-	F	B+	Mangas, football , Theatre, Cinema, Musique, Plongee sous marine
+20201009-41	C005	09/10/20	C005	Madam	FORT	anne marie	3	55	RUE DU JAPON	94310	ORLY-VILLE	FRANCE	jfort\@hotmail.fr	+33777889944	11/11/00	-	-	-	F	A-	Bandes Dessinees, Handball, Musique, Manga, foot, BasketBall
+20003AB	C006	16/10/00	C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU
+20004AB	C006	24/10/00	C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU
+20191102-33	C006	02/11/19	C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU
+20200924-24	C006	24/09/20	C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU
+20054FB	C007	14/03/05	C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+20065FB	C007	14/02/03	C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+20201AB	C007	13/11/20	C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+20200118-21	C007	18/01/20	C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+20200417-31	C007	17/04/20	C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+20201123-29	C007	23/11/20	C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+20210110-59	C007	10/01/21	C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+20200426-42	C008	26/04/20	C008	Monsieur	VIVANT	JEAN-BAPTISTE	1	13	RUE DE LA PAIX	93800	EPINAY-SUR-SEINE	FRANCE	jeanbaptiste@	0607	17/09/58	17/09/00	-	-	F	A+	Handball, football, BasketBall, FOOTBALL
+20062FB	C009	14/02/03	C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+20200116-58	C009	16/01/20	C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+20200818-40	C009	18/08/20	C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+20200919-16	C009	19/09/20	C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+20201214-11	C009	14/12/20	C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+20201226-17	C009	26/12/20	C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+20061FB	C010	14/02/03	C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL
+20191214-30	C010	14/12/19	C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL
+20200326-60	C010	26/03/20	C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL
+20200610-56	C010	10/06/20	C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL
+20190922-14	C011	22/09/19	C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed
+20200509-34	C011	09/05/20	C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed
+20201230-32	C011	30/12/20	C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed
+20001AB	C012	17/09/00	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20011RB	C012	22/01/01	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20012RB	C012	13/03/01	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20053FB	C012	10/03/05	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20055FB	C012	11/03/05	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20181AB	C012	17/09/18	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20191021-15	C012	21/10/19	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20191113-23	C012	13/11/19	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20056FB	C013	14/03/05	C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema
+20071FB	C013	30/01/07	C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema
+20072FB	C013	30/01/07	C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema
+20057FB	C014	11/03/05	C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema
+20073FB	C014	30/01/07	C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema
+20074FB	C014	30/01/07	C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema
+20184FB	C014	17/09/18	C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema
+20191223-20	C015	23/12/19	C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema
+20200528-36	C015	28/05/20	C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema
+20201020-43	C015	20/10/20	C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema
+20210109-50	C015	09/01/21	C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema
+20200627-55	C016	27/06/20	C016	Madame	obsolete	kadym	7	1	rue des anciens	000	CARTHAGE	IFRIQIA	inexistant	inexistant	-	-	-	-	F	A+	PARIS, SUDOKU, Not authorized
+20201002-26	C017	02/10/20	C017	Madame	RAHYM	Karym	1	1	RUE DES GENTILS	1000	CARTHAGE	TUNISIE	karym.rahym@gmail.com	+21624808444	01/01/90	05/01/21	-	-	F	AB+	Plongee sous marine, Voyages, FOOTBALL, Cinema, SUDOKU, Arts martiaux, Voyages, Mangas, BasketBall, Musique, Informatique, Bases de Données, Entrepôts de Données, Data Cleaning, FOOTBALL
+20191010-18	C018	10/10/19	C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema
+20200209-48	C018	09/02/20	C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema
+20200829-44	C018	29/08/20	C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema
+20201006-46	C018	06/10/20	C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema
+20191128-52	C019	28/11/19	C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning
+20200222-51	C019	22/02/20	C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning
+20200507-49	C019	07/05/20	C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning
+20200520-57	C019	20/05/20	C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning
+20200525-25	C020	25/05/20	C020	Madame	GENIe	GENIAL	3	16	AVENUE FOCH	75016	PARIS	FRENCE	genialegenie@gmail.com	0777889900	17/09/88	11/11/11	-	-	F	-	-
+20201005-22	C020	05/10/20	C020	Madame	GENIe	GENIAL	3	16	AVENUE FOCH	75016	PARIS	FRENCE	genialegenie@gmail.com	0777889900	17/09/88	11/11/11	-	-	F	-	-
+20190923-13	C021	23/09/19	C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-
+20191007-28	C021	07/10/19	C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-
+20201012-39	C021	12/10/20	C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-
+20191116-45	C022	16/11/19	C022	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	PARIS	-	belle.africaine@hotmail.com	+33777889911	17/09/88	11/11/11	-	-	F	-	-
+20200211-53	C022	11/02/20	C022	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	PARIS	-	belle.africaine@hotmail.com	+33777889911	17/09/88	11/11/11	-	-	F	-	-
+20190928-12	C023	28/09/19	C023	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	DAKAR	-	africaineb@gmail.com	+33777889922	17/09/88	11/11/11	-	-	F	-	-
+-	-	-	C118	Madame	GENIE	Adam	3	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	17/09/88	-	-	-	F	-	-
+-	-	-	C119	MadamE	UNE	Marie	6	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieune@gmail.com	0617586575	01/01/91	-	-	-	F	-	-
+-	-	-	C120	MADAME	1	MARIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	MARIEUNE@GMAIL.COM	0617586575	01/01/91	-	-	-	F	-	-
+-	-	-	C121	Monsieur	2 PAR 2	Girard	1	27	AVENUE D ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-
+-	-	-	C122	Monsieur	DE PAR DE	GIRARD	1	27	AVENUE D-ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-
+-	-	-	C123	Monsieur	DE PAR DE	GIRARD	1	27	AVENUE D'ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	-	-	-	-	F	-	-
+-	-	-	C124	Monsieur	DE PAR DE	Girard	1	27	AVENUE D_ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-
+-	-	-	C125	Monsieur	DE PAR DE	Girard	1	27	AVENUE D_ITALIE	75013	PARIS	france	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-
+-	-	-	C126	Monsieur	DE PAR DE	Gir@rd	1	27	AVENUE@D_ITALIE/	75013	paris	france	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-
+-	-	-	C127	Monsieur	SMITH	John	1	-	-	-	LONDON	United-Kingdom	-	-	03/03/83	-	-	-	F	-	-
+-	-	-	C128	Monsieur	BIDON	Jade	1	-	-	-	LONDON	United-KINGDOM	-	-	17/07/77	-	-	-	F	-	-
+-	-	-	C129	Monsieur	STOne	Brakeur	1	-	-	-	LONDON	United-KINGDOM	-	-	18/08/88	-	-	-	F	-	-
+-	-	-	C130	MADAM	STOne	Jane	1	-	-	-	Oxford	United KINGDOM	-	-	-	-	-	-	F	-	-
+-	-	-	C131	MONsieur	CATS	BiLL	9	-	Maison Planchhhe	-	NEW-YORk	UNITED-STATS-AMERICA	-	-	17/09/78	-	-	-	F	-	-
+-	-	-	C295	MONSIEUr	MOUCHE	Gorge	3	-	-	-	L'Hay-Les-Roses	-	usapresident@labas.com	-	02/02/50	20/01/91	-	-	F	x-	-
+-	-	-	C296	MONSIEUR	MOUBARAK	OOObana	3	-	-	-	-	-	-	-	15/05/65	20/01/08	-	-	F	A	-
+-	-	-	C297	MADAME	CLEANTOOON	Hilally	3	-	-	-	-	-	-	-	15/05/66	20/01/16	-	-	F	B+-	-
+-	-	-	C298	monsieur	TROMPE.	Ronald	-3	-	-	-	-	-	usapresident@labas.com	-	10/10/45	20/01/16	-	-	-	-	NUL, Not authorized, Not allowed, Not permitted
+-	-	-	C299	MONSIEUuR	BIDON!	Joie	3	-	-	-	-	-	-	-	10/10/41	03/11/20	-	-	F	-	-
+-	-	-	C300	MONSIEUR	HOBAAAMA	M'Barek	3	-	-	-	-	-	-	-	10/10/85	20/01/08	-	-	F	o+	BasketBall, Handball, FOOTBALL
+-	-	-	C554	Monsieur	ALIBABA	Mystere	1	55	Rue De Belleville	75019	PARIS	FRANCE	sezameouvretoi.alibaba.myster@gmail.com	0697837311	12/12/92	-	-	-	F	-	-
+-	-	-	C555	Madame	SMART	Data	2	55	RUE DE BELLEVILLE	75019	PARIS	FRANCE	smartdata@gmail.com	+33755555555	-
 */
 
 -- E09. Jointure GAUCHE entre Clients et commandes
 SELECT * FROM Clients LEFT OUTER JOIN Commandes ON Clients.codcli = Commandes.codcli;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	CIVCLI	NOMCLI	PRENCLI	CATCLI	ADNCLI	ADRCLI	CPCLI	VILCLI	PAYSCLI	MAILCLI	TELCLI	DATNAISCLI	DPREMCONTACTCLI	OBSCLI	REMCLI	GENRECLI	GSCLI	KEYWORDSCLI	NUMCOM	CODCLI	DATCOM
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20002AB	C001	17/09/00
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20031FB	C001	14/02/03
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20191023-19	C001	23/10/19
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20200611-54	C001	11/06/20
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20200805-35	C001	05/08/20
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20201215-27	C001	15/12/20
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20066FB	C002	14/02/03
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20067FB	C002	14/02/03
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20068FB	C002	14/02/03
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20069FB	C002	30/01/07
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20070FB	C002	30/01/07
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20200425-37	C002	25/04/20
+C003	Madame	UNIQUE	Inès	2	77	RUE DE LA LIBERTE	13001	MARCHEILLLE	FRANCE	munique@gmail.com	+33717889922	22/11/69	12/12/12	-	-	F	B+	Cinema, football, Yoga, Mangas, SuDOKU, BASKETbal, Arts Martiaux, Haute couture	20051FB	C003	07/01/05
+C003	Madame	UNIQUE	Inès	2	77	RUE DE LA LIBERTE	13001	MARCHEILLLE	FRANCE	munique@gmail.com	+33717889922	22/11/69	12/12/12	-	-	F	B+	Cinema, football, Yoga, Mangas, SuDOKU, BASKETbal, Arts Martiaux, Haute couture	20052FB	C003	12/01/05
+C004	Madame	CLEMENCE	EVELYNE	4	8 BIS	FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence evelyne@gmail.com	+33777889933	-	-	-	-	F	B+	Mangas, football , Theatre, Cinema, Musique, Plongee sous marine	20201010-38	C004	10/10/20
+C004	Madame	CLEMENCE	EVELYNE	4	8 BIS	FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence evelyne@gmail.com	+33777889933	-	-	-	-	F	B+	Mangas, football , Theatre, Cinema, Musique, Plongee sous marine	20210105-47	C004	05/01/21
+C005	Madam	FORT	anne marie	3	55	RUE DU JAPON	94310	ORLY-VILLE	FRANCE	jfort\@hotmail.fr	+33777889944	11/11/00	-	-	-	F	A-	Bandes Dessinees, Handball, Musique, Manga, foot, BasketBall	20201009-41	C005	09/10/20
+C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU	20003AB	C006	16/10/00
+C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU	20004AB	C006	24/10/00
+C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU	20191102-33	C006	02/11/19
+C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU	20200924-24	C006	24/09/20
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20054FB	C007	14/03/05
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20065FB	C007	14/02/03
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20201AB	C007	13/11/20
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20200118-21	C007	18/01/20
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20200417-31	C007	17/04/20
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20201123-29	C007	23/11/20
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20210110-59	C007	10/01/21
+C008	Monsieur	VIVANT	JEAN-BAPTISTE	1	13	RUE DE LA PAIX	93800	EPINAY-SUR-SEINE	FRANCE	jeanbaptiste@	0607	17/09/58	17/09/00	-	-	F	A+	Handball, football, BasketBall, FOOTBALL	20200426-42	C008	26/04/20
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20062FB	C009	14/02/03
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20200116-58	C009	16/01/20
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20200818-40	C009	18/08/20
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20200919-16	C009	19/09/20
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20201214-11	C009	14/12/20
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20201226-17	C009	26/12/20
+C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL	20061FB	C010	14/02/03
+C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL	20191214-30	C010	14/12/19
+C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL	20200326-60	C010	26/03/20
+C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL	20200610-56	C010	10/06/20
+C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed	20190922-14	C011	22/09/19
+C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed	20200509-34	C011	09/05/20
+C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed	20201230-32	C011	30/12/20
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20001AB	C012	17/09/00
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20011RB	C012	22/01/01
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20012RB	C012	13/03/01
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20053FB	C012	10/03/05
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20055FB	C012	11/03/05
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20181AB	C012	17/09/18
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20191021-15	C012	21/10/19
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20191113-23	C012	13/11/19
+C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema	20056FB	C013	14/03/05
+C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema	20071FB	C013	30/01/07
+C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema	20072FB	C013	30/01/07
+C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema	20057FB	C014	11/03/05
+C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema	20073FB	C014	30/01/07
+C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema	20074FB	C014	30/01/07
+C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema	20184FB	C014	17/09/18
+C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema	20191223-20	C015	23/12/19
+C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema	20200528-36	C015	28/05/20
+C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema	20201020-43	C015	20/10/20
+C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema	20210109-50	C015	09/01/21
+C016	Madame	obsolete	kadym	7	1	rue des anciens	000	CARTHAGE	IFRIQIA	inexistant	inexistant	-	-	-	-	F	A+	PARIS, SUDOKU, Not authorized	20200627-55	C016	27/06/20
+C017	Madame	RAHYM	Karym	1	1	RUE DES GENTILS	1000	CARTHAGE	TUNISIE	karym.rahym@gmail.com	+21624808444	01/01/90	05/01/21	-	-	F	AB+	Plongee sous marine, Voyages, FOOTBALL, Cinema, SUDOKU, Arts martiaux, Voyages, Mangas, BasketBall, Musique, Informatique, Bases de Données, Entrepôts de Données, Data Cleaning, FOOTBALL	20201002-26	C017	02/10/20
+C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema	20191010-18	C018	10/10/19
+C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema	20200209-48	C018	09/02/20
+C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema	20200829-44	C018	29/08/20
+C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema	20201006-46	C018	06/10/20
+C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning	20191128-52	C019	28/11/19
+C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning	20200222-51	C019	22/02/20
+C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning	20200507-49	C019	07/05/20
+C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning	20200520-57	C019	20/05/20
+C020	Madame	GENIe	GENIAL	3	16	AVENUE FOCH	75016	PARIS	FRENCE	genialegenie@gmail.com	0777889900	17/09/88	11/11/11	-	-	F	-	-	20200525-25	C020	25/05/20
+C020	Madame	GENIe	GENIAL	3	16	AVENUE FOCH	75016	PARIS	FRENCE	genialegenie@gmail.com	0777889900	17/09/88	11/11/11	-	-	F	-	-	20201005-22	C020	05/10/20
+C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-	20190923-13	C021	23/09/19
+C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-	20191007-28	C021	07/10/19
+C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-	20201012-39	C021	12/10/20
+C022	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	PARIS	-	belle.africaine@hotmail.com	+33777889911	17/09/88	11/11/11	-	-	F	-	-	20191116-45	C022	16/11/19
+C022	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	PARIS	-	belle.africaine@hotmail.com	+33777889911	17/09/88	11/11/11	-	-	F	-	-	20200211-53	C022	11/02/20
+C023	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	DAKAR	-	africaineb@gmail.com	+33777889922	17/09/88	11/11/11	-	-	F	-	-	20190928-12	C023	28/09/19
+C118	Madame	GENIE	Adam	3	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	17/09/88	-	-	-	F	-	-	-	-	-
+C119	MadamE	UNE	Marie	6	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieune@gmail.com	0617586575	01/01/91	-	-	-	F	-	-	-	-	-
+C120	MADAME	1	MARIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	MARIEUNE@GMAIL.COM	0617586575	01/01/91	-	-	-	F	-	-	-	-	-
+C121	Monsieur	2 PAR 2	Girard	1	27	AVENUE D ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-	-	-	-
+C122	Monsieur	DE PAR DE	GIRARD	1	27	AVENUE D-ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-	-	-	-
+C123	Monsieur	DE PAR DE	GIRARD	1	27	AVENUE D'ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	-	-	-	-	F	-	-	-	-	-
+C124	Monsieur	DE PAR DE	Girard	1	27	AVENUE D_ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-	-	-	-
+C125	Monsieur	DE PAR DE	Girard	1	27	AVENUE D_ITALIE	75013	PARIS	france	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-	-	-	-
+C126	Monsieur	DE PAR DE	Gir@rd	1	27	AVENUE@D_ITALIE/	75013	paris	france	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-	-	-	-
+C127	Monsieur	SMITH	John	1	-	-	-	LONDON	United-Kingdom	-	-	03/03/83	-	-	-	F	-	-	-	-	-
+C128	Monsieur	BIDON	Jade	1	-	-	-	LONDON	United-KINGDOM	-	-	17/07/77	-	-	-	F	-	-	-	-	-
+C129	Monsieur	STOne	Brakeur	1	-	-	-	LONDON	United-KINGDOM	-	-	18/08/88	-	-	-	F	-	-	-	-	-
+C130	MADAM	STOne	Jane	1	-	-	-	Oxford	United KINGDOM	-	-	-	-	-	-	F	-	-	-	-	-
+C131	MONsieur	CATS	BiLL	9	-	Maison Planchhhe	-	NEW-YORk	UNITED-STATS-AMERICA	-	-	17/09/78	-	-	-	F	-	-	-	-	-
+C295	MONSIEUr	MOUCHE	Gorge	3	-	-	-	L'Hay-Les-Roses	-	usapresident@labas.com	-	02/02/50	20/01/91	-	-	F	x-	-	-	-	-
+C296	MONSIEUR	MOUBARAK	OOObana	3	-	-	-	-	-	-	-	15/05/65	20/01/08	-	-	F	A	-	-	-	-
+C297	MADAME	CLEANTOOON	Hilally	3	-	-	-	-	-	-	-	15/05/66	20/01/16	-	-	F	B+-	-	-	-	-
+C298	monsieur	TROMPE.	Ronald	-3	-	-	-	-	-	usapresident@labas.com	-	10/10/45	20/01/16	-	-	-	-	NUL, Not authorized, Not allowed, Not permitted	-	-	-
+C299	MONSIEUuR	BIDON!	Joie	3	-	-	-	-	-	-	-	10/10/41	03/11/20	-	-	F	-	-	-	-	-
+C300	MONSIEUR	HOBAAAMA	M'Barek	3	-	-	-	-	-	-	-	10/10/85	20/01/08	-	-	F	o+	BasketBall, Handball, FOOTBALL	-	-	-
+C554	Monsieur	ALIBABA	Mystere	1	55	Rue De Belleville	75019	PARIS	FRANCE	sezameouvretoi.alibaba.myster@gmail.com	0697837311	12/12/92	-	-	-	F	-	-	-	-	-
+C555	Madame	SMART	Data	2	55	RUE DE BELLEVILLE	75019	PARIS	FRANCE	smartdata@gmail.com	+33755555555	-	-	-
 */
 -- E10. Jointure GAUCHE entre commandes et Clients
 SELECT * FROM Commandes LEFT OUTER JOIN Clients ON Clients.codcli = Commandes.codcli;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+NUMCOM	CODCLI	DATCOM	CODCLI	CIVCLI	NOMCLI	PRENCLI	CATCLI	ADNCLI	ADRCLI	CPCLI	VILCLI	PAYSCLI	MAILCLI	TELCLI	DATNAISCLI	DPREMCONTACTCLI	OBSCLI	REMCLI	GENRECLI	GSCLI	KEYWORDSCLI
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+20002AB	C001	17/09/00	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20031FB	C001	14/02/03	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20191023-19	C001	23/10/19	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20200611-54	C001	11/06/20	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20200805-35	C001	05/08/20	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20201215-27	C001	15/12/20	C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+20066FB	C002	14/02/03	C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees
+20067FB	C002	14/02/03	C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees
+20068FB	C002	14/02/03	C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees
+20069FB	C002	30/01/07	C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees
+20070FB	C002	30/01/07	C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees
+20200425-37	C002	25/04/20	C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees
+20051FB	C003	07/01/05	C003	Madame	UNIQUE	Inès	2	77	RUE DE LA LIBERTE	13001	MARCHEILLLE	FRANCE	munique@gmail.com	+33717889922	22/11/69	12/12/12	-	-	F	B+	Cinema, football, Yoga, Mangas, SuDOKU, BASKETbal, Arts Martiaux, Haute couture
+20052FB	C003	12/01/05	C003	Madame	UNIQUE	Inès	2	77	RUE DE LA LIBERTE	13001	MARCHEILLLE	FRANCE	munique@gmail.com	+33717889922	22/11/69	12/12/12	-	-	F	B+	Cinema, football, Yoga, Mangas, SuDOKU, BASKETbal, Arts Martiaux, Haute couture
+20201010-38	C004	10/10/20	C004	Madame	CLEMENCE	EVELYNE	4	8 BIS	FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence evelyne@gmail.com	+33777889933	-	-	-	-	F	B+	Mangas, football , Theatre, Cinema, Musique, Plongee sous marine
+20210105-47	C004	05/01/21	C004	Madame	CLEMENCE	EVELYNE	4	8 BIS	FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence evelyne@gmail.com	+33777889933	-	-	-	-	F	B+	Mangas, football , Theatre, Cinema, Musique, Plongee sous marine
+20201009-41	C005	09/10/20	C005	Madam	FORT	anne marie	3	55	RUE DU JAPON	94310	ORLY-VILLE	FRANCE	jfort\@hotmail.fr	+33777889944	11/11/00	-	-	-	F	A-	Bandes Dessinees, Handball, Musique, Manga, foot, BasketBall
+20003AB	C006	16/10/00	C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU
+20004AB	C006	24/10/00	C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU
+20191102-33	C006	02/11/19	C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU
+20200924-24	C006	24/09/20	C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU
+20054FB	C007	14/03/05	C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+20065FB	C007	14/02/03	C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+20201AB	C007	13/11/20	C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+20200118-21	C007	18/01/20	C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+20200417-31	C007	17/04/20	C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+20201123-29	C007	23/11/20	C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+20210110-59	C007	10/01/21	C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+20200426-42	C008	26/04/20	C008	Monsieur	VIVANT	JEAN-BAPTISTE	1	13	RUE DE LA PAIX	93800	EPINAY-SUR-SEINE	FRANCE	jeanbaptiste@	0607	17/09/58	17/09/00	-	-	F	A+	Handball, football, BasketBall, FOOTBALL
+20062FB	C009	14/02/03	C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+20200116-58	C009	16/01/20	C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+20200818-40	C009	18/08/20	C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+20200919-16	C009	19/09/20	C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+20201214-11	C009	14/12/20	C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+20201226-17	C009	26/12/20	C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+20061FB	C010	14/02/03	C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL
+20191214-30	C010	14/12/19	C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL
+20200326-60	C010	26/03/20	C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL
+20200610-56	C010	10/06/20	C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL
+20190922-14	C011	22/09/19	C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed
+20200509-34	C011	09/05/20	C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed
+20201230-32	C011	30/12/20	C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed
+20001AB	C012	17/09/00	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20011RB	C012	22/01/01	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20012RB	C012	13/03/01	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20053FB	C012	10/03/05	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20055FB	C012	11/03/05	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20181AB	C012	17/09/18	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20191021-15	C012	21/10/19	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20191113-23	C012	13/11/19	C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+20056FB	C013	14/03/05	C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema
+20071FB	C013	30/01/07	C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema
+20072FB	C013	30/01/07	C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema
+20057FB	C014	11/03/05	C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema
+20073FB	C014	30/01/07	C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema
+20074FB	C014	30/01/07	C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema
+20184FB	C014	17/09/18	C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema
+20191223-20	C015	23/12/19	C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema
+20200528-36	C015	28/05/20	C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema
+20201020-43	C015	20/10/20	C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema
+20210109-50	C015	09/01/21	C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema
+20200627-55	C016	27/06/20	C016	Madame	obsolete	kadym	7	1	rue des anciens	000	CARTHAGE	IFRIQIA	inexistant	inexistant	-	-	-	-	F	A+	PARIS, SUDOKU, Not authorized
+20201002-26	C017	02/10/20	C017	Madame	RAHYM	Karym	1	1	RUE DES GENTILS	1000	CARTHAGE	TUNISIE	karym.rahym@gmail.com	+21624808444	01/01/90	05/01/21	-	-	F	AB+	Plongee sous marine, Voyages, FOOTBALL, Cinema, SUDOKU, Arts martiaux, Voyages, Mangas, BasketBall, Musique, Informatique, Bases de Données, Entrepôts de Données, Data Cleaning, FOOTBALL
+20191010-18	C018	10/10/19	C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema
+20200209-48	C018	09/02/20	C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema
+20200829-44	C018	29/08/20	C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema
+20201006-46	C018	06/10/20	C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema
+20191128-52	C019	28/11/19	C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning
+20200222-51	C019	22/02/20	C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning
+20200507-49	C019	07/05/20	C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning
+20200520-57	C019	20/05/20	C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning
+20200525-25	C020	25/05/20	C020	Madame	GENIe	GENIAL	3	16	AVENUE FOCH	75016	PARIS	FRENCE	genialegenie@gmail.com	0777889900	17/09/88	11/11/11	-	-	F	-	-
+20201005-22	C020	05/10/20	C020	Madame	GENIe	GENIAL	3	16	AVENUE FOCH	75016	PARIS	FRENCE	genialegenie@gmail.com	0777889900	17/09/88	11/11/11	-	-	F	-	-
+20190923-13	C021	23/09/19	C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-
+20191007-28	C021	07/10/19	C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-
+20201012-39	C021	12/10/20	C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-
+20191116-45	C022	16/11/19	C022	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	PARIS	-	belle.africaine@hotmail.com	+33777889911	17/09/88	11/11/11	-	-	F	-	-
+20200211-53	C022	11/02/20	C022	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	PARIS	-	belle.africaine@hotmail.com	+33777889911	17/09/88	11/11/11	-	-	F	-	-
+20190928-12	C023	28/09/19	C023	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	DAKAR	-	africaineb@gmail.com	+33777889922	17/09/88	11/11/11
 */
 
 -- E11. Jointure DROITE entre Clients et commandes
 SELECT * FROM Clients RIGHT OUTER JOIN Commandes ON Clients.codcli = Commandes.codcli;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	CIVCLI	NOMCLI	PRENCLI	CATCLI	ADNCLI	ADRCLI	CPCLI	VILCLI	PAYSCLI	MAILCLI	TELCLI	DATNAISCLI	DPREMCONTACTCLI	OBSCLI	REMCLI	GENRECLI	GSCLI	KEYWORDSCLI	NUMCOM	CODCLI	DATCOM
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20002AB	C001	17/09/00
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20031FB	C001	14/02/03
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20191023-19	C001	23/10/19
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20200611-54	C001	11/06/20
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20200805-35	C001	05/08/20
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL	20201215-27	C001	15/12/20
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20066FB	C002	14/02/03
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20067FB	C002	14/02/03
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20068FB	C002	14/02/03
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20069FB	C002	30/01/07
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20070FB	C002	30/01/07
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees	20200425-37	C002	25/04/20
+C003	Madame	UNIQUE	Inès	2	77	RUE DE LA LIBERTE	13001	MARCHEILLLE	FRANCE	munique@gmail.com	+33717889922	22/11/69	12/12/12	-	-	F	B+	Cinema, football, Yoga, Mangas, SuDOKU, BASKETbal, Arts Martiaux, Haute couture	20051FB	C003	07/01/05
+C003	Madame	UNIQUE	Inès	2	77	RUE DE LA LIBERTE	13001	MARCHEILLLE	FRANCE	munique@gmail.com	+33717889922	22/11/69	12/12/12	-	-	F	B+	Cinema, football, Yoga, Mangas, SuDOKU, BASKETbal, Arts Martiaux, Haute couture	20052FB	C003	12/01/05
+C004	Madame	CLEMENCE	EVELYNE	4	8 BIS	FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence evelyne@gmail.com	+33777889933	-	-	-	-	F	B+	Mangas, football , Theatre, Cinema, Musique, Plongee sous marine	20201010-38	C004	10/10/20
+C004	Madame	CLEMENCE	EVELYNE	4	8 BIS	FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence evelyne@gmail.com	+33777889933	-	-	-	-	F	B+	Mangas, football , Theatre, Cinema, Musique, Plongee sous marine	20210105-47	C004	05/01/21
+C005	Madam	FORT	anne marie	3	55	RUE DU JAPON	94310	ORLY-VILLE	FRANCE	jfort\@hotmail.fr	+33777889944	11/11/00	-	-	-	F	A-	Bandes Dessinees, Handball, Musique, Manga, foot, BasketBall	20201009-41	C005	09/10/20
+C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU	20003AB	C006	16/10/00
+C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU	20004AB	C006	24/10/00
+C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU	20191102-33	C006	02/11/19
+C006	Mademoisele	LE BON	Clémence	1	18	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence.le bon@cfo.fr	0033777889955	16/10/96	18/10/18	-	-	F	A+	Plongee sous marine, Mangas, Cinema, FOOTBALL, SuDOKU	20200924-24	C006	24/09/20
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20054FB	C007	14/03/05
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20065FB	C007	14/02/03
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20201AB	C007	13/11/20
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20200118-21	C007	18/01/20
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20200417-31	C007	17/04/20
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20201123-29	C007	23/11/20
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL	20210110-59	C007	10/01/21
+C008	Monsieur	VIVANT	JEAN-BAPTISTE	1	13	RUE DE LA PAIX	93800	EPINAY-SUR-SEINE	FRANCE	jeanbaptiste@	0607	17/09/58	17/09/00	-	-	F	A+	Handball, football, BasketBall, FOOTBALL	20200426-42	C008	26/04/20
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20062FB	C009	14/02/03
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20200116-58	C009	16/01/20
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20200818-40	C009	18/08/20
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20200919-16	C009	19/09/20
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20201214-11	C009	14/12/20
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique	20201226-17	C009	26/12/20
+C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL	20061FB	C010	14/02/03
+C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL	20191214-30	C010	14/12/19
+C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL	20200326-60	C010	26/03/20
+C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL	20200610-56	C010	10/06/20
+C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed	20190922-14	C011	22/09/19
+C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed	20200509-34	C011	09/05/20
+C011	Monsiieur	PREMIER	JOS//EPH	2	77//	RUE// DE LA LIBERTE	13001	MARCHEILLE	FRANCE	josef@premier	+33777889977	01/01/00	20/10/20	-	-	F	B+	Voyages, Mangas, Not allowed	20201230-32	C011	30/12/20
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20001AB	C012	17/09/00
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20011RB	C012	22/01/01
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20012RB	C012	13/03/01
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20053FB	C012	10/03/05
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20055FB	C012	11/03/05
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20181AB	C012	17/09/18
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20191021-15	C012	21/10/19
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20191113-23	C012	13/11/19
+C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema	20056FB	C013	14/03/05
+C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema	20071FB	C013	30/01/07
+C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema	20072FB	C013	30/01/07
+C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema	20057FB	C014	11/03/05
+C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema	20073FB	C014	30/01/07
+C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema	20074FB	C014	30/01/07
+C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema	20184FB	C014	17/09/18
+C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema	20191223-20	C015	23/12/19
+C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema	20200528-36	C015	28/05/20
+C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema	20201020-43	C015	20/10/20
+C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema	20210109-50	C015	09/01/21
+C016	Madame	obsolete	kadym	7	1	rue des anciens	000	CARTHAGE	IFRIQIA	inexistant	inexistant	-	-	-	-	F	A+	PARIS, SUDOKU, Not authorized	20200627-55	C016	27/06/20
+C017	Madame	RAHYM	Karym	1	1	RUE DES GENTILS	1000	CARTHAGE	TUNISIE	karym.rahym@gmail.com	+21624808444	01/01/90	05/01/21	-	-	F	AB+	Plongee sous marine, Voyages, FOOTBALL, Cinema, SUDOKU, Arts martiaux, Voyages, Mangas, BasketBall, Musique, Informatique, Bases de Données, Entrepôts de Données, Data Cleaning, FOOTBALL	20201002-26	C017	02/10/20
+C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema	20191010-18	C018	10/10/19
+C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema	20200209-48	C018	09/02/20
+C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema	20200829-44	C018	29/08/20
+C018	Madame	GENIE	ADAM	6	8	BOULEVARD FOCH	93800	EPINAY SUR SEINE	FRANCE	adam.génie@gmail.com	+33777889911	01/01/90	11/11/11	-	-	F	Ab+	FootBALL, BasketBall, Natation, Mangas, Cinema	20201006-46	C018	06/10/20
+C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning	20191128-52	C019	28/11/19
+C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning	20200222-51	C019	22/02/20
+C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning	20200507-49	C019	07/05/20
+C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning	20200520-57	C019	20/05/20
+C020	Madame	GENIe	GENIAL	3	16	AVENUE FOCH	75016	PARIS	FRENCE	genialegenie@gmail.com	0777889900	17/09/88	11/11/11	-	-	F	-	-	20200525-25	C020	25/05/20
+C020	Madame	GENIe	GENIAL	3	16	AVENUE FOCH	75016	PARIS	FRENCE	genialegenie@gmail.com	0777889900	17/09/88	11/11/11	-	-	F	-	-	20201005-22	C020	05/10/20
+C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-	20190923-13	C021	23/09/19
+C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-	20191007-28	C021	07/10/19
+C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-	20201012-39	C021	12/10/20
+C022	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	PARIS	-	belle.africaine@hotmail.com	+33777889911	17/09/88	11/11/11	-	-	F	-	-	20191116-45	C022	16/11/19
+C022	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	PARIS	-	belle.africaine@hotmail.com	+33777889911	17/09/88	11/11/11	-	-	F	-	-	20200211-53	C022	11/02/20
+C023	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	DAKAR	-	africaineb@gmail.com	+33777889922	17/09/88	11/11/11	-	-	F	-	-	20190928-12	C023	28/09/19
 */
 
 -- E12. Les clients de paris qui ont passé des commandes (PARIS, paris ? ; Problème des majuscules-minuscules)
@@ -2582,7 +3238,7 @@ FROM   Clients, Commandes
 WHERE  Clients.codcli=Commandes.codcli 
 AND Clients.vilcli=LOWER('PARIS') OR Clients.vilcli = LOWER('paris'); -- N'importe quoi
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+aucune données n'a été trouvée
 */
 
 -- E13. Les clients de paris qui ont passé des commandes (PARIS, Paris, PARis, paris...)
@@ -2590,7 +3246,42 @@ SELECT Clients.codcli, Clients.Nomcli, Clients.Vilcli, Commandes.datcom
 FROM   Clients, Commandes 
 WHERE  Clients.codcli = Commandes.codcli AND LOWER(Clients.vilcli) = 'paris';
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	NOMCLI	VILCLI	DATCOM
+------------------------------------------
+C007	TRAIFOR	PARIS	14/03/05
+C010	TRAIFOR	PARIS	14/02/03
+C009	CLEMENCE	PARIS	14/02/03
+C007	TRAIFOR	PARIS	14/02/03
+C002	LESEUL	PARIS	14/02/03
+C002	LESEUL	PARIS	14/02/03
+C002	LESEUL	PARIS	14/02/03
+C002	LESEUL	PARIS	30/01/07
+C002	LESEUL	PARIS	30/01/07
+C007	TRAIFOR	PARIS	13/11/20
+C021	LAPARISIENNE	PARIS	23/09/19
+C021	LAPARISIENNE	PARIS	07/10/19
+C022	AFRICAINE	PARIS	16/11/19
+C019	GENIE	PARIS	28/11/19
+C010	TRAIFOR	PARIS	14/12/19
+C009	CLEMENCE	PARIS	16/01/20
+C007	TRAIFOR	PARIS	18/01/20
+C022	AFRICAINE	PARIS	11/02/20
+C019	GENIE	PARIS	22/02/20
+C010	TRAIFOR	PARIS	26/03/20
+C007	TRAIFOR	PARIS	17/04/20
+C002	LESEUL	PARIS	25/04/20
+C019	GENIE	PARIS	07/05/20
+C019	GENIE	PARIS	20/05/20
+C020	GENIe	PARIS	25/05/20
+C010	TRAIFOR	PARIS	10/06/20
+C009	CLEMENCE	PARIS	18/08/20
+C009	CLEMENCE	PARIS	19/09/20
+C020	GENIe	PARIS	05/10/20
+C021	LAPARISIENNE	PARIS	12/10/20
+C007	TRAIFOR	PARIS	23/11/20
+C009	CLEMENCE	PARIS	14/12/20
+C009	CLEMENCE	PARIS	26/12/20
+C007	TRAIFOR	PARIS	10/01/21
 */
 
 -- E14. Les clients de paris qui ont passé des commandes (PARIS, Paris, PARis, paris...)
@@ -2598,7 +3289,42 @@ SELECT Clients.codcli, Clients.Nomcli, Clients.Vilcli, Commandes.datcom
 FROM   Clients, Commandes 
 WHERE  Clients.codcli = Commandes.codcli AND UPPER(Clients.vilcli) = 'PARIS';
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	NOMCLI	VILCLI	DATCOM
+--------------------------------------------
+C007	TRAIFOR	PARIS	14/03/05
+C010	TRAIFOR	PARIS	14/02/03
+C009	CLEMENCE	PARIS	14/02/03
+C007	TRAIFOR	PARIS	14/02/03
+C002	LESEUL	PARIS	14/02/03
+C002	LESEUL	PARIS	14/02/03
+C002	LESEUL	PARIS	14/02/03
+C002	LESEUL	PARIS	30/01/07
+C002	LESEUL	PARIS	30/01/07
+C007	TRAIFOR	PARIS	13/11/20
+C021	LAPARISIENNE	PARIS	23/09/19
+C021	LAPARISIENNE	PARIS	07/10/19
+C022	AFRICAINE	PARIS	16/11/19
+C019	GENIE	PARIS	28/11/19
+C010	TRAIFOR	PARIS	14/12/19
+C009	CLEMENCE	PARIS	16/01/20
+C007	TRAIFOR	PARIS	18/01/20
+C022	AFRICAINE	PARIS	11/02/20
+C019	GENIE	PARIS	22/02/20
+C010	TRAIFOR	PARIS	26/03/20
+C007	TRAIFOR	PARIS	17/04/20
+C002	LESEUL	PARIS	25/04/20
+C019	GENIE	PARIS	07/05/20
+C019	GENIE	PARIS	20/05/20
+C020	GENIe	PARIS	25/05/20
+C010	TRAIFOR	PARIS	10/06/20
+C009	CLEMENCE	PARIS	18/08/20
+C009	CLEMENCE	PARIS	19/09/20
+C020	GENIe	PARIS	05/10/20
+C021	LAPARISIENNE	PARIS	12/10/20
+C007	TRAIFOR	PARIS	23/11/20
+C009	CLEMENCE	PARIS	14/12/20
+C009	CLEMENCE	PARIS	26/12/20
+C007	TRAIFOR	PARIS	10/01/21
 */
 
 -- E15. Les clients de paris qui ont passé des commandes
@@ -2606,7 +3332,42 @@ SELECT t.codcli, t.Nomcli, t.Vilcli, Commandes.datcom
 FROM (SELECT * FROM Clients WHERE LOWER(vilcli) = 'paris') t, Commandes 
 WHERE t.codcli = Commandes.codcli;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	NOMCLI	VILCLI	DATCOM
+---------------------------------------
+C007	TRAIFOR	PARIS	14/03/05
+C010	TRAIFOR	PARIS	14/02/03
+C009	CLEMENCE	PARIS	14/02/03
+C007	TRAIFOR	PARIS	14/02/03
+C002	LESEUL	PARIS	14/02/03
+C002	LESEUL	PARIS	14/02/03
+C002	LESEUL	PARIS	14/02/03
+C002	LESEUL	PARIS	30/01/07
+C002	LESEUL	PARIS	30/01/07
+C007	TRAIFOR	PARIS	13/11/20
+C021	LAPARISIENNE	PARIS	23/09/19
+C021	LAPARISIENNE	PARIS	07/10/19
+C022	AFRICAINE	PARIS	16/11/19
+C019	GENIE	PARIS	28/11/19
+C010	TRAIFOR	PARIS	14/12/19
+C009	CLEMENCE	PARIS	16/01/20
+C007	TRAIFOR	PARIS	18/01/20
+C022	AFRICAINE	PARIS	11/02/20
+C019	GENIE	PARIS	22/02/20
+C010	TRAIFOR	PARIS	26/03/20
+C007	TRAIFOR	PARIS	17/04/20
+C002	LESEUL	PARIS	25/04/20
+C019	GENIE	PARIS	07/05/20
+C019	GENIE	PARIS	20/05/20
+C020	GENIe	PARIS	25/05/20
+C010	TRAIFOR	PARIS	10/06/20
+C009	CLEMENCE	PARIS	18/08/20
+C009	CLEMENCE	PARIS	19/09/20
+C020	GENIe	PARIS	05/10/20
+C021	LAPARISIENNE	PARIS	12/10/20
+C007	TRAIFOR	PARIS	23/11/20
+C009	CLEMENCE	PARIS	14/12/20
+C009	CLEMENCE	PARIS	26/12/20
+C007	TRAIFOR	PARIS	10/01/21
 */
 
 -- E16. Les clients de paris qui ont passé des commandes
@@ -2614,7 +3375,42 @@ SELECT Clients.codcli, Clients.Nomcli, Clients.Vilcli, Commandes.datcom
 FROM   Commandes, Clients   ---->>>>>>>>>>>> inverser l'ORDRE des tables C'est parfois très IMPORTANT!
 WHERE  Clients.codcli = Commandes.codcli AND LOWER(Clients.vilcli)='paris';
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	NOMCLI	VILCLI	DATCOM
+--------------------------------------------
+C007	TRAIFOR	PARIS	14/03/05
+C010	TRAIFOR	PARIS	14/02/03
+C009	CLEMENCE	PARIS	14/02/03
+C007	TRAIFOR	PARIS	14/02/03
+C002	LESEUL	PARIS	14/02/03
+C002	LESEUL	PARIS	14/02/03
+C002	LESEUL	PARIS	14/02/03
+C002	LESEUL	PARIS	30/01/07
+C002	LESEUL	PARIS	30/01/07
+C007	TRAIFOR	PARIS	13/11/20
+C021	LAPARISIENNE	PARIS	23/09/19
+C021	LAPARISIENNE	PARIS	07/10/19
+C022	AFRICAINE	PARIS	16/11/19
+C019	GENIE	PARIS	28/11/19
+C010	TRAIFOR	PARIS	14/12/19
+C009	CLEMENCE	PARIS	16/01/20
+C007	TRAIFOR	PARIS	18/01/20
+C022	AFRICAINE	PARIS	11/02/20
+C019	GENIE	PARIS	22/02/20
+C010	TRAIFOR	PARIS	26/03/20
+C007	TRAIFOR	PARIS	17/04/20
+C002	LESEUL	PARIS	25/04/20
+C019	GENIE	PARIS	07/05/20
+C019	GENIE	PARIS	20/05/20
+C020	GENIe	PARIS	25/05/20
+C010	TRAIFOR	PARIS	10/06/20
+C009	CLEMENCE	PARIS	18/08/20
+C009	CLEMENCE	PARIS	19/09/20
+C020	GENIe	PARIS	05/10/20
+C021	LAPARISIENNE	PARIS	12/10/20
+C007	TRAIFOR	PARIS	23/11/20
+C009	CLEMENCE	PARIS	14/12/20
+C009	CLEMENCE	PARIS	26/12/20
+C007	TRAIFOR	PARIS	10/01/21
 */
 
 -- Remarques : Jointure & Optimisation des requêtes, Les différentes formulations, ci-dessous, ne donnent pas les mêmes performances
@@ -2628,7 +3424,42 @@ WHERE LOWER(C.vilcli) = 'paris'
 AND C.codcli = K.codcli ;
 /*
 ------>>>>> ATTENTION : Des DOUBLONS !
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODE	NOM
+-----------------------
+C007	TRAIFOR
+C010	TRAIFOR
+C009	CLEMENCE
+C007	TRAIFOR
+C002	LESEUL
+C002	LESEUL
+C002	LESEUL
+C002	LESEUL
+C002	LESEUL
+C007	TRAIFOR
+C021	LAPARISIENNE
+C021	LAPARISIENNE
+C022	AFRICAINE
+C019	GENIE
+C010	TRAIFOR
+C009	CLEMENCE
+C007	TRAIFOR
+C022	AFRICAINE
+C019	GENIE
+C010	TRAIFOR
+C007	TRAIFOR
+C002	LESEUL
+C019	GENIE
+C019	GENIE
+C020	GENIe
+C010	TRAIFOR
+C009	CLEMENCE
+C009	CLEMENCE
+C020	GENIe
+C021	LAPARISIENNE
+C007	TRAIFOR
+C009	CLEMENCE
+C009	CLEMENCE
+C007	TRAIFOR
 */
 
 -- E18. Les clients (Codes & Noms des clients) de Paris ayant commandé
@@ -2639,7 +3470,16 @@ WHERE LOWER(C.vilcli) = 'paris'
 AND C.codcli IN (SELECT K.codcli FROM Commandes K);
 /*
 ------>>>>> ATTENTION : PAS de DOUBLON !
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	NOMCLI
+-----------------------
+C007	TRAIFOR
+C010	TRAIFOR
+C009	CLEMENCE
+C002	LESEUL
+C021	LAPARISIENNE
+C022	AFRICAINE
+C019	GENIE
+C020	GENIe
 */
 
 -- E19. Les clients (Codes & Noms des clients) de Paris ayant commandé
@@ -2650,7 +3490,7 @@ WHERE LOWER(C.vilcli) = 'paris'
 AND C.codcli =ANY (SELECT K.codcli FROM Commandes K);
 /*
 ------>>>>> ATTENTION : PAS de DOUBLON !
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+Même résultat que la précédente requête
 */
 
 -- E20. Les clients (Codes & Noms des clients) de Paris ayant commandé
@@ -2661,7 +3501,7 @@ WHERE LOWER(C.vilcli) = 'paris'
 AND EXISTS (SELECT * FROM Commandes WHERE Commandes.codcli = C.codcli);
 /*
 ------>>>>> ATTENTION : PAS de DOUBLON !
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+Même résultat que la précédente reuête
 */
 
 -- E21. Les clients (Codes & Noms des clients) de Paris ayant commandé
@@ -2672,7 +3512,7 @@ WHERE LOWER(Clients.vilcli) = 'paris'
 AND 0 < (SELECT COUNT(*) FROM Commandes WHERE Commandes.codcli = Clients.codcli);
 /*
 ------>>>>> ATTENTION : PAS de DOUBLON !
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+Même résultat que la précédente requête
 */
 
 -- E21. Les clients (Code des clients et Dates des Commandes) de Paris ayant commandé
@@ -2682,7 +3522,42 @@ FROM (SELECT * FROM Clients WHERE UPPER(vilcli)='PARIS') t, Commandes
 WHERE t.codcli= Commandes.codcli;
 /*
 ------>>>>> ATTENTION : Des DOUBLONS !
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	NOMCLI	DATCOM
+-------------------------------------
+C007	TRAIFOR	14/03/05
+C010	TRAIFOR	14/02/03
+C009	CLEMENCE	14/02/03
+C007	TRAIFOR	14/02/03
+C002	LESEUL	14/02/03
+C002	LESEUL	14/02/03
+C002	LESEUL	14/02/03
+C002	LESEUL	30/01/07
+C002	LESEUL	30/01/07
+C007	TRAIFOR	13/11/20
+C021	LAPARISIENNE	23/09/19
+C021	LAPARISIENNE	07/10/19
+C022	AFRICAINE	16/11/19
+C019	GENIE	28/11/19
+C010	TRAIFOR	14/12/19
+C009	CLEMENCE	16/01/20
+C007	TRAIFOR	18/01/20
+C022	AFRICAINE	11/02/20
+C019	GENIE	22/02/20
+C010	TRAIFOR	26/03/20
+C007	TRAIFOR	17/04/20
+C002	LESEUL	25/04/20
+C019	GENIE	07/05/20
+C019	GENIE	20/05/20
+C020	GENIe	25/05/20
+C010	TRAIFOR	10/06/20
+C009	CLEMENCE	18/08/20
+C009	CLEMENCE	19/09/20
+C020	GENIe	05/10/20
+C021	LAPARISIENNE	12/10/20
+C007	TRAIFOR	23/11/20
+C009	CLEMENCE	14/12/20
+C009	CLEMENCE	26/12/20
+C007	TRAIFOR	10/01/21
 */
 
 -- Jointure & choix de l’ordre d’exécution des tables pour des raisons de performances !
@@ -2695,7 +3570,42 @@ FROM Commandes, Clients
 WHERE Clients.codcli = Commandes.codcli 
 AND UPPER(Clients.vilcli)='PARIS';
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	DATCOM
+--------------------
+C007	14/03/05
+C010	14/02/03
+C009	14/02/03
+C007	14/02/03
+C002	14/02/03
+C002	14/02/03
+C002	14/02/03
+C002	30/01/07
+C002	30/01/07
+C007	13/11/20
+C021	23/09/19
+C021	07/10/19
+C022	16/11/19
+C019	28/11/19
+C010	14/12/19
+C009	16/01/20
+C007	18/01/20
+C022	11/02/20
+C019	22/02/20
+C010	26/03/20
+C007	17/04/20
+C002	25/04/20
+C019	07/05/20
+C019	20/05/20
+C020	25/05/20
+C010	10/06/20
+C009	18/08/20
+C009	19/09/20
+C020	05/10/20
+C021	12/10/20
+C007	23/11/20
+C009	14/12/20
+C009	26/12/20
+C007	10/01/21
 */
 
 -- E23. Les clients (Code des clients et Dates des Commandes) de Paris ayant commandé  avec le hint SELECT /* + ordered */
@@ -2705,13 +3615,16 @@ FROM Clients, Commandes
 WHERE Clients.codcli = Commandes.codcli 
 AND UPPER(Clients.vilcli)='PARIS';
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+Même résultat que la précédente requête
 */
 
 -- E24.
 SELECT * FROM Clients NATURAL JOIN Commandes WHERE TO_CHAR(datcom,'MM')=9 AND TO_CHAR(datcom,'YYYY')=2018;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	CIVCLI	NOMCLI	PRENCLI	CATCLI	ADNCLI	ADRCLI	CPCLI	VILCLI	PAYSCLI	MAILCLI	TELCLI	DATNAISCLI	DPREMCONTACTCLI	OBSCLI	REMCLI	GENRECLI	GSCLI	KEYWORDSCLI	NUMCOM	DATCOM
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema	20184FB	17/09/18
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20181AB	17/09/18
 */
 
 -- E25. Détails des commandes des clients parisiens
@@ -2720,7 +3633,51 @@ SELECT * FROM Detailcom
 WHERE numcom IN (SELECT numcom FROM Commandes WHERE codcli IN (SELECT codcli FROM Clients WHERE UPPER(vilcli) = 'PARIS'  ));
 SELECT * FROM CommandesParisiens;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+NUMCOM	REFART	QTCOM	PUART	REMISE
+----------------------------------------------
+20054FB	WD.003	1	22,86	0
+20061FB	FB.003	5	24	0
+20062FB	FB.003	5	24	0
+20065FB	FB.003	5	24	0
+20066FB	FB.003	5	24	0
+20067FB	FB.001	22	24	0
+20068FB	FB.001	22	24	0
+20069FB	FB.001	25	58	0
+20070FB	FB.001	50	24	0
+20201AB	FB.002	22	19,99	,22
+20201AB	FB.003	22	17,77	,22
+20190923-13	STO-SB7+	1	30	,09
+20191007-28	UE58TU6905	7	499	,15
+20191116-45	MISCOOT 1S NOIR	9	399	,04
+20191116-45	65UN8500	4	699	,04
+20191116-45	LM8012_05	7	50	,45
+20191116-45	V550920	10	70	,07
+20191116-45	HP DESKJET 4130	1	60	,37
+20191116-45	Tune 560 BT Noir	10	25	,44
+20191128-52	YY3922FD	9	60	,06
+20191214-30	CH32G6HD-T1	2	99	,06
+20200116-58	CH32G6HD-T1	1	99	,34
+20200118-21	V550920	8	70	,09
+20200211-53	V550920	8	70	,32
+20200222-51	QA510110	9	100	,04
+20200326-60	QE55Q80TATXXC	1	999	,05
+20200326-60	V550920	4	70	,02
+20200326-60	UE75TU7025	1	799	,06
+20200326-60	KST 2	4	80	,5
+20200417-31	55F501HK5110	8	299	,06
+20200425-37	RA22ALG	2	100	,28
+20200507-49	FLIP ESSENTIAL	1	70	,19
+20200520-57	HP 17-CD0125NF 15	4	799	,08
+20200525-25	OX484100	4	65	,36
+20200610-56	ROOMBA 113840	7	289	,05
+20200818-40	OX484100	3	65	,14
+20200919-16	KST 2	6	80	,08
+20201005-22	RA22ALG	3	100	,05
+20201012-39	KST 2	1	80	,3
+20201123-29	YY4230FD	1	30	,02
+20201214-11	50P611	6	329	,07
+20201226-17	QA510110	2	100	,26
+20210110-59	QE55Q80TATXXC	7	999	,1
 */
 
 -- E26. Les clients qui habitent la même ville
