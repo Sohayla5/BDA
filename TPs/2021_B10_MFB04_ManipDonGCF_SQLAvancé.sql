@@ -2089,6 +2089,41 @@ NBRCLIENTS1	LAPLUSANCIENNEDATNAIS1	LAPLUSRECENTEDATNAIS1	'***'	NBRCLIENTS2	LAPLU
 */
 
 -- C12. Idées/Données sur les articles (Statistiques/Profilage) Nombre, Prix minimum, Prix maximum et moyennne des prix
+CREATE OR REPLACE
+FUNCTION F08_Min_Numerique(PVART IN VARCHAR2, TABLEC IN VARCHAR2)
+RETURN NUMBER IS
+    MINPVART NUMBER;
+    BEGIN
+        EXECUTE IMMEDIATE 'SELECT MIN('|| PVART ||') FROM ' || TABLEC INTO MINPVART;
+        IF MINPVART IS NULL THEN 
+            RAISE NO_DATA_FOUND;
+        ELSE
+            RETURN MINPVART;
+        END IF;
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+        RETURN NULL;
+    END;
+/
+
+CREATE OR REPLACE
+FUNCTION F09_Max_Numerique(PVART IN VARCHAR2, TABLEC IN VARCHAR2)
+RETURN NUMBER IS
+    MAXPVART NUMBER;
+    BEGIN
+        EXECUTE IMMEDIATE 'SELECT MAX('|| PVART ||') FROM ' || TABLEC INTO MAXPVART;
+        IF MAXPVART IS NULL THEN 
+            RAISE NO_DATA_FOUND;
+        ELSE
+            RETURN MAXPVART;
+        END IF;
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+        RETURN NULL;
+    END;
+/
+
+
 SELECT 
 COUNT(*) NBRARTICLES1, MIN(PVART) PVMIN1, MAX(PVART) PVMAX1, AVG(PVART) MOYPV1, '***',
 F01_NombreDeLignes('ARTICLES') NBRARTICLES2, 
@@ -2097,7 +2132,9 @@ F09_Max_Numerique('PVART','ARTICLES') PVMAX2,
 F10_Moy_Numerique('PVART','ARTICLES') MOYPV2
 FROM ARTICLES;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+NBRARTICLES1	PVMIN1	PVMAX1	MOYPV1	'***'	NBRARTICLES2	PVMIN2	PVMAX2	MOYPV2
+----------------------------------------------------------------------------------------
+61	2,29	999	143,85	***	61	2,29	999	143,85
 */
 
 -- ==== MFB =======================================================================================================================
