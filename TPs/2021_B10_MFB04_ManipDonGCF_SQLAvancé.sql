@@ -1863,55 +1863,217 @@ SELECT NomArt, PvArt-PaArt AS Marge FROM Articles WHERE UPPER(NomArt) LIKE '%SIE
 
 -- C01. Nombre de clients (Femme + Homme)
 SELECT COUNT(*) FROM Clients;
+/*
+COUNT(*)
+-----------
+45
+*/
 SELECT COUNT(*) AS NbrCli FROM Clients;
+/*
+NBRCLI
+----------
+45
+*/
 
 -- C02. Nombre de clientes (Femme)
 SELECT COUNT(*) FROM Clients WHERE CivCli='Madame' OR CivCli='Mademoiselle';
 SELECT COUNT(*) FROM Clients WHERE CivCli='MADame' OR CivCli='MaDEmoisellE';
 SELECT COUNT(*) NbrClientes  FROM Clients WHERE UPPER(CivCli)='MADAME' OR LOWER(CivCli)='mademoiselle';
 SELECT COUNT(*) NbrClientes  FROM Clients WHERE UPPER(CivCli) LIKE 'MA%';
+/*
+Requete n°1 :
+COUNT(*)
+----------
+15
+
+Requete n°2 :
+COUNT(*)
+---------
+0
+
+Requete n°3 :
+NBRCLIENTES
+------------
+18
+
+Requete n°4 :
+NBRCLIENTES
+------------
+21
+*/
 
 -- C03. Nombre de clients (Homme)
 SELECT COUNT(*) FROM Clients WHERE CivCli='Monsieur';
 SELECT COUNT(*) NbrClients FROM Clients WHERE UPPER(CivCli) LIKE 'MO%';
+/*
+Requete n°1 :
+COUNT(*)
+----------
+17
+
+Requete n°2 :
+NBRCLIENTS
+------------
+24
+
+*/
 
 -- C04. Le prix de vente le plus élevé
 SELECT MIN(PvArt) FROM Articles;
 SELECT MAX(PvArt) LEPLUSCHER FROM Articles;
+/*
+Requete n°1 :
+MIN(PVART)
+------------
+2,29
+
+Requete n°2 :
+LEPLUSCHER
+-----------
+999
+
+*/
 
 -- C05. Moyenne des prix de vente des articles chers (PV>100)
 SELECT AVG(PvArt) FROM Articles WHERE PVART >100 ;
+/*
+AVG(PVART)
+------------
+434,196875
+*/
 
 -- C06. La valeur du stock : Prix d'achat * Qté en Stock pour tous les articles
 SELECT SUM(PAArt*qsart) AS ValeurDustock FROM Articles;
+/*
+VALEURDUSTOCK
+--------------
+151434,15
+*/
 
 -- C07. Calculez le nombre de téléphones inconnus (valeurs nulles) valeurs manquantes de téléphone
 SELECT COUNT(*) AS NbrValManq FROM Clients WHERE TELCLI IS NULL;
 
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+NBRVALMANQ
+------------
+7
 */
 
 -- C08. Les articles dont le prix de vente est supérieur à la moyenne des prix de vente
 SELECT * FROM Articles WHERE PvArt >= (SELECT AVG(PvArt) FROM Articles);
+/*
+REFART	NOMART	PVART	QSART	PAART
+-----------------------------------------------------------------
+UE58TU6905	SAMSUNG Télévisur LED 4K (146 cm)	499	35	300
+55F501HK5110	HITACHI Télévisur LED 4K (136 cm)	299	15	180
+50P611	TCL Télévisur LED 4K (125)	329	33	198
+UE75TU7025	SAMSUNG Télévisur LED 4K (189 cm)	799	21	480
+65UN8500	LG Télévisur LED 4K (164 cm)	699	14	420
+UE65TU6905	SAMSUNG Télévisur LED 4K (163 cm)	599	25	360
+QE55Q80TATXXC	SAMSUNG Télévisur QLED 4K (163 cm)	999	31	600
+MISCOOT 1S NOIR	Trottinette électrique pliable	399	30	240
+S712JA-AU216T	ASUS Ordinateur portable	499	49	300
+HP 17-CD0125NF 15	HP Ordinateur portable	799	51	480
+DESKJET 2710	HP Imprimante multifonction	249	30	150
+ROOMBA 113840	Robot Aspirateur robot connecté	289	54	174
+*/
 
 -- C09. Les commandes vides ! (Elles ne contiennent aucun article)
 SELECT * FROM COMMANDES WHERE NUMCOM NOT IN (SELECT NUMCOM FROM DETAILCOM);
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+NUMCOM	CODCLI	DATCOM
+--------------------------
+20184FB	C014	17/09/18
+20011RB	C012	22/01/01
 */
 
 -- C10. Le nombre de valeurs différentes (distinctes) par colonne
 SELECT DISTINCT VILCLI FROM CLIENTS ;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+VILCLI
+---------------------
+paris
+LONDON
+-
+BAGDAD
+CARTHAGE
+PARIS
+EPINAY-SUR-ORGE
+EPINAY SUR SEINE
+MARCHEILLE
+EPINAY SUR SEINE
+NEW-YORk
+MARCHEILLLE
+TUNIS
+ORLY-VILLE
+ROME
+DAKAR
+L'Hay-Les-Roses
+PARIS
+EPINAY-SUR-SEINE
+VILLETANEUSE
+Oxford
 */
+
 SELECT COUNT(DISTINCT VILCLI) N FROM CLIENTS ;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+N
+----
+21
 */
 
 -- C11. Idées/Données sur les client.e.s (Statistiques/Profilage) Nombre, la plus anicenne date de naissance, la plus récente date de naissance
+CREATE OR REPLACE
+FUNCTION F01_NombreDeLignes(DATEC IN VARCHAR2, TABLEC VARCHAR2)
+RETURN NUMBER IS
+    NBLIGNE NUMBER;
+    BEGIN
+        EXECUTE IMMEDIATE 'SELECT COUNT(*) FROM ' || TABLEC INTO NBLIGNE;
+        IF NBLIGNE = 0 THEN 
+            RAISE NO_DATA_FOUND;
+        ELSE
+            RETURN NBLIGNE;
+        END IF;
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+        RETURN NULL;
+    END;
+/
+
+CREATE OR REPLACE
+FUNCTION F13_Min_date(DATEC IN VARCHAR2, TABLEC IN VARCHAR2)
+RETURN DATE IS
+    MINDATE DATE;
+    BEGIN
+        EXECUTE IMMEDIATE 'SELECT MIN('|| DATEC ||') FROM ' || TABLEC INTO MINDATE;
+        IF MINDATE IS NULL THEN 
+            RAISE NO_DATA_FOUND;
+        ELSE
+            RETURN MINDATE;
+        END IF;
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+        RETURN NULL;
+    END;
+/
+
+CREATE OR REPLACE
+FUNCTION F14_Max_date(DATEC IN VARCHAR2, TABLEC IN VARCHAR2)
+RETURN DATE IS
+    MAXDATE DATE;
+    BEGIN
+        EXECUTE IMMEDIATE 'SELECT MAX('|| DATEC ||') FROM ' || TABLEC INTO MAXDATE;
+        IF MAXDATE IS NULL THEN 
+            RAISE NO_DATA_FOUND;
+        ELSE
+            RETURN MAXDATE;
+        END IF;
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+        RETURN NULL;
+    END;
+/
+
 SELECT 
 COUNT(*) NBRCLIENTS1, 
 MIN(DATNAISCLI) LAPLUSANCIENNEDATNAIS1, 
@@ -1921,7 +2083,9 @@ F13_Min_date('DATNAISCLI','CLIENTS') LAPLUSANCIENNEDATNAIS2,
 F14_Max_date('DATNAISCLI','CLIENTS') LAPLUSRECENTEDATNAIS2
 FROM CLIENTS;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+NBRCLIENTS1	LAPLUSANCIENNEDATNAIS1	LAPLUSRECENTEDATNAIS1	'***'	NBRCLIENTS2	LAPLUSANCIENNEDATNAIS2	LAPLUSRECENTEDATNAIS2
+---------------------------------------------------------------------------------------------------------------------------------
+45	10/10/41	19/06/01	***	45	10/10/41	19/06/01
 */
 
 -- C12. Idées/Données sur les articles (Statistiques/Profilage) Nombre, Prix minimum, Prix maximum et moyennne des prix
@@ -1946,13 +2110,52 @@ FROM ARTICLES;
 -- D01. Nombre de clients par Ville
 SELECT VILCLI AS VILLE, COUNT(*) AS NombreCli  FROM Clients GROUP BY VILCLI ORDER BY 1;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+VILLE	NOMBRECLI
+---------------------------
+-	5
+EPINAY SUR SEINE	1
+PARIS	4
+paris	1
+BAGDAD	1
+CARTHAGE	2
+DAKAR	1
+EPINAY SUR SEINE	1
+EPINAY-SUR-ORGE	1
+EPINAY-SUR-SEINE	3
+L'Hay-Les-Roses	1
+LONDON	3
+MARCHEILLE	1
+MARCHEILLLE	1
+NEW-YORk	1
+ORLY-VILLE	1
+Oxford	1
+PARIS	13
+ROME	1
+TUNIS	1
+VILLETANEUSE	1
 */
 
 -- D02. Nombre de clients par pays
 SELECT PAYSCLI AS PAYS, COUNT(*) AS NombreCli  FROM Clients GROUP BY PAYSCLI ORDER BY 1;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+PAYS	NOMBRECLI
+----------------------------
+-	6
+FRANCE	1
+FRANCE	1
+FRA	1
+FRANCE	19
+france	2
+FRENCE	1
+IFRIQIA	1
+IRAQ	1
+ITALIE	1
+TUNISIE	2
+United KINGDOM	1
+United-KINGDOM	2
+United-Kingdom	1
+UNITED-STATS-AMERICA	1
+-	4
 */
 
 -- D03. Nombre de clients par catégorie
