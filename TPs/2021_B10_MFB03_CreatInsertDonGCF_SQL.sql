@@ -47,8 +47,8 @@
 -- Binome = Groupe de Travail N° xy  : Bxy (Exemple B01, B02,... B09, B10, B11...)
 -- ==== MFB =======================================================================================================================
 -- Numéro du Binôme (= GroupeDeTravail) --->>>> : Bxy
--- NOM1 PRENOM1                         --->>>> : np1
--- NOM2 PRENOM2                         --->>>> : np2
+-- NOM1 PRENOM1                         --->>>> : BOUZIANE Hajar
+-- NOM2 PRENOM2                         --->>>> : RABHI Sohayla
 
 -- ====>>> Vos fichiers sql devront s'appeler : Bxy-NomDuFichier.sql
 -- ==== MFB =======================================================================================================================
@@ -337,8 +337,8 @@ SET PAGES 100
 COLUMN TABLE_NAME  FORMAT A20
 COLUMN COLUMN_NAME FORMAT A20
 COLUMN COMMENTS    FORMAT A100
-SELECT * FROM user_col_comments WHERE table_name = 'CLIENTS';  
---Tous les noms des objets (TABLE, VUE, COLONNE...) Oracle sont en majuscule;
+SELECT * FROM user_col_comments WHERE table_name = 'CLIENTS'; 
+--Tous les noms des objets (TABLE, VUE, COLONNE...) Oracle sont en majuscule; 
 
 -- ==== MFB =======================================================================================================================
 -- Définition de la structure des données en SQL 2 ====================================================================== FIN =====
@@ -991,31 +991,34 @@ en permanence avec les clients, à rationaliser leurs processus et à améliorer
 -- Développez une procédure P_CREERMAILMAG qui permet de modifier le schéma et d'Insérer les nouvelles données dans cette colonne
 -- Le mail d'un magasin (en minuscule) est composé de : 'bb' + NUMMAG + '@gmail.com'
 
-ALTER TABLE MAGASINS ADD MAILMAG VARCHAR2(50);
+-- *********************************************************************************************************************************
+-- * Création de la procédure P02_CREERMAILMAG *************************************************************************************
 
-CREATE OR REPLACE PROCEDURE P02_CREERMAILMAG(PErr OUT NUMBER) AS
+ALTER TABLE MAGASINS ADD MAILMAG VARCHAR2(50);
+CREATE OR REPLACE PROCEDURE P02_CREERMAILMAG AS
     BEGIN
-        UPDATE MAGASINS SET MAILMAG = CONCAT('bb',CONCAT(NUMMAG,'@gmail.com'));
-        PErr:=0;
-    EXCEPTION
-        WHEN NO_DATA_FOUND THEN PERR:=1;
+        UPDATE MAGASINS SET MAILMAG = CONCAT('bb', CONCAT(NUMMAG,'@gmail.com'));
     END;
 /
 
-DECLARE 
-    VErr NUMBER;
+-- * Appels à la procédure P02_CREERMAILMAG ****************************************************************************************
+/*
 BEGIN
-    P02_CREERMAILMAG(VErr);
-    IF VErr = 1 THEN
-        DBMS_OUTPUT.PUT_LINE('Aucun magasin enregistré');
-    END IF;
+    P02_CREERMAILMAG;
 END;
 /
-
-SELECT * FROM MAGASINS;
-
--- Appels à la procédure P02_CREERMAILMAG
+*/
 EXEC P02_CREERMAILMAG;
+-- Résultats (extrait) *************************************************************************************************************
+-- SELECT * FROM MAGASINS;
+/*
+NUMMAG	NOMMAG	TELMAG	ADRNUMMAG	ADRRUEMAG	ADRCPMAG	ADRVILLEMAG	ADRPAYSMAG	CONTINENTMAG	SURFACEMAG	MAILMAG
+FR01	BB-BE KIND	0142586485	18	AVENUE FOCH	91000	PARIS	FRANCE	EUROPE	300	bbFR01@gmail.com
+FR02	BB-SAY PLEASE	+33153800796	21	AVENUE D ITALIE	75013	PARIS	FRANCE	EUROPE	180	bbFR02@gmail.com
+FR03	BB-SAY THANK YOU	0254974410	77	RUE DE LA LIBERTE	13001	MARSEILLE	FRANCE	EUROPE	200	bbFR03@gmail.com
+FR04	BB-WORK HARD	0657985246	8 BIS	BOULEVARD FOCH	93800	EPINAY-SUR-SEINE	FRANCE	EUROPE	100	bbFR04@gmail.com
+FR05	BB-ENCOURAGE EACH OTHER	0546874430	55	RUE DU JAPON	94310	ORLY-VILLE	FRANCE	EUROPE	100	bbFR05@gmail.com
+*/
 
 -- Modification de la structure des données de la table CLIENTS : Ajout d'une colonne pour le groupe sanguin
 ----->>>>>>>>>>>>>>> ALTER TABLE CLIENTS ADD GS VARCHAR2(3); A-|A+|B-|B+|AB-|AB+|O-|O+
@@ -1183,8 +1186,8 @@ SELECT
  TELCLI  || ';' ||
  DATNAISCLI       || ';' ||
  DPREMCONTACTCLI
---OBSCLI, REMCLI, GENRECLI, GSCLI, KeyWordsCli
 FROM CLIENTS;
+--OBSCLI, REMCLI, GENRECLI, GSCLI, KeyWordsCli
 
 -- Affichage des données des magasins sous forme CSV avec ; comme séparateur
 SELECT 'Liste des magasins gérés par l''entreprise ALBABAZONES-CLICKANDCOLLECT' AS MAGASINS FROM DUAL;
@@ -1202,29 +1205,55 @@ SURFACEMAG
 FROM MAGASINS;
 	
 -- Appels à la procédure P01_AFFICHAGECSV pour l'affichage au format CSV avec le ; comme séparateur	
+
+-- *********************************************************************************************************************************
+-- * Création de la procédure P01_AFFICHAGECSV *************************************************************************************
+
 CREATE OR REPLACE PROCEDURE P01_AFFICHAGECSV(TABLEC IN VARCHAR2, ROWC IN VARCHAR2) IS
     LIGNE VARCHAR2(500);
     BEGIN
-        LIGNE := REPLACE(ROWC,',','||'';''||');
+        LIGNE := REPLACE(ROWC, ',' ,'||'';''||');
         EXECUTE IMMEDIATE 'CREATE OR REPLACE VIEW VCSV AS SELECT ' || LIGNE || ' AS VCSV FROM ' || TABLEC;
-    END;    
+    END;
 /
 
+-- * Appels à la procédure P02_CREERMAILMAG ****************************************************************************************
+/*
 BEGIN
-    P01_AFFICHAGECSV('CLIENTS','CODCLI,CIVCLI,NOMCLI,PRENCLI,CATCLI,ADNCLI,ADRCLI,CPCLI,VILCLI,PAYSCLI,MAILCLI,TELCLI,DATNAISCLI,DPREMCONTACTCLI,OBSCLI, REMCLI, GENRECLI');
+    P01_AFFICHAGECSV('CLIENTS', 'CODCLI,CIVCLI,NOMCLI,PRENCLI,CATCLI,ADNCLI,ADRCLI,CPCLI,VILCLI,PAYSCLI,MAILCLI,TELCLI,DATNAISCLI,DPREMCONTACTCLI,OBSCLI, REMCLI, GENRECLI');
 END;
 /
+*/
+EXEC P01_AFFICHAGECSV('CLIENTS', 'CODCLI,CIVCLI,NOMCLI,PRENCLI,CATCLI,ADNCLI,ADRCLI,CPCLI,VILCLI,PAYSCLI,MAILCLI,TELCLI,DATNAISCLI,DPREMCONTACTCLI,OBSCLI, REMCLI, GENRECLI');
+-- Résultats (extrait) *************************************************************************************************************
+-- SELECT * FROM VCSV;
+/*
+VCSV
+C001;Madame;CLEM@ENT;EVE;1;18;BOULEVARD FOCH;91000;EPINAY-SUR-ORGE;FRANCE;eve.clement@gmail.com;+33777889911;17/06/51;12/12/12;;;F
+C002;Madame;LESEUL;M@RIE;1;17;AVENUE D ITALIE;75013;PARIS;FRANCE;marieleseul@yahoo.fr;0617586565;05/08/83;05/08/83;;;F
+C003;Madame;UNIQUE;Inès;2;77;RUE DE LA LIBERTE;13001;MARCHEILLLE;FRANCE;munique@gmail.com;+33717889922;22/11/69;12/12/12;;;F
+C004;Madame;CLEMENCE;EVELYNE;4;8 BIS;FOCH;93800;EPINAY-SUR-SEINE;FRANCE;clemence evelyne@gmail.com;+33777889933;;;;;F
+C005;Madam;FORT;anne marie;3;55;RUE DU JAPON;94310;ORLY-VILLE;FRANCE;jfort\@hotmail.fr;+33777889944;11/11/00;;;;F
+*/
 
---EXEC P01_AFFICHAGECSV('CLIENTS', 'CODCLI,CIVCLI,NOMCLI,PRENCLI,CATCLI,ADNCLI,ADRCLI,CPCLI,VILCLI,PAYSCLI,MAILCLI,TELCLI,DATNAISCLI,DPREMCONTACTCLI,OBSCLI, REMCLI, GENRECLI');
-SELECT * FROM VCSV;
-
+-- * Appels à la procédure P02_CREERMAILMAG ****************************************************************************************
+/*
 BEGIN
     P01_AFFICHAGECSV('MAGASINS', 'NUMMAG,NOMMAG,TELMAG,ADRNUMMAG,ADRRUEMAG,ADRCPMAG,ADRVILLEMAG,ADRPAYSMAG,CONTINENTMAG,SURFACEMAG');
 END;
 /
-
---EXEC P01_AFFICHAGECSV('MAGASINS', 'NUMMAG,NOMMAG,TELMAG,ADRNUMMAG,ADRRUEMAG,ADRCPMAG,ADRVILLEMAG,ADRPAYSMAG,CONTINENTMAG,SURFACEMAG');
-SELECT * FROM VCSV;
+*/
+EXEC P01_AFFICHAGECSV('MAGASINS', 'NUMMAG,NOMMAG,TELMAG,ADRNUMMAG,ADRRUEMAG,ADRCPMAG,ADRVILLEMAG,ADRPAYSMAG,CONTINENTMAG,SURFACEMAG');
+-- Résultats (extrait) *************************************************************************************************************
+-- SELECT * FROM VCSV;
+/*
+VCSV
+FR01;BB-BE KIND;0142586485;18;AVENUE FOCH;91000;PARIS;FRANCE;EUROPE;300
+FR02;BB-SAY PLEASE;+33153800796;21;AVENUE D ITALIE;75013;PARIS;FRANCE;EUROPE;180
+FR03;BB-SAY THANK YOU;0254974410;77;RUE DE LA LIBERTE;13001;MARSEILLE;FRANCE;EUROPE;200
+FR04;BB-WORK HARD;0657985246;8 BIS;BOULEVARD FOCH;93800;EPINAY-SUR-SEINE;FRANCE;EUROPE;100
+FR05;BB-ENCOURAGE EACH OTHER;0546874430;55;RUE DU JAPON;94310;ORLY-VILLE;FRANCE;EUROPE;100
+*/
 
 -- Affichage des données sous forme de commandes SQL (recréer les commandes INSERT INTO...!)
 SELECT 'Commandes de re-création des magasins gérés par l''entreprise ALBABAZONES-CLICKANDCOLLECT' AS MAGASINS FROM DUAL;
@@ -1298,7 +1327,7 @@ FROM ARTICLES;
 SELECT * FROM ScriptSQLInsertData_ART;
 
 SELECT 'Commandes de re-création des commandes gérées par l''entreprise ALBABAZONES-CLICKANDCOLLECT' AS COMMANDES FROM DUAL;
-ALTER SESSION SET NLS_DATE_FORMAT = 'DAY DD-MONTH-YYYY';
+ALTER SESSION SET NLS_DATE_FORMAT = 'DAY DD-MONTH-YYYY'; 
 CREATE OR REPLACE VIEW ScriptSQLInsertData_COM(SQL_ORDER) AS
 SELECT 
 'INSERT INTO COMMANDES VALUES (' ||
