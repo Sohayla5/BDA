@@ -1327,31 +1327,67 @@ NOT REGEXP_LIKE (NOMCLI,'^[[:alpha:] ]+$')
 OR
 NOT REGEXP_LIKE (PRENCLI,'^[[:alpha:]-]+$');
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	NOMCLI	PRENCLI
+----------------------------
+C001	CLEM@ENT	EVE
+C002	LESEUL	M@RIE
+C005	FORT	anne marie
+C011	PREMIER	JOS//EPH
+C120	1	MARIE
+C121	2 PAR 2	Girard
+C126	DE PAR DE	Gir@rd
+C298	TROMPE.	Ronald
+C299	BIDON!	Joie
+C300	HOBAAAMA	M'Barek
+
+>>>>>>>> Notes : Cette requête renvoie tout les nom ou prénom qui ne sont pas composés uniquement que de 
+                 lettre alphabétique.
 */
 
 -- A23. Les cclients (Code, Nom et Prénom) pour lesquels le prénom ne contient que : des lettres de [A à Z]+[a à z] (sans accent è, é...)
 SELECT CODCLI, NOMCLI, PRENCLI  FROM CLIENTS  WHERE NOT REGEXP_LIKE (PRENCLI,'^[A-Za-z]+$');
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	NOMCLI	PRENCLI
+-------------------------------
+C002	LESEUL	M@RIE
+C005	FORT	anne marie
+C008	VIVANT	JEAN-BAPTISTE
+C011	PREMIER	JOS//EPH
+C126	DE PAR DE	Gir@rd
+C300	HOBAAAMA	M'Barek
 */
 
 -- A24. Les clients (Code, Nom et Prénom) pour lesquels le prénom ne contient que : des lettres de [A à Z]+[a à z]+[ -] (sans accent è, é...)
 SELECT CODCLI, NOMCLI, PRENCLI  FROM CLIENTS  WHERE NOT REGEXP_LIKE (PRENCLI,'^[A-Za-z -]+$');
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	NOMCLI	PRENCLI
+----------------------------
+C002	LESEUL	M@RIE
+C011	PREMIER	JOS//EPH
+C126	DE PAR DE	Gir@rd
+C300	HOBAAAMA	M'Barek
 */
 
 -- A25. Les clients (Code, Nom et Prénom) pour lesquels le prénom ne contient que : des lettres de [A à Z]+[a à z]+['-] (sans accent è, é...)
 SELECT CODCLI, NOMCLI, PRENCLI  FROM CLIENTS  WHERE NOT REGEXP_LIKE (PRENCLI,'^[A-Za-z''-]+$');
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	NOMCLI	PRENCLI
+----------------------------
+C002	LESEUL	M@RIE
+C005	FORT	anne marie
+C011	PREMIER	JOS//EPH
+C126	DE PAR DE	Gir@rd
 */
 
 -- A26. Les clients (Code, Nom et Prénom) pour lesquels le prénom ne contient que : des lettres de [A à Z]+[a à z]+['-] (avec accents è, é...)
 SELECT CODCLI, NOMCLI, PRENCLI  FROM CLIENTS  WHERE NOT REGEXP_LIKE (PRENCLI,'^[èéA-Za-z''-]+$');
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	NOMCLI	PRENCLI
+----------------------------
+C002	LESEUL	M@RIE
+C005	FORT	anne marie
+C011	PREMIER	JOS//EPH
+C126	DE PAR DE	Gir@rd
 */
 
 -- A27. Les clients (Code, Nom et Prénom) pour lesquels le prénom est bizarre contient des répétitions de lettres (+3)
@@ -1361,7 +1397,13 @@ NOT UPPER(REGEXP_REPLACE(UPPER(PRENCLI), '(A){3,}', 'A')) = UPPER(PRENCLI)      
 OR
 NOT UPPER(REGEXP_REPLACE(UPPER(PRENCLI), '(B){3,}', 'B')) = UPPER(PRENCLI)        -- Répétition + de 3 fois la lettre B...
 OR
-NOT UPPER(REGEXP_REPLACE(UPPER(PRENCLI), '(O){3,}', 'O')) = UPPER(PRENCLI)        -- Répétition + de 3 fois la lettre O
+NOT UPPER(REGEXP_REPLACE(UPPER(PRENCLI), '(O){3,}', 'O')) = UPPER(PRENCLI);       -- Répétition + de 3 fois la lettre O
+/*
+CODCLI	NOMCLI	PRENCLI
+-----------------------------
+C296	MOUBARAK	OOObana
+*/
+
 
 -- A28. Les clients (Code, Nom et Ville) dont le nom ou la ville contiennent des espaces inutiles superflus !
 SELECT CODCLI, NOMCLI, VILCLI  FROM CLIENTS 
@@ -1370,7 +1412,14 @@ NOT RTRIM(LTRIM(REGEXP_REPLACE(NOMCLI, '( ){2,}', ' '))) = NOMCLI
 OR
 NOT RTRIM(LTRIM(REGEXP_REPLACE(VILCLI, '( ){2,}', ' '))) = VILCLI;    
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	NOMCLI	VILCLI
+-----------------------------------
+C118	GENIE	EPINAY SUR SEINE
+C122	DE PAR DE	PARIS
+C123	DE PAR DE	PARIS
+C124	DE PAR DE	PARIS
+C125	DE PAR DE	PARIS
+C126	DE PAR DE	paris
 */
 
 -- A29. Les clients (Code, Nom et Mail) pour lesquels les mails sont INVALIDES
@@ -1379,7 +1428,26 @@ SELECT CODCLI, NOMCLI, MAILCLI  FROM CLIENTS
 WHERE 
 NOT REGEXP_LIKE (MAILCLI,'^[A-Za-z]+[A-Za-z0-9.]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$') ;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	NOMCLI	MAILCLI
+--------------------------------------------------
+C004	CLEMENCE	clemence evelyne@gmail.com
+C005	FORT	jfort\@hotmail.fr
+C006	LE BON	clemence.le bon@cfo.fr
+C008	VIVANT	jeanbaptiste@
+C011	PREMIER	josef@premier
+C014	ADAM	adamo.adamé@gmail com
+C015	Labsent	pala-labsent@paici
+C016	obsolete	inexistant
+C121	2 PAR 2	2PAR2@GMAIL.COM
+C122	DE PAR DE	2PAR2@GMAIL.COM
+C123	DE PAR DE	2PAR2@GMAIL.COM
+C124	DE PAR DE	2PAR2@GMAIL.COM
+C125	DE PAR DE	2PAR2@GMAIL.COM
+C126	DE PAR DE	2PAR2@GMAIL.COM
+C296	MOUBARAK	-
+C297	CLEANTOOON	-
+C299	BIDON!	-
+C300	HOBAAAMA	-
 */
 
 -- A30. Les clients (Code, Nom et Tel) pour lesquels les téléphones sont INVALIDES 
@@ -1389,7 +1457,31 @@ WHERE
 NOT REGEXP_LIKE (TELCLI,'^(([\+]|[0]{2})([3]{2}))[1-9]([0-9]{8})$') OR NOT LENGTH(TELCLI) = 12;
 --NOT REGEXP_LIKE (TELCLI,'^[0][1-9][0-9]{8}$') OR NOT LENGTH(COL12) = 10 ; --(téléphone français sans l'indicatif de l'international)
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	NOMCLI	TELCLI
+--------------------------
+C002	LESEUL	0617586565
+C006	LE BON	0033777889955
+C008	VIVANT	0607
+C010	TRAIFOR	06070809
+C013	FORT	+21624801777
+C016	obsolete	inexistant
+C017	RAHYM	+21624808444
+C020	GENIe	0777889900
+C119	UNE	0617586575
+C120	1	0617586575
+C121	2 PAR 2	0617586577
+C122	DE PAR DE	0617586577
+C123	DE PAR DE	0617586577
+C124	DE PAR DE	0617586577
+C125	DE PAR DE	0617586577
+C126	DE PAR DE	0617586577
+C295	MOUCHE	-
+C296	MOUBARAK	-
+C297	CLEANTOOON	-
+C298	TROMPE.	-
+C299	BIDON!	-
+C300	HOBAAAMA	-
+C554	ALIBABA	0697837311
 */
 
 -- A31. Les clients (Code et Adresse) pour lesquels l'adresse est INVALIDE 
@@ -1398,7 +1490,22 @@ SELECT CODCLI,  ADRCLI  FROM CLIENTS
 WHERE
 NOT REGEXP_LIKE (UPPER(ADRCLI),'^(BOULEVARD|AVENUE|RUE)[[:alpha:] '']+$');
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	ADRCLI
+-------------------------------
+C004	FOCH
+C007	DE LA ROSIERE
+C011	RUE// DE LA LIBERTE
+C122	AVENUE D-ITALIE
+C124	AVENUE D_ITALIE
+C125	AVENUE D_ITALIE
+C126	AVENUE@D_ITALIE/
+C131	Maison Planchhhe
+C295	-
+C296	-
+C297	-
+C298	-
+C299	-
+C300	-
 */
 
 -- A32. Les clients (Code, Nom, Civilté et Catégorie) pour lesquels la règle de gestion suivante n'est pas vérifiée
@@ -1407,7 +1514,28 @@ SELECT CODCLI, NOMCLI, CIVCLI, CATCLI  FROM CLIENTS
 WHERE
 NOT ((UPPER(CIVCLI) LIKE 'MO%' AND CATCLI IN (1, 3, 5)) OR (UPPER(CIVCLI) LIKE 'MA%' AND CATCLI IN (2, 4, 6)));
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	NOMCLI	CIVCLI	CATCLI
+---------------------------------------
+C001	CLEM@ENT	Madame	1
+C002	LESEUL	Madame	1
+C005	FORT	Madam	3
+C006	LE BON	Mademoisele	1
+C011	PREMIER	Monsiieur	2
+C012	CLEMENT	Monsieur	2
+C015	Labsent	Monsieur	7
+C016	obsolete	Madame	7
+C017	RAHYM	Madame	1
+C019	GENIE	Madame	3
+C020	GENIe	Madame	3
+C021	LAPARISIENNE	Madame	3
+C022	AFRICAINE	Mademoiselle	9
+C023	AFRICAINE	Mademoiselle	9
+C118	GENIE	Madame	3
+C120	1	MADAME	1
+C130	STOne	MADAM	1
+C131	CATS	MONsieur	9
+C297	CLEANTOOON	MADAME	3
+C298	TROMPE.	monsieur	-3
 */
 
 -- A33. Les clients (Code, Civilté+NOM+Prénom, Catégorie) qui n'ont pas (jamais) commandé
@@ -1419,7 +1547,33 @@ FROM CLIENTS
 WHERE CODCLI NOT IN (SELECT CODCLI FROM COMMANDES)
 ORDER BY 1;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODE	CLIENT_E	CATEGORIE
+--------------------------------------
+C299	MONSIEUuR BIDON! Joie	3
+C118	Madame GENIE Adam	3
+C119	MadamE UNE Marie	6
+C120	MADAME 1 Marie	1
+C121	Monsieur 2 PAR 2 Girard	1
+C122	Monsieur DE PAR DE Girard	1
+C123	Monsieur DE PAR DE Girard	1
+C124	Monsieur DE PAR DE Girard	1
+C125	Monsieur DE PAR DE Girard	1
+C126	Monsieur DE PAR DE Gir@Rd	1
+C127	Monsieur SMITH John	1
+C128	Monsieur BIDON Jade	1
+C129	Monsieur STONE Brakeur	1
+C130	MADAM STONE Jane	1
+C131	MONsieur CATS Bill	9
+C295	MONSIEUr MOUCHE Gorge	3
+C296	MONSIEUR MOUBARAK Ooobana	3
+C297	MADAME CLEANTOOON Hilally	3
+C298	monsieur TROMPE. Ronald	-3
+C300	MONSIEUR HOBAAAMA M'Barek	3
+C554	Monsieur ALIBABA Mystere	1
+C555	Madame SMART Data	2
+
+>>>>>>>> Notes : LTRIM -> supprime des caractères en début de chaine 
+                 RTRIM -> supprime des caractères en fin de chaine
 */
 
 -- A34. Les articles (Référence, NOM) qui n'ont pas été commandés
@@ -1428,7 +1582,25 @@ FROM ARTICLES
 WHERE REFART NOT IN (SELECT REFART FROM DETAILCOM)
 ORDER BY 1;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+REFART	NOMART
+---------------------------------------
+F1.002	CASQUE CYCLISTE PROTECTION
+F1.004	STORE DE PROTECTION
+F1.005	COINS DE PROTECTION
+F1.006	CACHE PRISE DE COURANT
+F1.010	PROTECTION DE CUISINIERE
+F1.012	BRETELLE DE SECURITE
+F1.014	COUVRE ROBINETTERIE
+F2.002	BARRIERE DE PORTE, EN METAL
+F2.003	BARRIERE DE LIT
+F2.004	PORTE-BEBE
+F2.005	SIEGE-AUTO COSMOS
+F2.006	SIEGE-AUTO EUROSEAT
+VOYAGAIR	Ecouteur sans fil
+WD.004	DVD-FRERES DES OURS
+WD.005	K7 VIDEO-LE ROI LION
+WD.006	K7 VIDEO-LE ROI LION 2
+WD.007	K7 VIDEO-LE ROI LION 3
 */
 
 -- MFB -->>>>> REMARQUE : ******************************************************************************************************************
