@@ -977,13 +977,32 @@ F2.003	BARRIERE DE LIT	23,71	10	15,71
 -- A13. Les articles du fournisseur « WD »
 SELECT * FROM Articles WHERE UPPER(REFART) LIKE'WD%';
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+REFART	NOMART	PVART	QSART	PAART
+-----------------------------------------------------------
+WD.001	K7 VIDEO-TOY STORY	21,29	10	9,29
+WD.002	DVD-TOY STORY 2	34,29	10	12,14
+WD.003	K7 VIDEO-WINNIE L OURSON	22,86	5	9,29
+WD.004	DVD-FRERES DES OURS	35	3	13
+WD.005	K7 VIDEO-LE ROI LION	30	1	13
+WD.006	K7 VIDEO-LE ROI LION 2	30	4	13
+WD.007	K7 VIDEO-LE ROI LION 3	30	3	13
+WDBU6Y0040BBK-W	WD Disque dur Eléments 4To Noir	101	21	61
 */
 
 -- A14. Les clients pour lesquels on n''a pas de téléphone
 SELECT CODCLI, UPPER(NOMCLI) NOM, MAILCLI, TELCLI FROM Clients WHERE TELCLI IS NULL;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	NOM	MAILCLI	TELCLI
+-----------------------------------------------
+C014	ADAM	adamo.adamé@gmail com	-
+C015	LABSENT	pala-labsent@paici	-
+C127	SMITH	-	-
+C128	BIDON	-	-
+C129	STONE	-	-
+C130	STONE	-	-
+C131	CATS	-	-
+
+>>>>>>>> Notes : Certains client qui n'ont pas de téléphone, n'ont pas aussi de mail !
 */
 
 
@@ -998,6 +1017,80 @@ SELECT * FROM Clients WHERE SOUNDEX(VilCli)=SOUNDEX('PARIz') ;
 SELECT * FROM Clients WHERE SOUNDEX(VilCli)=SOUNDEX('PARIzzz') ;
 SELECT * FROM Clients WHERE SOUNDEX(VilCli)=SOUNDEX('PeRIzzz') ;
 SELECT * FROM Clients WHERE SOUNDEX(VilCli)=SOUNDEX('pary') ;
+
+/*
+Requête n°1 :
+-------------------------
+VILCLI	SOUNDEX(VILCLI)
+EPINAY-SUR-ORGE	E152
+PARIS	P620
+MARCHEILLLE	M624
+EPINAY-SUR-SEINE	E152
+ORLY-VILLE	O641
+EPINAY-SUR-SEINE	E152
+PARIS	P620
+EPINAY-SUR-SEINE	E152
+PARIS	P620
+PARIS	P620
+MARCHEILLE	M624
+VILLETANEUSE	V435
+TUNIS	T520
+ROME	R500
+BAGDAD	B233
+CARTHAGE	C632
+CARTHAGE	C632
+EPINAY SUR SEINE	E152
+PARIS	P620
+PARIS	P620
+PARIS	P620
+PARIS	P620
+DAKAR	D260
+EPINAY SUR SEINE	E152
+PARIS	P620
+PARIS	P620
+PARIS	P620
+PARIS	P620
+PARIS	P620
+PARIS	P620
+PARIS	P620
+paris	P620
+LONDON	L535
+LONDON	L535
+LONDON	L535
+Oxford	O216
+NEW-YORk	N620
+L'Hay-Les-Roses	L426
+-	-
+-	-
+-	-
+-	-
+-	-
+PARIS	P620
+PARIS	P620
+
+Requête n°2 et 8 : aucune données n'a été trouvées
+Requête n°3, 4, 5, 6 et 7 :
+CODCLI	CIVCLI	NOMCLI	PRENCLI	CATCLI	ADNCLI	ADRCLI	CPCLI	VILCLI	PAYSCLI	MAILCLI	TELCLI	DATNAISCLI	DPREMCONTACTCLI	OBSCLI	REMCLI	GENRECLI	GSCLI	KEYWORDSCLI
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+C002	Madame	LESEUL	M@RIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieleseul@yahoo.fr	0617586565	05/08/83	05/08/83	-	-	F	A+	Natation, Dessin, Voyages, Bandes Dessinees
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL
+C019	Madame	GENIE	GENIALE	3	16	AVENUE FOCH	75016	PARIS	FRANCE	genialegenie@gmail.com	+33777889900	17/09/88	11/11/11	-	-	F	-	BasketBall, FootBALL, Informatique, Data Management, Machine Learning
+C020	Madame	GENIe	GENIAL	3	16	AVENUE FOCH	75016	PARIS	FRENCE	genialegenie@gmail.com	0777889900	17/09/88	11/11/11	-	-	F	-	-
+C021	Madame	LAPARISIENNE	Belle	3	26	AVENUE FOCH	75016	PARIS	-	belle.laparisienne@gmail.com	+33777889977	17/09/88	11/11/11	-	-	F	-	-
+C022	Mademoiselle	AFRICAINE	Belle	9	26	AVENUE FOCH	75016	PARIS	-	belle.africaine@hotmail.com	+33777889911	17/09/88	11/11/11	-	-	F	-	-
+C119	MadamE	UNE	Marie	6	17	AVENUE D ITALIE	75013	PARIS	FRANCE	marieune@gmail.com	0617586575	01/01/91	-	-	-	F	-	-
+C120	MADAME	1	MARIE	1	17	AVENUE D ITALIE	75013	PARIS	FRANCE	MARIEUNE@GMAIL.COM	0617586575	01/01/91	-	-	-	F	-	-
+C121	Monsieur	2 PAR 2	Girard	1	27	AVENUE D ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-
+C122	Monsieur	DE PAR DE	GIRARD	1	27	AVENUE D-ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-
+C123	Monsieur	DE PAR DE	GIRARD	1	27	AVENUE D'ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	-	-	-	-	F	-	-
+C124	Monsieur	DE PAR DE	Girard	1	27	AVENUE D_ITALIE	75013	PARIS	FRANCE	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-
+C125	Monsieur	DE PAR DE	Girard	1	27	AVENUE D_ITALIE	75013	PARIS	france	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-
+C126	Monsieur	DE PAR DE	Gir@rd	1	27	AVENUE@D_ITALIE/	75013	paris	france	2PAR2@GMAIL.COM	0617586577	02/02/82	-	-	-	F	-	-
+C554	Monsieur	ALIBABA	Mystere	1	55	Rue De Belleville	75019	PARIS	FRANCE	sezameouvretoi.alibaba.myster@gmail.com	0697837311	12/12/92	-	-	-	F	-	-
+C555	Madame	SMART	Data	2	55	RUE DE BELLEVILLE	75019	PARIS	FRANCE	smartdata@gmail.com	+33755555555	-	-	-	-	F	B+	FOOTBALL, SMART DATA
+*/
 
 -- A16. Les clients dont le nom est similaire à « traifor » ou « tresfor » ou « tresfaur »
 
