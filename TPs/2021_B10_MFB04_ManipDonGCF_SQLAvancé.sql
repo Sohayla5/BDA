@@ -1101,7 +1101,53 @@ SOUNDEX(UPPER(NOMCLI))   MAJUSCULENOM,
 SOUNDEX(Initcap(NOMCLI)) MINMAJNOM
 FROM Clients ;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+NOMCLI	LOWER(NOMCLI)	UPPER(NOMCLI)	INITCAP(NOMCLI)	MINUSCULENOM	MAJUSCULENOM	MINMAJNOM
+---------------------------------------------------------------------------------------------------
+CLEM@ENT	clem@ent	CLEM@ENT	Clem@Ent	C455	C455	C455
+LESEUL	leseul	LESEUL	Leseul	L240	L240	L240
+UNIQUE	unique	UNIQUE	Unique	U520	U520	U520
+CLEMENCE	clemence	CLEMENCE	Clemence	C455	C455	C455
+FORT	fort	FORT	Fort	F630	F630	F630
+LE BON	le bon	LE BON	Le Bon	L150	L150	L150
+TRAIFOR	traifor	TRAIFOR	Traifor	T616	T616	T616
+VIVANT	vivant	VIVANT	Vivant	V153	V153	V153
+CLEMENCE	clemence	CLEMENCE	Clemence	C455	C455	C455
+TRAIFOR	traifor	TRAIFOR	Traifor	T616	T616	T616
+PREMIER	premier	PREMIER	Premier	P656	P656	P656
+CLEMENT	clement	CLEMENT	Clement	C455	C455	C455
+FORT	fort	FORT	Fort	F630	F630	F630
+ADAM	adam	ADAM	Adam	A350	A350	A350
+Labsent	labsent	LABSENT	Labsent	L125	L125	L125
+obsolete	obsolete	OBSOLETE	Obsolete	O124	O124	O124
+RAHYM	rahym	RAHYM	Rahym	R500	R500	R500
+GENIE	genie	GENIE	Genie	G500	G500	G500
+GENIE	genie	GENIE	Genie	G500	G500	G500
+GENIe	genie	GENIE	Genie	G500	G500	G500
+LAPARISIENNE	laparisienne	LAPARISIENNE	Laparisienne	L162	L162	L162
+AFRICAINE	africaine	AFRICAINE	Africaine	A162	A162	A162
+AFRICAINE	africaine	AFRICAINE	Africaine	A162	A162	A162
+GENIE	genie	GENIE	Genie	G500	G500	G500
+UNE	une	UNE	Une	U500	U500	U500
+1	1	1	1	-	-	-
+2 PAR 2	2 par 2	2 PAR 2	2 Par 2	P600	P600	P600
+DE PAR DE	de par de	DE PAR DE	De Par De	D163	D163	D163
+DE PAR DE	de par de	DE PAR DE	De Par De	D163	D163	D163
+DE PAR DE	de par de	DE PAR DE	De Par De	D163	D163	D163
+DE PAR DE	de par de	DE PAR DE	De Par De	D163	D163	D163
+DE PAR DE	de par de	DE PAR DE	De Par De	D163	D163	D163
+SMITH	smith	SMITH	Smith	S530	S530	S530
+BIDON	bidon	BIDON	Bidon	B350	B350	B350
+STOne	stone	STONE	Stone	S350	S350	S350
+STOne	stone	STONE	Stone	S350	S350	S350
+CATS	cats	CATS	Cats	C320	C320	C320
+MOUCHE	mouche	MOUCHE	Mouche	M200	M200	M200
+MOUBARAK	moubarak	MOUBARAK	Moubarak	M162	M162	M162
+CLEANTOOON	cleantooon	CLEANTOOON	Cleantooon	C453	C453	C453
+TROMPE.	trompe.	TROMPE.	Trompe.	T651	T651	T651
+BIDON!	bidon!	BIDON!	Bidon!	B350	B350	B350
+HOBAAAMA	hobaaama	HOBAAAMA	Hobaaama	H150	H150	H150
+ALIBABA	alibaba	ALIBABA	Alibaba	A411	A411	A411
+SMART	smart	SMART	Smart	S563	S563	S563
 */
 
 -- A17. Les clients dont le nom commence par T ; contient T ; se termine par T
@@ -1109,19 +1155,80 @@ SELECT * FROM Clients WHERE UPPER(Nomcli) LIKE 'T%';
 SELECT * FROM Clients WHERE UPPER(Nomcli) LIKE '%T%';
 SELECT * FROM Clients WHERE UPPER(Nomcli) LIKE '%T';
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+Requête 1 :
+CODCLI	CIVCLI	NOMCLI	PRENCLI	CATCLI	ADNCLI	ADRCLI	CPCLI	VILCLI	PAYSCLI	MAILCLI	TELCLI	DATNAISCLI	DPREMCONTACTCLI	OBSCLI	REMCLI	GENRECLI	GSCLI	KEYWORDSCLI
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL
+C298	monsieur	TROMPE.	Ronald	-3	-	-	-	-	-	usapresident@labas.com	-	10/10/45	20/01/16	-	-	-	-	NUL, Not authorized, Not allowed, Not permitted
+
+Requête 2 :
+CODCLI	CIVCLI	NOMCLI	PRENCLI	CATCLI	ADNCLI	ADRCLI	CPCLI	VILCLI	PAYSCLI	MAILCLI	TELCLI	DATNAISCLI	DPREMCONTACTCLI	OBSCLI	REMCLI	GENRECLI	GSCLI	KEYWORDSCLI
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+C005	Madam	FORT	anne marie	3	55	RUE DU JAPON	94310	ORLY-VILLE	FRANCE	jfort\@hotmail.fr	+33777889944	11/11/00	-	-	-	F	A-	Bandes Dessinees, Handball, Musique, Manga, foot, BasketBall
+C007	Mademoiselle	TRAIFOR	Alice	2	6	DE LA ROSIERE	75015	PARIS	FRANCE	alice.traifor@yahoo.fr	+33777889966	23/02/98	-	-	-	F	A+	Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL
+C008	Monsieur	VIVANT	JEAN-BAPTISTE	1	13	RUE DE LA PAIX	93800	EPINAY-SUR-SEINE	FRANCE	jeanbaptiste@	0607	17/09/58	17/09/00	-	-	F	A+	Handball, football, BasketBall, FOOTBALL
+C010	Monsieur	TRAIFOR	Alexandre	1	17	AVENUE FOCH	75016	PARIS	FRA	alexandre.traifor@up13.fr	06070809	17/07/67	17/09/00	-	-	F	B+	Handball, Theatre, Voyages, FOOTBALL
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema
+C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema
+C016	Madame	obsolete	kadym	7	1	rue des anciens	000	CARTHAGE	IFRIQIA	inexistant	inexistant	-	-	-	-	F	A+	PARIS, SUDOKU, Not authorized
+C127	Monsieur	SMITH	John	1	-	-	-	LONDON	United-Kingdom	-	-	03/03/83	-	-	-	F	-	-
+C129	Monsieur	STOne	Brakeur	1	-	-	-	LONDON	United-KINGDOM	-	-	18/08/88	-	-	-	F	-	-
+C130	MADAM	STOne	Jane	1	-	-	-	Oxford	United KINGDOM	-	-	-	-	-	-	F	-	-
+C131	MONsieur	CATS	BiLL	9	-	Maison Planchhhe	-	NEW-YORk	UNITED-STATS-AMERICA	-	-	17/09/78	-	-	-	F	-	-
+C297	MADAME	CLEANTOOON	Hilally	3	-	-	-	-	-	-	-	15/05/66	20/01/16	-	-	F	B+-	-
+C298	monsieur	TROMPE.	Ronald	-3	-	-	-	-	-	usapresident@labas.com	-	10/10/45	20/01/16	-	-	-	-	NUL, Not authorized, Not allowed, Not permitted
+C555	Madame	SMART	Data	2	55	RUE DE BELLEVILLE	75019	PARIS	FRANCE	smartdata@gmail.com	+33755555555	-	-	-	-	F	B+	FOOTBALL, SMART DATA
+
+Requête 3:
+CODCLI	CIVCLI	NOMCLI	PRENCLI	CATCLI	ADNCLI	ADRCLI	CPCLI	VILCLI	PAYSCLI	MAILCLI	TELCLI	DATNAISCLI	DPREMCONTACTCLI	OBSCLI	REMCLI	GENRECLI	GSCLI	KEYWORDSCLI
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+C005	Madam	FORT	anne marie	3	55	RUE DU JAPON	94310	ORLY-VILLE	FRANCE	jfort\@hotmail.fr	+33777889944	11/11/00	-	-	-	F	A-	Bandes Dessinees, Handball, Musique, Manga, foot, BasketBall
+C008	Monsieur	VIVANT	JEAN-BAPTISTE	1	13	RUE DE LA PAIX	93800	EPINAY-SUR-SEINE	FRANCE	jeanbaptiste@	0607	17/09/58	17/09/00	-	-	F	A+	Handball, football, BasketBall, FOOTBALL
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+C013	Monsieur	FORT	Gabriel	5	1	AVENUE DE CARTAGE	99000	TUNIS	TUNISIE	gabriel.fort@yahoo.fr	+21624801777	05/05/85	17/09/00	-	-	F	A+	Plongee sous marine, , Natation, , Cinema
+C015	Monsieur	Labsent	pala	7	1	rue des absents	000	BAGDAD	IRAQ	pala-labsent@paici	-	-	-	-	-	F	A+	FootBALL, Natation, Mangas, Cinema
+C555	Madame	SMART	Data	2	55	RUE DE BELLEVILLE	75019	PARIS	FRANCE	smartdata@gmail.com	+33755555555	-	-	-	-	F	B+	FOOTBALL, SMART DATA
 */
 
 -- A18. Les clients dont le nom n'est pas en majuscule
 SELECT CODCLI, NOMCLI FROM Clients WHERE UPPER(NOMCLI) <> NOMCLI;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	NOMCLI
+-----------------
+C015	Labsent
+C016	obsolete
+C020	GENIe
+C129	STOne
+C130	STOne
 */
 
 -- A19. Les clients dont le prénom n'est pas : Seule la première lettre est en majuscule
 SELECT CODCLI, NOMCLI, PRENCLI FROM Clients WHERE INITCAP(PRENCLI) <> PRENCLI;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	NOMCLI	PRENCLI
+------------------------------
+C001	CLEM@ENT	EVE
+C002	LESEUL	M@RIE
+C004	CLEMENCE	EVELYNE
+C005	FORT	anne marie
+C008	VIVANT	JEAN-BAPTISTE
+C011	PREMIER	JOS//EPH
+C014	ADAM	ADAMO
+C015	Labsent	pala
+C016	obsolete	kadym
+C018	GENIE	ADAM
+C019	GENIE	GENIALE
+C020	GENIe	GENIAL
+C120	1	MARIE
+C122	DE PAR DE	GIRARD
+C123	DE PAR DE	GIRARD
+C126	DE PAR DE	Gir@rd
+C131	CATS	BiLL
+C296	MOUBARAK	OOObana
 */
 
 -- A20. Décodification de la catégorie des clients : Afficher/Transformer la catégorie des clients comme suit : 
@@ -1129,7 +1236,53 @@ SELECT CODCLI, NOMCLI, PRENCLI FROM Clients WHERE INITCAP(PRENCLI) <> PRENCLI;
 SELECT Nomcli, catcli, CASE catcli WHEN 1 THEN 'Grossiste' WHEN 2 THEN 'Demi-Gros' ELSE 'détaillant' END AS Categorie FROM Clients;
 SELECT Nomcli, catcli, DECODE(catcli, 1, 'Grossiste', 2, 'Demi-Gros', 'Detaillant')                      AS Categorie FROM Clients;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+NOMCLI	CATCLI	CATEGORIE
+-----------------------------
+CLEM@ENT	1	Grossiste
+LESEUL	1	Grossiste
+UNIQUE	2	Demi-Gros
+CLEMENCE	4	détaillant
+FORT	3	détaillant
+LE BON	1	Grossiste
+TRAIFOR	2	Demi-Gros
+VIVANT	1	Grossiste
+CLEMENCE	1	Grossiste
+TRAIFOR	1	Grossiste
+PREMIER	2	Demi-Gros
+CLEMENT	2	Demi-Gros
+FORT	5	détaillant
+ADAM	5	détaillant
+Labsent	7	détaillant
+obsolete	7	détaillant
+RAHYM	1	Grossiste
+GENIE	6	détaillant
+GENIE	3	détaillant
+GENIe	3	détaillant
+LAPARISIENNE	3	détaillant
+AFRICAINE	9	détaillant
+AFRICAINE	9	détaillant
+GENIE	3	détaillant
+UNE	6	détaillant
+1	1	Grossiste
+2 PAR 2	1	Grossiste
+DE PAR DE	1	Grossiste
+DE PAR DE	1	Grossiste
+DE PAR DE	1	Grossiste
+DE PAR DE	1	Grossiste
+DE PAR DE	1	Grossiste
+SMITH	1	Grossiste
+BIDON	1	Grossiste
+STOne	1	Grossiste
+STOne	1	Grossiste
+CATS	9	détaillant
+MOUCHE	3	détaillant
+MOUBARAK	3	détaillant
+CLEANTOOON	3	détaillant
+TROMPE.	-3	détaillant
+BIDON!	3	détaillant
+HOBAAAMA	3	détaillant
+ALIBABA	1	Grossiste
+SMART	2	Demi-Gros
 */
 
 -- A21. Les clients pour lesquels les lettres myster ou les chiffres 6978373 existent quelques part ?
@@ -1153,8 +1306,11 @@ SELECT
 FROM CLIENTS;
 SELECT * FROM V WHERE UPPER(COL) LIKE '%MYSTER%' OR UPPER(COL) LIKE '%6978373%';
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+COL
+---------------------------------------------------------------------------------------------------------------------------------------
+C554;Monsieur;ALIBABA;Mystere;1;55;Rue De Belleville;75019;PARIS;FRANCE;sezameouvretoi.alibaba.myster@gmail.com;0697837311;12/12/92;
 */
+
 -- Sur le clavier du téléphone portable : ---->>>>>>>>>  1  2/ABC 3/DEF 4/GHI 5/JKL 6/MNO 7/PQRS 8/TUV 9/WXYZ 0/+
 
 -- ==== MFB =======================================================================================================================
