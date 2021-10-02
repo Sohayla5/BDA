@@ -303,6 +303,7 @@ SELECT * FROM VCSV;
 /*
 -- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat pour la table CLIENTS:
 VCSV
+----------------------------------------------------------------------------------------------------------------------------------------------------
 C001;Madame;CLEM@ENT;EVE;1;18;BOULEVARD FOCH;91000;EPINAY-SUR-ORGE;FRANCE;eve.clement@gmail.com;+33777889911;17/06/51;12/12/12;A+
 C002;Madame;LESEUL;M@RIE;1;17;AVENUE D ITALIE;75013;PARIS;FRANCE;marieleseul@yahoo.fr;0617586565;05/08/83;05/08/83;A+
 C003;Madame;UNIQUE;Inès;2;77;RUE DE LA LIBERTE;13001;MARCHEILLLE;FRANCE;munique@gmail.com;+33717889922;22/11/69;12/12/12;B+
@@ -351,6 +352,7 @@ C555;Madame;SMART;Data;2;55;RUE DE BELLEVILLE;75019;PARIS;FRANCE;smartdata@gmail
 
 -- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat pour la table COMMANDES :
 VCSV
+---------------------------
 20001AB;17/09/00;C012
 20002AB;17/09/00;C001
 20003AB;16/10/00;C006
@@ -433,6 +435,7 @@ VCSV
 
 -- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat pour la table ARTICLES :
 VCSV
+--------------------------------------------------
 F1.001;SIEGE DE TABLE;10;26,43;35
 F1.002;CASQUE CYCLISTE PROTECTION;20;20;27
 F1.003;BONNET PARE-CHOCS;100;5,71;10,71
@@ -497,6 +500,7 @@ V550920;DeLonghi Radiateur bain d'huile;30;42;70
 
 -- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat pour la table DETAILCOM :
 VCSV
+-----------------------------
 20001AB;F1.001;2;35;2,5
 20001AB;F1.003;4;10,71;3
 20001AB;F1.013;2;49,14;0
@@ -625,6 +629,7 @@ VCSV
 
 -- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat pour la table MAGASINS :
 VCSV
+-----------------------------------------------------------------------------------------------------
 FR01;BB-BE KIND;0142586485;18;AVENUE FOCH;91000;PARIS;FRANCE;EUROPE;300
 FR02;BB-SAY PLEASE;+33153800796;21;AVENUE D ITALIE;75013;PARIS;FRANCE;EUROPE;180
 FR03;BB-SAY THANK YOU;0254974410;77;RUE DE LA LIBERTE;13001;MARSEILLE;FRANCE;EUROPE;200
@@ -656,7 +661,7 @@ CREATE OR REPLACE VIEW ScriptSQLInsertData(SQL_ORDER) AS
 	SELECT * FROM ScriptSQLInsertData_ART UNION SELECT * FROM ScriptSQLInsertData_MAG;
 SELECT * FROM ScriptSQLInsertData;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+-- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré: A FAIRE UNE FOIS SCRIPT MFB03 CORRIGE ++++++++++++++++++++++++++++++
 */
 
 -- ==== MFB =======================================================================================================================
@@ -674,56 +679,232 @@ SELECT * FROM ScriptSQLInsertData;
 -- A01. Les Noms des clients (Avec éventuellement des doublons)
 SELECT NOMCLI FROM Clients ;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+NOMCLI
+----------
+CLEM@ENT
+LESEUL
+UNIQUE
+CLEMENCE
+FORT
+LE BON
+TRAIFOR
+VIVANT
+CLEMENCE
+TRAIFOR
+PREMIER
+CLEMENT
+FORT
+ADAM
+Labsent
+obsolete
+RAHYM
+GENIE
+GENIE
+GENIe
+LAPARISIENNE
+AFRICAINE
+AFRICAINE
+GENIE
+UNE
+1
+2 PAR 2
+DE PAR DE
+DE PAR DE
+DE PAR DE
+DE PAR DE
+DE PAR DE
+SMITH
+BIDON
+STOne
+STOne
+CATS
+MOUCHE
+MOUBARAK
+CLEANTOOON
+TROMPE.
+BIDON!
+HOBAAAMA
+ALIBABA
+SMART
+
+>>>>>>>> Notes : on remarque que parmis les noms des clients, certains comportent :
+                    - des ponctuations,
+                    - des caractères spéciaux,
+                    - des espaces,
+                    - des majuscules
+                Il existe aussi des chiffres à la place des noms ainsi que de "faux" nom.
 */
 
 -- A02. Les noms des villes où habitent les client.e.s
 SELECT CODCLI, VILCLI FROM Clients ;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	VILCLI
+----------------------------
+C001	EPINAY-SUR-ORGE
+C002	PARIS
+C003	MARCHEILLLE
+C004	EPINAY-SUR-SEINE
+C005	ORLY-VILLE
+C006	EPINAY-SUR-SEINE
+C007	PARIS
+C008	EPINAY-SUR-SEINE
+C009	PARIS
+C010	PARIS
+C011	MARCHEILLE
+C012	VILLETANEUSE
+C013	TUNIS
+C014	ROME
+C015	BAGDAD
+C016	CARTHAGE
+C017	CARTHAGE
+C018	EPINAY SUR SEINE
+C019	PARIS
+C020	PARIS
+C021	PARIS
+C022	PARIS
+C023	DAKAR
+C118	EPINAY SUR SEINE
+C119	PARIS
+C120	PARIS
+C121	PARIS
+C122	PARIS
+C123	PARIS
+C124	PARIS
+C125	PARIS
+C126	paris
+C127	LONDON
+C128	LONDON
+C129	LONDON
+C130	Oxford
+C131	NEW-YORk
+C295	L'Hay-Les-Roses
+C296	-
+C297	-
+C298	-
+C299	-
+C300	-
+C554	PARIS
+C555	PARIS
+
+>>>>>>>> Notes : - On remarque que certains clients n'ont pas de ville qui leur sont assignés (valeur null)
+                 - Une même ville est écrit de différente façon, (des tirets, des espaces, en minuscule).
+                 - Certaines villes contiennent des apostrophres
 */
 
 -- A03. Les Noms des clients (Sans les doublons)
 SELECT DISTINCT NOMCLI FROM Clients ;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+NOMCLI
+----------- 
+GENIE
+HOBAAAMA
+LESEUL
+VIVANT
+ADAM
+LAPARISIENNE
+DE PAR DE
+MOUBARAK
+TROMPE.
+ALIBABA
+CLEMENT
+LE BON
+UNIQUE
+CLEMENCE
+FORT
+PREMIER
+UNE
+CATS
+CLEANTOOON
+BIDON!
+SMART
+Labsent
+RAHYM
+AFRICAINE
+1
+DE PAR DE
+SMITH
+BIDON
+MOUCHE
+CLEM@ENT
+
+>>>>>>>> Notes : même constation que pour A01
 */
 
 -- A04. Les Noms des villes où habitent les client.e.s (Sans les doublons)
 SELECT DISTINCT VILCLI FROM Clients ;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+VILCLI
+------------------
+paris
+LONDON
+-
+BAGDAD
+CARTHAGE
+PARIS
+EPINAY-SUR-ORGE
+EPINAY SUR SEINE
+MARCHEILLE
+EPINAY SUR SEINE
+NEW-YORk
+MARCHEILLLE
+TUNIS
+ORLY-VILLE
+ROME
+DAKAR
+L'Hay-Les-Roses
+PARIS
+EPINAY-SUR-SEINE
+VILLETANEUSE
+Oxford
+
+>>>>>>>> Notes : même constation que pour A02
 */
 
 -- A05. Les articles dont le prix de vente est supérieur ou égal au double du prix d’achat et dont la quantité en stock >= 100
 SELECT * FROM Articles WHERE PvArt >= 2*(PaArt) AND QSART >= 100;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+REFART	NOMART	PVART	QSART	PAART
+--------------------------------------------------
+F1.005	COINS DE PROTECTION	4	100	1,71
+F1.006	CACHE PRISE DE COURANT	2,29	500	,71
 */
 
 -- A06. Les articles dont le prix de vente est soit 4 soit 27 soit 35
 SELECT * FROM Articles WHERE PvArt=4 OR PvArt=27 OR PvArt=35;
 SELECT * FROM Articles WHERE PvArt IN (4, 27, 35);
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+REFART	NOMART	PVART	QSART	PAART
+--------------------------------------------------
+F1.001	SIEGE DE TABLE	35	10	26,43
+F1.002	CASQUE CYCLISTE PROTECTION	27	20	20
+F1.005	COINS DE PROTECTION	4	100	1,71
+WD.004	DVD-FRERES DES OURS	35	3	13
 */
 
 -- A07. Les articles dont le prix de vente est compris entre 40 et 45
 SELECT * FROM Articles WHERE PvArt BETWEEN 40 AND 45;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+REFART	NOMART	PVART	QSART	PAART
+--------------------------------------------
+F1.013	HAUSSE-CHAISE	42,71	1	25,43
+F2.004	PORTE-BEBE	44,86	6	34,29
 */
 
 -- A08. Les Commandes du mois de septembre 2018
 SELECT * FROM Commandes WHERE TO_CHAR(datcom,'MM')='09' AND TO_CHAR(datcom,'YYYY')='2018';
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+NUMCOM	CODCLI	DATCOM
+-------------------------
+20184FB	C014	17/09/18
+20181AB	C012	17/09/18
 */
 
 -- A09. Les détails des Commandes d’une année donnée (2018)
 SELECT * FROM DETAILCOM WHERE NUMCOM LIKE '2018%';
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+NUMCOM	REFART	QTCOM	PUART	REMISE
+----------------------------------------
+20181AB	FB.001	7	17,77	0
 */
 
 -- ==== MFB =======================================================================================================================
@@ -744,19 +925,53 @@ SELECT CIVCLI || ' ' || NOMCLI || ' ' || PRENCLI AS CLIent_e_, VILCLI AS VILLE F
 SELECT civcli || ' ' || NOMCLI || ' ' || PRENCLI AS CLIent_e_, VILCLI AS VILLE FROM Clients WHERE UPPER(VilCli) = 'PARIS';
 SELECT civcli || ' ' || NOMCLI || ' ' || PRENCLI AS CLIent_e_, VILCLI AS VILLE FROM CLIENTS WHERE LOWER(VilCli) = 'paris';
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+Requête n°1: aucune donnée n'a été trouvée
+Requête n°2, 3 et 4 :
+CLIENT_E_	VILLE
+---------------------------------------
+Madame LESEUL M@RIE	PARIS
+Mademoiselle TRAIFOR Alice	PARIS
+Monsieur CLEMENCE Alexandre	PARIS
+Monsieur TRAIFOR Alexandre	PARIS
+Madame GENIE GENIALE	PARIS
+Madame GENIe GENIAL	PARIS
+Madame LAPARISIENNE Belle	PARIS
+Mademoiselle AFRICAINE Belle	PARIS
+MadamE UNE Marie	PARIS
+MADAME 1 MARIE	PARIS
+Monsieur 2 PAR 2 Girard	PARIS
+Monsieur ALIBABA Mystere	PARIS
+Madame SMART Data	PARIS
 */
 
 -- A11. Les clients dont le nom commence par « C »
 SELECT * FROM Clients WHERE UPPER(Nomcli) LIKE 'C%';
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	CIVCLI	NOMCLI	PRENCLI	CATCLI	ADNCLI	ADRCLI	CPCLI	VILCLI	PAYSCLI	MAILCLI	TELCLI	DATNAISCLI	DPREMCONTACTCLI	OBSCLI	REMCLI	GENRECLI	GSCLI	KEYWORDSCLI
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+C001	Madame	CLEM@ENT	EVE	1	18	BOULEVARD FOCH	91000	EPINAY-SUR-ORGE	FRANCE	eve.clement@gmail.com	+33777889911	17/06/51	12/12/12	-	-	F	A+	Voyages, Mangas, BasketBall, Musique, SuDOKU, Informatque, Bases de Données, Entrepôts de Données, Data, FOOTBALL
+C004	Madame	CLEMENCE	EVELYNE	4	8 BIS	FOCH	93800	EPINAY-SUR-SEINE	FRANCE	clemence evelyne@gmail.com	+33777889933	-	-	-	-	F	B+	Mangas, football , Theatre, Cinema, Musique, Plongee sous marine
+C009	Monsieur	CLEMENCE	Alexandre	1	5	Rue De Belleville	75019	PARIS	-	alexandre.clemence@up13.fr	+33149404071	19/09/99	20/10/20	-	-	F		BasketBall, Bandes Dessinees, football , Musique, Handball, Voyages, Bandes Dessinees, football , Musique, Handball, Voyages, FOOTBALL, BasketBall, Informatique
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas
+C131	MONsieur	CATS	BiLL	9	-	Maison Planchhhe	-	NEW-YORk	UNITED-STATS-AMERICA	-	-	17/09/78	-	-	-	F	-	-
+C297	MADAME	CLEANTOOON	Hilally	3	-	-	-	-	-	-	-	15/05/66	20/01/16	-	-	F	B+-	-
+
+>>>>>>>> Notes : /!\ cette table contient de nombreuses anomalies :
+                     1. il existe une dépendance fonctionnelle entre deux colonnes n'ont clé (cpcli et villCli)
+                     2. Certaines valeur sont null dans la colonne PaysCli
+                     3. certaines lignes sont redondante (elle sont écrite différemment comme pour la civilité mais correspondantes à un seul et même client)
+                     3. certaines valeur d'une même colonne contienne des caractères spéciaux, des majuscule, des espaces, des tirets, des apostrophes, ...
+                     4. le format des adresses mail n'est pas toujours conforme (présence d'espaces)
 */
 
 -- A12. Les articles dont le nom commence par « Barrières de »
 SELECT * FROM Articles WHERE UPPER(NomArt) LIKE 'BARRIERE DE%';
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+REFART	NOMART	PVART	QSART	PAART
+--------------------------------------------------------
+F2.001	BARRIERE DE PORTE, EN BOIS	32,71	2	25,71
+F2.002	BARRIERE DE PORTE, EN METAL	49,14	3	28,43
+F2.003	BARRIERE DE LIT	23,71	10	15,71
 */
 
 -- A13. Les articles du fournisseur « WD »
