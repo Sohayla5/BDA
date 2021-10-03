@@ -4239,33 +4239,97 @@ aucun résultat n'a été trouvée
 -- H01. Nombre de clients
 SELECT COUNT(*), COUNT(codcli), COUNT(NOMCLI), COUNT(PRENCLI) FROM Clients;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+COUNT(*)	COUNT(CODCLI)	COUNT(NOMCLI)	COUNT(PRENCLI)
+--------------------------------------------------------------
+45	45	45	45
 */
 
 -- H02. Nombre de pays
 SELECT 'Nombre de pays et Nombre de pays distincts' FROM DUAL;
 SELECT COUNT(PAYSCLI) AS nbpays, COUNT(distinct PAYSCLI) as nbpaysdiff FROM Clients;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+NBPAYS	NBPAYSDIFF
+---------------------------
+41	15
 */
 
 -- H03. Pays et Nombre d'occurrences
 SELECT PAYSCLI Pays, COUNT(PAYSCLI) AS nbpays FROM Clients GROUP BY PAYSCLI ORDER BY 1;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+PAYS	NBPAYS
+--------------------------
+-	6
+FRANCE	1
+FRANCE	1
+FRA	1
+FRANCE	19
+france	2
+FRENCE	1
+IFRIQIA	1
+IRAQ	1
+ITALIE	1
+TUNISIE	2
+United KINGDOM	1
+United-KINGDOM	2
+United-Kingdom	1
+UNITED-STATS-AMERICA	1
+-	0
+
+>>>>>>>> Notes : On remarque que la FRANCE n'a pas été regroupé.
+                 Ceci s'explique par le fait que des espaces ont été ajouté avant (ou après) la saisie
+                 du nom du pays.
 */
 
 -- H04. Nombre de clients par catégorie
 SELECT catcli AS categorie, COUNT(*) AS nbc FROM Clients  GROUP BY catcli;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CATEGORIE	NBC
+------------------
+6	2
+1	19
+7	2
+-3	1
+2	5
+4	1
+5	2
+3	10
+9	3
 */
 
 -- H05. Nombre de clients par catégorie et par ville
 SELECT 'Nombre de clients par catégorie et par ville' FROM DUAL;
 SELECT catcli AS categorie, vilcli AS ville, COUNT(*) AS nbcv FROM Clients GROUP BY catcli, vilcli ORDER BY 1;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CATEGORIE	VILLE	NBCV
+-----------------------------
+-3	-	1
+1	PARIS	4
+1	paris	1
+1	CARTHAGE	1
+1	EPINAY-SUR-ORGE	1
+1	EPINAY-SUR-SEINE	2
+1	LONDON	3
+1	Oxford	1
+1	PARIS	6
+2	MARCHEILLE	1
+2	MARCHEILLLE	1
+2	PARIS	2
+2	VILLETANEUSE	1
+3	EPINAY SUR SEINE	1
+3	-	4
+3	L'Hay-Les-Roses	1
+3	ORLY-VILLE	1
+3	PARIS	3
+4	EPINAY-SUR-SEINE	1
+5	ROME	1
+5	TUNIS	1
+6	EPINAY SUR SEINE	1
+6	PARIS	1
+7	BAGDAD	1
+7	CARTHAGE	1
+9	DAKAR	1
+9	NEW-YORk	1
+9	PARIS	1
 */
 
 -- H06. Nombre de clients par ville et par catégorie
@@ -4273,7 +4337,36 @@ SELECT 'Nombre de clients par par ville et par catégorie' FROM DUAL;
 SELECT vilcli AS ville, catcli AS categorie, COUNT(*) AS nbcv FROM Clients 
 GROUP BY vilcli, catcli ORDER BY 1;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+VILLE	CATEGORIE	NBCV
+------------------------------------
+-	3	4
+-	-3	1
+EPINAY SUR SEINE	3	1
+PARIS	1	4
+paris	1	1
+BAGDAD	7	1
+CARTHAGE	7	1
+CARTHAGE	1	1
+DAKAR	9	1
+EPINAY SUR SEINE	6	1
+EPINAY-SUR-ORGE	1	1
+EPINAY-SUR-SEINE	4	1
+EPINAY-SUR-SEINE	1	2
+L'Hay-Les-Roses	3	1
+LONDON	1	3
+MARCHEILLE	2	1
+MARCHEILLLE	2	1
+NEW-YORk	9	1
+ORLY-VILLE	3	1
+Oxford	1	1
+PARIS	3	3
+PARIS	6	1
+PARIS	9	1
+PARIS	1	6
+PARIS	2	2
+ROME	5	1
+TUNIS	5	1
+VILLETANEUSE	2	1
 */
 
 -- H07. Nombre de clients par catégorie et par ville -->> fonction CUBE
@@ -4281,7 +4374,67 @@ SELECT 'Nombre de clients par catégorie et par ville AVEC LA FONCTION >>> CUBE'
 SELECT catcli AS categorie, vilcli AS ville, COUNT(*) AS nbcv FROM Clients 
 GROUP BY CUBE(catcli, vilcli);
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CATEGORIE	VILLE	NBCV
+---------------------------------
+-	-	45
+-	-	5
+-	ROME	1
+-	DAKAR	1
+-	PARIS	13
+-	TUNIS	1
+-	BAGDAD	1
+-	LONDON	3
+-	Oxford	1
+-	CARTHAGE	2
+-	NEW-YORk	1
+-	MARCHEILLE	1
+-	ORLY-VILLE	1
+-	MARCHEILLLE	1
+-	VILLETANEUSE	1
+-	PARIS	4
+-	paris	1
+-	EPINAY-SUR-ORGE	1
+-	L'Hay-Les-Roses	1
+-	EPINAY SUR SEINE	1
+-	EPINAY-SUR-SEINE	3
+-	EPINAY SUR SEINE	1
+1	-	19
+1	PARIS	6
+1	LONDON	3
+1	Oxford	1
+1	CARTHAGE	1
+1	PARIS	4
+1	paris	1
+1	EPINAY-SUR-ORGE	1
+1	EPINAY-SUR-SEINE	2
+2	-	5
+2	PARIS	2
+2	MARCHEILLE	1
+2	MARCHEILLLE	1
+2	VILLETANEUSE	1
+3	-	10
+3	-	4
+3	PARIS	3
+3	ORLY-VILLE	1
+3	L'Hay-Les-Roses	1
+3	EPINAY SUR SEINE	1
+4	-	1
+4	EPINAY-SUR-SEINE	1
+5	-	2
+5	ROME	1
+5	TUNIS	1
+6	-	2
+6	PARIS	1
+6	EPINAY SUR SEINE	1
+7	-	2
+7	BAGDAD	1
+7	CARTHAGE	1
+9	-	3
+9	DAKAR	1
+9	PARIS	1
+9	NEW-YORk	1
+-3	-	1
+-3	-	1
 */
 
 -- H08. Nombre de clients par catégorie et par ville -->> fonction ROLLUP
@@ -4289,7 +4442,46 @@ SELECT 'Nombre de clients par catégorie et par ville AVEC LA FONCTION >>> ROLLU
 SELECT catcli AS categorie, vilcli AS ville, COUNT(*) AS nbcv FROM Clients 
 GROUP BY ROLLUP(catcli, vilcli);
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CATEGORIE	VILLE	NBCV
+----------------------------------
+1	PARIS	6
+1	LONDON	3
+1	Oxford	1
+1	CARTHAGE	1
+1	PARIS	4
+1	paris	1
+1	EPINAY-SUR-ORGE	1
+1	EPINAY-SUR-SEINE	2
+1	-	19
+2	PARIS	2
+2	MARCHEILLE	1
+2	MARCHEILLLE	1
+2	VILLETANEUSE	1
+2	-	5
+3	-	4
+3	PARIS	3
+3	ORLY-VILLE	1
+3	L'Hay-Les-Roses	1
+3	EPINAY SUR SEINE	1
+3	-	10
+4	EPINAY-SUR-SEINE	1
+4	-	1
+5	ROME	1
+5	TUNIS	1
+5	-	2
+6	PARIS	1
+6	EPINAY SUR SEINE	1
+6	-	2
+7	BAGDAD	1
+7	CARTHAGE	1
+7	-	2
+9	DAKAR	1
+9	PARIS	1
+9	NEW-YORk	1
+9	-	3
+-3	-	1
+-3	-	1
+-	-	45
 */
 
 -- H09. Classez les clients par ordre décroissant du chiffre d’affaires CA
@@ -4300,7 +4492,31 @@ where clients.codcli = Commandes.codcli AND Commandes.NUMCOM = DETAILCOM.numcom
 group by clients.codcli
 order by 2 desc;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	CA
+------------------------
+C018	18526,0703
+C004	14077,737
+C007	10937,814216
+C011	8944,8804
+C022	8299,2662
+C001	6417,3069
+C015	6031,4013
+C010	4735,2348
+C019	4702,6262
+C002	4025,44
+C021	3597,4935
+C006	3078,33585
+C009	3065,1046
+C012	2094,6078
+C016	1990,8072
+C013	1465,72
+C008	1258,992
+C014	813,09
+C017	597,9402
+C020	558,914
+C023	402,5456
+C003	359,2102
+C005	29,907
 */
 
 -- On passe par des vues
@@ -4311,10 +4527,40 @@ where clients.codcli = Commandes.codcli AND Commandes.NUMCOM = DETAILCOM.numcom
 group by clients.codcli
 order by 2 desc;
 select * from CACLIENTS;
+/*
+Même résultat que la précédente requête (réecrite avec une vue)
+*/
 
 create or replace view cli (cacli, codcli, nomcli, catcli, vilcli, payscli) as 
 select CHIFFAFFClient, Clients.codcli, nomcli, catcli, vilcli, payscli from clients, CACLIENTS where clients.codcli = CACLIENTS.CodeClient;
 select * from CLI;
+/*
+CACLI	CODCLI	NOMCLI	CATCLI	VILCLI	PAYSCLI
+--------------------------------------------------------------------
+18526,0703	C018	GENIE	6	EPINAY SUR SEINE	FRANCE
+14077,737	C004	CLEMENCE	4	EPINAY-SUR-SEINE	FRANCE
+10937,814216	C007	TRAIFOR	2	PARIS	FRANCE
+8944,8804	C011	PREMIER	2	MARCHEILLE	FRANCE
+8299,2662	C022	AFRICAINE	9	PARIS	-
+6417,3069	C001	CLEM@ENT	1	EPINAY-SUR-ORGE	FRANCE
+6031,4013	C015	Labsent	7	BAGDAD	IRAQ
+4735,2348	C010	TRAIFOR	1	PARIS	FRA
+4702,6262	C019	GENIE	3	PARIS	FRANCE
+4025,44	C002	LESEUL	1	PARIS	FRANCE
+3597,4935	C021	LAPARISIENNE	3	PARIS	-
+3078,33585	C006	LE BON	1	EPINAY-SUR-SEINE	FRANCE
+3065,1046	C009	CLEMENCE	1	PARIS	-
+2094,6078	C012	CLEMENT	2	VILLETANEUSE	FRANCE
+1990,8072	C016	obsolete	7	CARTHAGE	IFRIQIA
+1465,72	C013	FORT	5	TUNIS	TUNISIE
+1258,992	C008	VIVANT	1	EPINAY-SUR-SEINE	FRANCE
+813,09	C014	ADAM	5	ROME	ITALIE
+597,9402	C017	RAHYM	1	CARTHAGE	TUNISIE
+558,914	C020	GENIe	3	PARIS	FRENCE
+402,5456	C023	AFRICAINE	9	DAKAR	-
+359,2102	C003	UNIQUE	2	MARCHEILLLE	FRANCE
+29,907	C005	FORT	3	ORLY-VILLE	FRANCE
+*/
 
 -- H10. Classez les clients par ordre décroissant du ca, donnez le rang
 select 'Les clients par ordre décroissant du CA, donnez le rang' from dual;
@@ -4322,19 +4568,76 @@ SELECT (SELECT COUNT(*)+1 FROM cli C2 WHERE C1.cacli < C2.cacli) AS rang,
 cacli, codcli, nomcli, catcli, vilcli, payscli
 FROM cli C1
 ORDER BY rang;
-
+/*
+RANG	CACLI	CODCLI	NOMCLI	CATCLI	VILCLI	PAYSCLI
+----------------------------------------------------------------------
+1	18526,0703	C018	GENIE	6	EPINAY SUR SEINE	FRANCE
+2	14077,737	C004	CLEMENCE	4	EPINAY-SUR-SEINE	FRANCE
+3	10937,814216	C007	TRAIFOR	2	PARIS	FRANCE
+4	8944,8804	C011	PREMIER	2	MARCHEILLE	FRANCE
+5	8299,2662	C022	AFRICAINE	9	PARIS	-
+6	6417,3069	C001	CLEM@ENT	1	EPINAY-SUR-ORGE	FRANCE
+7	6031,4013	C015	Labsent	7	BAGDAD	IRAQ
+8	4735,2348	C010	TRAIFOR	1	PARIS	FRA
+9	4702,6262	C019	GENIE	3	PARIS	FRANCE
+10	4025,44	C002	LESEUL	1	PARIS	FRANCE
+11	3597,4935	C021	LAPARISIENNE	3	PARIS	-
+12	3078,33585	C006	LE BON	1	EPINAY-SUR-SEINE	FRANCE
+13	3065,1046	C009	CLEMENCE	1	PARIS	-
+14	2094,6078	C012	CLEMENT	2	VILLETANEUSE	FRANCE
+15	1990,8072	C016	obsolete	7	CARTHAGE	IFRIQIA
+16	1465,72	C013	FORT	5	TUNIS	TUNISIE
+17	1258,992	C008	VIVANT	1	EPINAY-SUR-SEINE	FRANCE
+18	813,09	C014	ADAM	5	ROME	ITALIE
+19	597,9402	C017	RAHYM	1	CARTHAGE	TUNISIE
+20	558,914	C020	GENIe	3	PARIS	FRENCE
+21	402,5456	C023	AFRICAINE	9	DAKAR	-
+22	359,2102	C003	UNIQUE	2	MARCHEILLLE	FRANCE
+23	29,907	C005	FORT	3	ORLY-VILLE	FRANCE
+*/
 
 -- H11. Classez les clients par ordre décroissant du ca, donnez le rang : RANK() OVER…
 select 'Classez les clients par ordre décroissant du ca, donnez le rang' from dual;
 SELECT rank() over(ORDER BY cacli desc) AS rang,
 cacli, codcli, nomcli, catcli, vilcli, payscli
 FROM cli;
+/*
+Même résultat que la précédente requête
+*/
 
 -- H12. Clients par ordre décroissant du ca et de la catégorie, donnez le rang
 select 'Clients par ordre décroissant du ca et de la catégorie, donnez le rang' from dual;
 SELECT rank() over (ORDER BY cacli desc, catcli desc) AS rang,
 cacli, codcli, nomcli, catcli, vilcli, payscli
 FROM cli;
+
+/*
+RANG	CACLI	CODCLI	NOMCLI	CATCLI	VILCLI	PAYSCLI
+---------------------------------------------------------------------
+1	18526,0703	C018	GENIE	6	EPINAY SUR SEINE	FRANCE
+2	14077,737	C004	CLEMENCE	4	EPINAY-SUR-SEINE	FRANCE
+3	10937,814216	C007	TRAIFOR	2	PARIS	FRANCE
+4	8944,8804	C011	PREMIER	2	MARCHEILLE	FRANCE
+5	8299,2662	C022	AFRICAINE	9	PARIS	-
+6	6417,3069	C001	CLEM@ENT	1	EPINAY-SUR-ORGE	FRANCE
+7	6031,4013	C015	Labsent	7	BAGDAD	IRAQ
+8	4735,2348	C010	TRAIFOR	1	PARIS	FRA
+9	4702,6262	C019	GENIE	3	PARIS	FRANCE
+10	4025,44	C002	LESEUL	1	PARIS	FRANCE
+11	3597,4935	C021	LAPARISIENNE	3	PARIS	-
+12	3078,33585	C006	LE BON	1	EPINAY-SUR-SEINE	FRANCE
+13	3065,1046	C009	CLEMENCE	1	PARIS	-
+14	2094,6078	C012	CLEMENT	2	VILLETANEUSE	FRANCE
+15	1990,8072	C016	obsolete	7	CARTHAGE	IFRIQIA
+16	1465,72	C013	FORT	5	TUNIS	TUNISIE
+17	1258,992	C008	VIVANT	1	EPINAY-SUR-SEINE	FRANCE
+18	813,09	C014	ADAM	5	ROME	ITALIE
+19	597,9402	C017	RAHYM	1	CARTHAGE	TUNISIE
+20	558,914	C020	GENIe	3	PARIS	FRENCE
+21	402,5456	C023	AFRICAINE	9	DAKAR	-
+22	359,2102	C003	UNIQUE	2	MARCHEILLLE	FRANCE
+23	29,907	C005	FORT	3	ORLY-VILLE	FRANCE
+*/
 
 -- H13. Clients par ordre décroissant du ca et de la catégorie, donnez le rang
 select 'Clients par ordre décroissant du ca et de la catégorie, donnez le rang' from dual;
@@ -4344,6 +4647,9 @@ FROM cli C1, cli C2
 WHERE C1.cacli <= C2.cacli or (C1.cacli=C2.cacli AND C1.catcli=C2.catcli)
 GROUP BY C1.catcli, C1.cacli, C1.codcli, C1.nomcli, C1.vilcli, C1.payscli
 ORDER BY C1.cacli desc, C1.catcli DESC;
+/*
+Même résultat que la précédente requête
+*/
 
 /*
 Remarques : 
