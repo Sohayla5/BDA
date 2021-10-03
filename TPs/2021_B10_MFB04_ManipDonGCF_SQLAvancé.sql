@@ -4201,8 +4201,32 @@ SELECT A.NOMART FROM Commandes C JOIN DETAILCOM D ON C.NUMCOM = D.NUMCOM JOIN Ar
 
 
 -- G02. Les articles qui figurent sur toutes les Commandes !
+SELECT REFART FROM ARTICLES A
+WHERE
+(SELECT COUNT(*) FROM COMMANDES)
+=
+(SELECT COUNT(*) FROM COMMANDES, DETAILCOM
+    WHERE COMMANDES.NUMCOM = DETAILCOM.NUMCOM 
+    AND DETAILCOM.REFART = A.REFART group by A.refart);
+
+/*
+aucun résultat n'a été trouvée
+*/
 
 -- G03. Les articles qui figurent sur toutes les Commandes d’une période donnée !
+SELECT DATCOM, A.REFART FROM COMMANDES C, DETAILCOM D, ARTICLES A
+WHERE
+(SELECT COUNT(*) FROM COMMANDES WHERE COMMANDES.DATCOM = C.DATCOM)
+=
+(SELECT COUNT(*) FROM COMMANDES, DETAILCOM, ARTICLES
+    WHERE COMMANDES.NUMCOM = DETAILCOM.NUMCOM
+    AND DETAILCOM.REFART = A.REFART
+    AND COMMANDES.DATCOM = C.DATCOM
+    GROUP BY A.REFART);
+
+/*
+aucun résultat n'a été trouvée
+*/
 
 -- ==== MFB =======================================================================================================================
 /*
