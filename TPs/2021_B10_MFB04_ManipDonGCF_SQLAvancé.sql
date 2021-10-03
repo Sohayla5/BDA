@@ -170,9 +170,11 @@ ALTER SESSION SET NLS_LANGUAGE=ENGLISH;
 -- ==== MFB =======================================================================================================================
 
 ----->>>>>>>>>>>>>>>>>>>>> Les dates ! Savez-vous que :
-ALTER SESSION SET NLS_TERRITORY = 'AMERICA';        -- First day of week is Sunday
+ALTER SESSION SET NLS_TERRITORY = 'AMERICA';        
+-- First day of week is Sunday
 SELECT TO_CHAR( DATE '2020-11-27', 'D' ) FROM DUAL;
-ALTER SESSION SET NLS_TERRITORY = 'UNITED KINGDOM'; -- First day of week is Monday
+ALTER SESSION SET NLS_TERRITORY = 'UNITED KINGDOM'; 
+-- First day of week is Monday
 SELECT TO_CHAR( DATE '2020-11-27', 'D' ) FROM DUAL;
 
 ALTER SESSION SET NLS_DATE_FORMAT = 'DD/MM/YYYY HH24:MI:SS';
@@ -3806,7 +3808,7 @@ SELECT C.codcli, C.Nomcli, K.datcom FROM Clients C, Commandes K
 WHERE UPPER(K.datcom) LIKE '%SEPTEMBRE-2018'
 AND C.codcli = K.codcli ;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+aucune données n'a été trouvée
 */
 
 -- F02 : Clients ayant commandé en SEPTEMBRE 2018 -- ATTENTION AU FORMAT DE LA DATE -- septembre
@@ -3814,7 +3816,7 @@ SELECT C.codcli, C.Nomcli, K.datcom FROM Clients C, Commandes K
 WHERE K.datcom LIKE '%september-2018'
 AND C.codcli = K.codcli ;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+aucune donnée n'a été trouvée
 */
 
 -- F03 : Clients ayant commandé en SEPTEMBRE 2018 -- ATTENTION AU FORMAT DE LA DATE -- SEPTEMBER
@@ -3822,10 +3824,18 @@ SELECT C.codcli, C.Nomcli, K.datcom FROM Clients C, Commandes K
 WHERE UPPER(K.datcom) LIKE '%SEPTEMBER-2018'
 AND C.codcli = K.codcli ;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+aucune donnée n'a été trouvée
 */
 
 -- F04 : Montant total des Commandes de septembre 2018
+SELECT SUM(PUart*QTCom) MontantSANSREMISE, SUM(PUart*(1-Remise/100)*QTCom) MontantAVECREMISE 
+    FROM DETAILCOM WHERE NUMCOM IN 
+        (SELECT NUMCOM FROM COMMANDES WHERE DATCOM LIKE '%09/18');
+/*
+MONTANTSANSREMISE	MONTANTAVECREMISE
+----------------------------------------
+124,39	124,39
+*/
 
 -- F05. Commandes ayant des articles dont le prix de vente est supérieur à 20 (Commande, Article, PV)
 
