@@ -4079,7 +4079,21 @@ SELECT CodCli FROM Clients WHERE UPPER(VilCli) = 'PARIS'
 AND CodCli NOT IN 
 (SELECT CodCli FROM Commandes WHERE DatCom LIKE '%10/2011');
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI
+----------
+C002
+C119
+C010
+C120
+C554
+C019
+C121
+C555
+C009
+C022
+C007
+C020
+C021
 */
 
 -- F09. Les clients de paris qui n’ont pas commandé en octobre 2011  -- NOT IN et le format de la date est MMMM/AAAA
@@ -4087,7 +4101,7 @@ SELECT CodCli FROM Clients WHERE UPPER(VilCli) = 'PARIS'
 AND CodCli NOT IN 
 (SELECT CodCli FROM Commandes WHERE UPPER(DatCom) LIKE '%OCTOBER-2011');
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+Même résultat que la précédente.
 */
 
 -- F10. Les clients de paris qui n’ont pas commandé en octobre 2011  -- MINUS et le format de la date est MMMM/AAAA
@@ -4095,7 +4109,22 @@ SELECT CodCli FROM Clients WHERE UPPER(VilCli) = 'PARIS'
 MINUS
 SELECT CodCli FROM Commandes WHERE UPPER(DatCom) LIKE '%OCTOBER-2011';
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+>>>>> même résultat que la précédente requête masi dans un ordre d'affichage différent
+CODCLI
+---------------
+C002
+C007
+C009
+C010
+C019
+C020
+C021
+C022
+C119
+C120
+C121
+C554
+C555
 */
 
 -- F11. Les clients de paris ou ceux ayant commandé en octobre 2011
@@ -4103,10 +4132,30 @@ SELECT CodCli FROM Clients   WHERE UPPER(VilCli) = 'PARIS'
 UNION 
 SELECT CodCli FROM Commandes WHERE UPPER(DatCom) LIKE '%OCTOBER-2011';
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI
+------------
+C002
+C007
+C009
+C010
+C019
+C020
+C021
+C022
+C119
+C120
+C121
+C554
+C555
 */
 
 -- F12. Intersection
+SELECT CodCli FROM Clients   WHERE UPPER(VilCli) = 'PARIS'
+INTERSECT
+SELECT CodCli FROM Commandes WHERE UPPER(DatCom) LIKE '%OCTOBER-2011';
+/*
+aucune donnée n'a été trouvée
+*/
 
 -- ==== MFB =======================================================================================================================
 /*
@@ -4133,7 +4182,10 @@ WHERE	NOT EXISTS
 		 AND	DETAILCOM.REFART = ARTICLES.REFART
 		 AND	Commandes.CODCLI = CLIENTS.CODCLI));
 
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+/*
+aucune donnée n'a été trouvée
+*/
+
 /*
 REFART     NOMART                                           
 ---------- --------------------------------------------------
@@ -4143,9 +4195,10 @@ Elapsed: 00:00:00.020
 */
 
 -- On pourrait appliquer une suite d'opérations, de l'Algèbre relationnelle, qui définissent la division !
-/*
--- A compléter
-*/
+SELECT CodCli FROM Clients   WHERE UPPER(VilCli) = 'PARIS'
+INTERSECT
+SELECT A.NOMART FROM Commandes C JOIN DETAILCOM D ON C.NUMCOM = D.NUMCOM JOIN Articles A ON A.REFART = D.REFART;
+
 
 -- G02. Les articles qui figurent sur toutes les Commandes !
 
