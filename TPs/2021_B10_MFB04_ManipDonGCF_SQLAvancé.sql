@@ -2026,7 +2026,7 @@ N
 
 -- C11. Idées/Données sur les client.e.s (Statistiques/Profilage) Nombre, la plus anicenne date de naissance, la plus récente date de naissance
 CREATE OR REPLACE
-FUNCTION F01_NombreDeLignes(DATEC IN VARCHAR2, TABLEC VARCHAR2)
+FUNCTION F01_NombreDeLignes(TABLEC VARCHAR2)
 RETURN NUMBER IS
     NBLIGNE NUMBER;
     BEGIN
