@@ -4214,6 +4214,1225 @@ aucun résultat n'a été trouvée
 */
 
 -- G03. Les articles qui figurent sur toutes les Commandes d’une période donnée !
+SELECT REFART FROM ARTICLES A
+WHERE
+(SELECT COUNT(*) FROM COMMANDES WHERE DATCOM BETWEEN '15/10/00' and '18/10/00')
+=
+(SELECT COUNT(*) FROM COMMANDES, DETAILCOM
+    WHERE COMMANDES.NUMCOM = DETAILCOM.NUMCOM 
+    AND DETAILCOM.REFART = A.REFART 
+    AND COMMANDES.DATCOM BETWEEN '15/10/00' and '18/10/00'
+    group by A.refart);
+
+/*
+REFART
+--------
+FB.001
+WD.002
+WD.003
+*/
+
+-- ==== MFB =======================================================================================================================
+/*
+----->>>>>>>>>> Requêtes du type Hi (SQL Avancé, SQL pour le multidimensionnel)
+----->>>>>>>>>> SELECT … FROM …PlusieursTables… WHERE … ;
+----->>>>>>>>>> CUBE ; ROLLUP ; RANK() OVER
+*/
+-- ==== MFB =======================================================================================================================
+
+-- H01. Nombre de clients
+SELECT COUNT(*), COUNT(codcli), COUNT(NOMCLI), COUNT(PRENCLI) FROM Clients;
+/*
+COUNT(*)	COUNT(CODCLI)	COUNT(NOMCLI)	COUNT(PRENCLI)
+--------------------------------------------------------------
+45	45	45	45
+*/
+
+-- H02. Nombre de pays
+SELECT 'Nombre de pays et Nombre de pays distincts' FROM DUAL;
+SELECT COUNT(PAYSCLI) AS nbpays, COUNT(distinct PAYSCLI) as nbpaysdiff FROM Clients;
+/*
+NBPAYS	NBPAYSDIFF
+---------------------------
+41	15
+*/
+
+-- H03. Pays et Nombre d'occurrences
+SELECT PAYSCLI Pays, COUNT(PAYSCLI) AS nbpays FROM Clients GROUP BY PAYSCLI ORDER BY 1;
+/*
+PAYS	NBPAYS
+--------------------------
+-	6
+FRANCE	1
+FRANCE	1
+FRA	1
+FRANCE	19
+france	2
+FRENCE	1
+IFRIQIA	1
+IRAQ	1
+ITALIE	1
+TUNISIE	2
+United KINGDOM	1
+United-KINGDOM	2
+United-Kingdom	1
+UNITED-STATS-AMERICA	1
+-	0
+
+>>>>>>>> Notes : On remarque que la FRANCE n'a pas été regroupé.
+                 Ceci s'explique par le fait que des espaces ont été ajouté avant (ou après) la saisie
+                 du nom du pays.
+*/
+
+-- H04. Nombre de clients par catégorie
+SELECT catcli AS categorie, COUNT(*) AS nbc FROM Clients  GROUP BY catcli;
+/*
+CATEGORIE	NBC
+------------------
+6	2
+1	19
+7	2
+-3	1
+2	5
+4	1
+5	2
+3	10
+9	3
+*/
+
+-- H05. Nombre de clients par catégorie et par ville
+SELECT 'Nombre de clients par catégorie et par ville' FROM DUAL;
+SELECT catcli AS categorie, vilcli AS ville, COUNT(*) AS nbcv FROM Clients GROUP BY catcli, vilcli ORDER BY 1;
+/*
+CATEGORIE	VILLE	NBCV
+-----------------------------
+-3	-	1
+1	PARIS	4
+1	paris	1
+1	CARTHAGE	1
+1	EPINAY-SUR-ORGE	1
+1	EPINAY-SUR-SEINE	2
+1	LONDON	3
+1	Oxford	1
+1	PARIS	6
+2	MARCHEILLE	1
+2	MARCHEILLLE	1
+2	PARIS	2
+2	VILLETANEUSE	1
+3	EPINAY SUR SEINE	1
+3	-	4
+3	L'Hay-Les-Roses	1
+3	ORLY-VILLE	1
+3	PARIS	3
+4	EPINAY-SUR-SEINE	1
+5	ROME	1
+5	TUNIS	1
+6	EPINAY SUR SEINE	1
+6	PARIS	1
+7	BAGDAD	1
+7	CARTHAGE	1
+9	DAKAR	1
+9	NEW-YORk	1
+9	PARIS	1
+*/
+
+-- H06. Nombre de clients par ville et par catégorie
+SELECT 'Nombre de clients par par ville et par catégorie' FROM DUAL;
+SELECT vilcli AS ville, catcli AS categorie, COUNT(*) AS nbcv FROM Clients 
+GROUP BY vilcli, catcli ORDER BY 1;
+/*
+VILLE	CATEGORIE	NBCV
+------------------------------------
+-	3	4
+-	-3	1
+EPINAY SUR SEINE	3	1
+PARIS	1	4
+paris	1	1
+BAGDAD	7	1
+CARTHAGE	7	1
+CARTHAGE	1	1
+DAKAR	9	1
+EPINAY SUR SEINE	6	1
+EPINAY-SUR-ORGE	1	1
+EPINAY-SUR-SEINE	4	1
+EPINAY-SUR-SEINE	1	2
+L'Hay-Les-Roses	3	1
+LONDON	1	3
+MARCHEILLE	2	1
+MARCHEILLLE	2	1
+NEW-YORk	9	1
+ORLY-VILLE	3	1
+Oxford	1	1
+PARIS	3	3
+PARIS	6	1
+PARIS	9	1
+PARIS	1	6
+PARIS	2	2
+ROME	5	1
+TUNIS	5	1
+VILLETANEUSE	2	1
+*/
+
+-- H07. Nombre de clients par catégorie et par ville -->> fonction CUBE
+SELECT 'Nombre de clients par catégorie et par ville AVEC LA FONCTION >>> CUBE' FROM DUAL;
+SELECT catcli AS categorie, vilcli AS ville, COUNT(*) AS nbcv FROM Clients 
+GROUP BY CUBE(catcli, vilcli);
+/*
+CATEGORIE	VILLE	NBCV
+---------------------------------
+-	-	45
+-	-	5
+-	ROME	1
+-	DAKAR	1
+-	PARIS	13
+-	TUNIS	1
+-	BAGDAD	1
+-	LONDON	3
+-	Oxford	1
+-	CARTHAGE	2
+-	NEW-YORk	1
+-	MARCHEILLE	1
+-	ORLY-VILLE	1
+-	MARCHEILLLE	1
+-	VILLETANEUSE	1
+-	PARIS	4
+-	paris	1
+-	EPINAY-SUR-ORGE	1
+-	L'Hay-Les-Roses	1
+-	EPINAY SUR SEINE	1
+-	EPINAY-SUR-SEINE	3
+-	EPINAY SUR SEINE	1
+1	-	19
+1	PARIS	6
+1	LONDON	3
+1	Oxford	1
+1	CARTHAGE	1
+1	PARIS	4
+1	paris	1
+1	EPINAY-SUR-ORGE	1
+1	EPINAY-SUR-SEINE	2
+2	-	5
+2	PARIS	2
+2	MARCHEILLE	1
+2	MARCHEILLLE	1
+2	VILLETANEUSE	1
+3	-	10
+3	-	4
+3	PARIS	3
+3	ORLY-VILLE	1
+3	L'Hay-Les-Roses	1
+3	EPINAY SUR SEINE	1
+4	-	1
+4	EPINAY-SUR-SEINE	1
+5	-	2
+5	ROME	1
+5	TUNIS	1
+6	-	2
+6	PARIS	1
+6	EPINAY SUR SEINE	1
+7	-	2
+7	BAGDAD	1
+7	CARTHAGE	1
+9	-	3
+9	DAKAR	1
+9	PARIS	1
+9	NEW-YORk	1
+-3	-	1
+-3	-	1
+*/
+
+-- H08. Nombre de clients par catégorie et par ville -->> fonction ROLLUP
+SELECT 'Nombre de clients par catégorie et par ville AVEC LA FONCTION >>> ROLLUP' FROM DUAL;
+SELECT catcli AS categorie, vilcli AS ville, COUNT(*) AS nbcv FROM Clients 
+GROUP BY ROLLUP(catcli, vilcli);
+/*
+CATEGORIE	VILLE	NBCV
+----------------------------------
+1	PARIS	6
+1	LONDON	3
+1	Oxford	1
+1	CARTHAGE	1
+1	PARIS	4
+1	paris	1
+1	EPINAY-SUR-ORGE	1
+1	EPINAY-SUR-SEINE	2
+1	-	19
+2	PARIS	2
+2	MARCHEILLE	1
+2	MARCHEILLLE	1
+2	VILLETANEUSE	1
+2	-	5
+3	-	4
+3	PARIS	3
+3	ORLY-VILLE	1
+3	L'Hay-Les-Roses	1
+3	EPINAY SUR SEINE	1
+3	-	10
+4	EPINAY-SUR-SEINE	1
+4	-	1
+5	ROME	1
+5	TUNIS	1
+5	-	2
+6	PARIS	1
+6	EPINAY SUR SEINE	1
+6	-	2
+7	BAGDAD	1
+7	CARTHAGE	1
+7	-	2
+9	DAKAR	1
+9	PARIS	1
+9	NEW-YORk	1
+9	-	3
+-3	-	1
+-3	-	1
+-	-	45
+*/
+
+-- H09. Classez les clients par ordre décroissant du chiffre d’affaires CA
+SELECt 'Les clients par ordre décroissant du CA' FROM DUAL;
+select clients.codcli, sum(DETAILCOM.puart * (1-DETAILCOM.REMISE/100) * DETAILCOM.QTCOM) as ca
+from Clients, Commandes, DETAILCOM
+where clients.codcli = Commandes.codcli AND Commandes.NUMCOM = DETAILCOM.numcom
+group by clients.codcli
+order by 2 desc;
+/*
+CODCLI	CA
+------------------------
+C018	18526,0703
+C004	14077,737
+C007	10937,814216
+C011	8944,8804
+C022	8299,2662
+C001	6417,3069
+C015	6031,4013
+C010	4735,2348
+C019	4702,6262
+C002	4025,44
+C021	3597,4935
+C006	3078,33585
+C009	3065,1046
+C012	2094,6078
+C016	1990,8072
+C013	1465,72
+C008	1258,992
+C014	813,09
+C017	597,9402
+C020	558,914
+C023	402,5456
+C003	359,2102
+C005	29,907
+*/
+
+-- On passe par des vues
+CREATE OR REPLACE VIEW CACLIENTS (CodeClient, CHIFFAFFClient) AS
+select clients.codcli, sum(DETAILCOM.puart * (1-DETAILCOM.REMISE/100) * DETAILCOM.QTCOM) as ca
+from Clients, Commandes, DETAILCOM
+where clients.codcli = Commandes.codcli AND Commandes.NUMCOM = DETAILCOM.numcom
+group by clients.codcli
+order by 2 desc;
+select * from CACLIENTS;
+/*
+Même résultat que la précédente requête (réecrite avec une vue)
+*/
+
+create or replace view cli (cacli, codcli, nomcli, catcli, vilcli, payscli) as 
+select CHIFFAFFClient, Clients.codcli, nomcli, catcli, vilcli, payscli from clients, CACLIENTS where clients.codcli = CACLIENTS.CodeClient;
+select * from CLI;
+/*
+CACLI	CODCLI	NOMCLI	CATCLI	VILCLI	PAYSCLI
+--------------------------------------------------------------------
+18526,0703	C018	GENIE	6	EPINAY SUR SEINE	FRANCE
+14077,737	C004	CLEMENCE	4	EPINAY-SUR-SEINE	FRANCE
+10937,814216	C007	TRAIFOR	2	PARIS	FRANCE
+8944,8804	C011	PREMIER	2	MARCHEILLE	FRANCE
+8299,2662	C022	AFRICAINE	9	PARIS	-
+6417,3069	C001	CLEM@ENT	1	EPINAY-SUR-ORGE	FRANCE
+6031,4013	C015	Labsent	7	BAGDAD	IRAQ
+4735,2348	C010	TRAIFOR	1	PARIS	FRA
+4702,6262	C019	GENIE	3	PARIS	FRANCE
+4025,44	C002	LESEUL	1	PARIS	FRANCE
+3597,4935	C021	LAPARISIENNE	3	PARIS	-
+3078,33585	C006	LE BON	1	EPINAY-SUR-SEINE	FRANCE
+3065,1046	C009	CLEMENCE	1	PARIS	-
+2094,6078	C012	CLEMENT	2	VILLETANEUSE	FRANCE
+1990,8072	C016	obsolete	7	CARTHAGE	IFRIQIA
+1465,72	C013	FORT	5	TUNIS	TUNISIE
+1258,992	C008	VIVANT	1	EPINAY-SUR-SEINE	FRANCE
+813,09	C014	ADAM	5	ROME	ITALIE
+597,9402	C017	RAHYM	1	CARTHAGE	TUNISIE
+558,914	C020	GENIe	3	PARIS	FRENCE
+402,5456	C023	AFRICAINE	9	DAKAR	-
+359,2102	C003	UNIQUE	2	MARCHEILLLE	FRANCE
+29,907	C005	FORT	3	ORLY-VILLE	FRANCE
+*/
+
+-- H10. Classez les clients par ordre décroissant du ca, donnez le rang
+select 'Les clients par ordre décroissant du CA, donnez le rang' from dual;
+SELECT (SELECT COUNT(*)+1 FROM cli C2 WHERE C1.cacli < C2.cacli) AS rang,
+cacli, codcli, nomcli, catcli, vilcli, payscli
+FROM cli C1
+ORDER BY rang;
+/*
+RANG	CACLI	CODCLI	NOMCLI	CATCLI	VILCLI	PAYSCLI
+----------------------------------------------------------------------
+1	18526,0703	C018	GENIE	6	EPINAY SUR SEINE	FRANCE
+2	14077,737	C004	CLEMENCE	4	EPINAY-SUR-SEINE	FRANCE
+3	10937,814216	C007	TRAIFOR	2	PARIS	FRANCE
+4	8944,8804	C011	PREMIER	2	MARCHEILLE	FRANCE
+5	8299,2662	C022	AFRICAINE	9	PARIS	-
+6	6417,3069	C001	CLEM@ENT	1	EPINAY-SUR-ORGE	FRANCE
+7	6031,4013	C015	Labsent	7	BAGDAD	IRAQ
+8	4735,2348	C010	TRAIFOR	1	PARIS	FRA
+9	4702,6262	C019	GENIE	3	PARIS	FRANCE
+10	4025,44	C002	LESEUL	1	PARIS	FRANCE
+11	3597,4935	C021	LAPARISIENNE	3	PARIS	-
+12	3078,33585	C006	LE BON	1	EPINAY-SUR-SEINE	FRANCE
+13	3065,1046	C009	CLEMENCE	1	PARIS	-
+14	2094,6078	C012	CLEMENT	2	VILLETANEUSE	FRANCE
+15	1990,8072	C016	obsolete	7	CARTHAGE	IFRIQIA
+16	1465,72	C013	FORT	5	TUNIS	TUNISIE
+17	1258,992	C008	VIVANT	1	EPINAY-SUR-SEINE	FRANCE
+18	813,09	C014	ADAM	5	ROME	ITALIE
+19	597,9402	C017	RAHYM	1	CARTHAGE	TUNISIE
+20	558,914	C020	GENIe	3	PARIS	FRENCE
+21	402,5456	C023	AFRICAINE	9	DAKAR	-
+22	359,2102	C003	UNIQUE	2	MARCHEILLLE	FRANCE
+23	29,907	C005	FORT	3	ORLY-VILLE	FRANCE
+*/
+
+-- H11. Classez les clients par ordre décroissant du ca, donnez le rang : RANK() OVER…
+select 'Classez les clients par ordre décroissant du ca, donnez le rang' from dual;
+SELECT rank() over(ORDER BY cacli desc) AS rang,
+cacli, codcli, nomcli, catcli, vilcli, payscli
+FROM cli;
+/*
+Même résultat que la précédente requête
+*/
+
+-- H12. Clients par ordre décroissant du ca et de la catégorie, donnez le rang
+select 'Clients par ordre décroissant du ca et de la catégorie, donnez le rang' from dual;
+SELECT rank() over (ORDER BY cacli desc, catcli desc) AS rang,
+cacli, codcli, nomcli, catcli, vilcli, payscli
+FROM cli;
+
+/*
+RANG	CACLI	CODCLI	NOMCLI	CATCLI	VILCLI	PAYSCLI
+---------------------------------------------------------------------
+1	18526,0703	C018	GENIE	6	EPINAY SUR SEINE	FRANCE
+2	14077,737	C004	CLEMENCE	4	EPINAY-SUR-SEINE	FRANCE
+3	10937,814216	C007	TRAIFOR	2	PARIS	FRANCE
+4	8944,8804	C011	PREMIER	2	MARCHEILLE	FRANCE
+5	8299,2662	C022	AFRICAINE	9	PARIS	-
+6	6417,3069	C001	CLEM@ENT	1	EPINAY-SUR-ORGE	FRANCE
+7	6031,4013	C015	Labsent	7	BAGDAD	IRAQ
+8	4735,2348	C010	TRAIFOR	1	PARIS	FRA
+9	4702,6262	C019	GENIE	3	PARIS	FRANCE
+10	4025,44	C002	LESEUL	1	PARIS	FRANCE
+11	3597,4935	C021	LAPARISIENNE	3	PARIS	-
+12	3078,33585	C006	LE BON	1	EPINAY-SUR-SEINE	FRANCE
+13	3065,1046	C009	CLEMENCE	1	PARIS	-
+14	2094,6078	C012	CLEMENT	2	VILLETANEUSE	FRANCE
+15	1990,8072	C016	obsolete	7	CARTHAGE	IFRIQIA
+16	1465,72	C013	FORT	5	TUNIS	TUNISIE
+17	1258,992	C008	VIVANT	1	EPINAY-SUR-SEINE	FRANCE
+18	813,09	C014	ADAM	5	ROME	ITALIE
+19	597,9402	C017	RAHYM	1	CARTHAGE	TUNISIE
+20	558,914	C020	GENIe	3	PARIS	FRENCE
+21	402,5456	C023	AFRICAINE	9	DAKAR	-
+22	359,2102	C003	UNIQUE	2	MARCHEILLLE	FRANCE
+23	29,907	C005	FORT	3	ORLY-VILLE	FRANCE
+*/
+
+-- H13. Clients par ordre décroissant du ca et de la catégorie, donnez le rang
+select 'Clients par ordre décroissant du ca et de la catégorie, donnez le rang' from dual;
+SELECT COUNT(C2.cacli) AS rang,
+C1.cacli, C1.codcli, C1.nomcli, C1.catcli, C1.vilcli, C1.payscli
+FROM cli C1, cli C2
+WHERE C1.cacli <= C2.cacli or (C1.cacli=C2.cacli AND C1.catcli=C2.catcli)
+GROUP BY C1.catcli, C1.cacli, C1.codcli, C1.nomcli, C1.vilcli, C1.payscli
+ORDER BY C1.cacli desc, C1.catcli DESC;
+/*
+Même résultat que la précédente requête
+*/
+
+/*
+Remarques : 
+La première partie de la clause WHERE C1.cacli <= C2.cacli permet de ne pas compter le nombre d’occurrences 
+où la valeur de la colonne cacli est <= à elle-même. 
+Si la colonne cacli ne contient pas de doublons, cette partie de la clause 
+WHERE serait en elle-même suffisante pour générer le rang correct.
+La deuxième partie de la clause WHERE or (C1.cacli=C2.cacli AND C1.catcli=C2.catcli), 
+garantit qu’en présence de doublons dans la colonne cacli, chaque valeur obtiendrait le correct.
+*/
+
+
+-- ==== MFB =======================================================================================================================
+/*
+Le Sport est générateur de confiance !
+                                      $"   *.      
+              mfbmfbmfbmfb             \J $&learning J
+                   dwh                     4r  "
+                   def                    .db
+                  g   s                  d" $
+         ..ec.. .i     m.              at   $.machin
+     .^        3*b.     a.           .a" .@"4F      eB
+   ."         d"  ^b.    *r        .$"  d"   $         O
+  /          P      $.    "t      d"   @     3r         U
+ 4        .eE........$r===e$$$$eeP    $       *..        F
+ $       $$$$$       $   4$$DB$$$     F       data.      A
+ $       DATA        $   4$DBMS$$     A       *$$$"      R
+ 4         "      ""3P ===$$DWH$"     O                  E
+  *                 $       """        U                S
+   ".             .P                    Z              @
+     %.         z*"&smart ;!?            I MFB Mfb^%. DATA
+        "*==*""                             ^"*==*""   
+*/ 
+-- ==== MFB =======================================================================================================================
+
+-- ==== MFB =======================================================================================================================
+-- Les dictons du jour !
+--
+-- Aujourd'hui, j'arrête de fumer : Le TABAC t'ABAT
+-- Fumer nuit grâvement à ta santé et à celle de ton entourage
+--
+-- M   T   Dents  ;  SMILE and the World SMILES with you !
+--
+-- MANGER + MANGER = GROSSIR (??? M, A, N, G, E, R, O, S, S, I)
+--
+-- Manger & Bouger, 
+-- Pour votre santé mangez 5 fruits et légumes par jour
+-- Pour votre santé ne mangez pas trop gras, trop salé, trop sucré
+-- Pour votre santé faites une activité physique régulière
+-- Pour votre santé faites 30 mn de marche par jour
+-- Pour votre santé faites des BD !!!
+--
+-- Dr. M. Faouzi Boufarès
+
+-- ==== MFB =======================================================================================================================
+
+ON : PAS de DOUBLON !
+Même résultat que la précédente requête
+*/
+
+-- E20. Les clients (Codes & Noms des clients) de Paris ayant commandé
+SELECT '4. Jointure quatrième écriture : Les clients de paris ayant commandé >>>>> EXISTS' Titre4 FROM DUAL;
+SELECT C.codcli, C.Nomcli  
+FROM Clients C 
+WHERE LOWER(C.vilcli) = 'paris' 
+AND EXISTS (SELECT * FROM Commandes WHERE Commandes.codcli = C.codcli);
+/*
+------>>>>> ATTENTION : PAS de DOUBLON !
+Même résultat que la précédente reuête
+*/
+
+-- E21. Les clients (Codes & Noms des clients) de Paris ayant commandé
+SELECT '5. Jointure cinquième écriture : Les clients de paris ayant commandé >>>>> COUNT' Titre5 FROM DUAL;
+SELECT Clients.Codcli, Clients.Nomcli 
+FROM Clients 
+WHERE LOWER(Clients.vilcli) = 'paris' 
+AND 0 < (SELECT COUNT(*) FROM Commandes WHERE Commandes.codcli = Clients.codcli);
+/*
+------>>>>> ATTENTION : PAS de DOUBLON !
+Même résultat que la précédente requête
+*/
+
+-- E21. Les clients (Code des clients et Dates des Commandes) de Paris ayant commandé
+SELECT '6. Jointure : Requête SELECT dans le FROM ---' Titre6 FROM DUAL;
+SELECT t.codcli, t.nomcli, Commandes.datcom 
+FROM (SELECT * FROM Clients WHERE UPPER(vilcli)='PARIS') t, Commandes
+WHERE t.codcli= Commandes.codcli;
+/*
+------>>>>> ATTENTION : Des DOUBLONS !
+CODCLI	NOMCLI	DATCOM
+-------------------------------------
+C007	TRAIFOR	14/03/05
+C010	TRAIFOR	14/02/03
+C009	CLEMENCE	14/02/03
+C007	TRAIFOR	14/02/03
+C002	LESEUL	14/02/03
+C002	LESEUL	14/02/03
+C002	LESEUL	14/02/03
+C002	LESEUL	30/01/07
+C002	LESEUL	30/01/07
+C007	TRAIFOR	13/11/20
+C021	LAPARISIENNE	23/09/19
+C021	LAPARISIENNE	07/10/19
+C022	AFRICAINE	16/11/19
+C019	GENIE	28/11/19
+C010	TRAIFOR	14/12/19
+C009	CLEMENCE	16/01/20
+C007	TRAIFOR	18/01/20
+C022	AFRICAINE	11/02/20
+C019	GENIE	22/02/20
+C010	TRAIFOR	26/03/20
+C007	TRAIFOR	17/04/20
+C002	LESEUL	25/04/20
+C019	GENIE	07/05/20
+C019	GENIE	20/05/20
+C020	GENIe	25/05/20
+C010	TRAIFOR	10/06/20
+C009	CLEMENCE	18/08/20
+C009	CLEMENCE	19/09/20
+C020	GENIe	05/10/20
+C021	LAPARISIENNE	12/10/20
+C007	TRAIFOR	23/11/20
+C009	CLEMENCE	14/12/20
+C009	CLEMENCE	26/12/20
+C007	TRAIFOR	10/01/21
+*/
+
+-- Jointure & choix de l’ordre d’exécution des tables pour des raisons de performances !
+-- SELECT /* + ordered */  --->>>>> ceci s’appelle le hint !
+
+-- E22. Les clients (Code des clients et Dates des Commandes) de Paris ayant commandé  avec le hint SELECT /* + ordered */
+SELECT '7. Jointure : Choix de l’ordre d’exécution des tables Commandes et Clients' Titre7 FROM DUAL;
+SELECT /* + ordered */ Clients.codcli, Commandes.datcom 
+FROM Commandes, Clients 
+WHERE Clients.codcli = Commandes.codcli 
+AND UPPER(Clients.vilcli)='PARIS';
+/*
+CODCLI	DATCOM
+--------------------
+C007	14/03/05
+C010	14/02/03
+C009	14/02/03
+C007	14/02/03
+C002	14/02/03
+C002	14/02/03
+C002	14/02/03
+C002	30/01/07
+C002	30/01/07
+C007	13/11/20
+C021	23/09/19
+C021	07/10/19
+C022	16/11/19
+C019	28/11/19
+C010	14/12/19
+C009	16/01/20
+C007	18/01/20
+C022	11/02/20
+C019	22/02/20
+C010	26/03/20
+C007	17/04/20
+C002	25/04/20
+C019	07/05/20
+C019	20/05/20
+C020	25/05/20
+C010	10/06/20
+C009	18/08/20
+C009	19/09/20
+C020	05/10/20
+C021	12/10/20
+C007	23/11/20
+C009	14/12/20
+C009	26/12/20
+C007	10/01/21
+*/
+
+-- E23. Les clients (Code des clients et Dates des Commandes) de Paris ayant commandé  avec le hint SELECT /* + ordered */
+SELECT '8. Jointure : Choix de l’ordre d’exécution des tables Clients et Commandes' Titre8 FROM DUAL;
+SELECT /* + ordered */ Clients.codcli, Commandes.datcom 
+FROM Clients, Commandes 
+WHERE Clients.codcli = Commandes.codcli 
+AND UPPER(Clients.vilcli)='PARIS';
+/*
+Même résultat que la précédente requête
+*/
+
+-- E24.
+SELECT * FROM Clients NATURAL JOIN Commandes WHERE TO_CHAR(datcom,'MM')=9 AND TO_CHAR(datcom,'YYYY')=2018;
+/*
+CODCLI	CIVCLI	NOMCLI	PRENCLI	CATCLI	ADNCLI	ADRCLI	CPCLI	VILCLI	PAYSCLI	MAILCLI	TELCLI	DATNAISCLI	DPREMCONTACTCLI	OBSCLI	REMCLI	GENRECLI	GSCLI	KEYWORDSCLI	NUMCOM	DATCOM
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+C014	Monsieur	ADAM	ADAMO	5	1	AVENUE DE ROME	99001	ROME	ITALIE	adamo.adamé@gmail com	-	12/12/00	20/10/20	-	-	F	AB+	Foot, Natation, Mangas, Cinema	20184FB	17/09/18
+C012	Monsieur	CLEMENT	Adam	2	13	AVENUE JEAN BAPTISTE CLEMENT	9430	VILLETANEUSE	FRANCE	adam.clement@gmail.com	+33149404072	19/06/01	-	-	-	F	B+	Voyages, FOOTBALL, BasketBall, Mangas	20181AB	17/09/18
+*/
+
+-- E25. Détails des commandes des clients parisiens
+CREATE OR REPLACE VIEW CommandesParisiens AS 
+SELECT * FROM Detailcom 
+WHERE numcom IN (SELECT numcom FROM Commandes WHERE codcli IN (SELECT codcli FROM Clients WHERE UPPER(vilcli) = 'PARIS'  ));
+SELECT * FROM CommandesParisiens;
+/*
+NUMCOM	REFART	QTCOM	PUART	REMISE
+----------------------------------------------
+20054FB	WD.003	1	22,86	0
+20061FB	FB.003	5	24	0
+20062FB	FB.003	5	24	0
+20065FB	FB.003	5	24	0
+20066FB	FB.003	5	24	0
+20067FB	FB.001	22	24	0
+20068FB	FB.001	22	24	0
+20069FB	FB.001	25	58	0
+20070FB	FB.001	50	24	0
+20201AB	FB.002	22	19,99	,22
+20201AB	FB.003	22	17,77	,22
+20190923-13	STO-SB7+	1	30	,09
+20191007-28	UE58TU6905	7	499	,15
+20191116-45	MISCOOT 1S NOIR	9	399	,04
+20191116-45	65UN8500	4	699	,04
+20191116-45	LM8012_05	7	50	,45
+20191116-45	V550920	10	70	,07
+20191116-45	HP DESKJET 4130	1	60	,37
+20191116-45	Tune 560 BT Noir	10	25	,44
+20191128-52	YY3922FD	9	60	,06
+20191214-30	CH32G6HD-T1	2	99	,06
+20200116-58	CH32G6HD-T1	1	99	,34
+20200118-21	V550920	8	70	,09
+20200211-53	V550920	8	70	,32
+20200222-51	QA510110	9	100	,04
+20200326-60	QE55Q80TATXXC	1	999	,05
+20200326-60	V550920	4	70	,02
+20200326-60	UE75TU7025	1	799	,06
+20200326-60	KST 2	4	80	,5
+20200417-31	55F501HK5110	8	299	,06
+20200425-37	RA22ALG	2	100	,28
+20200507-49	FLIP ESSENTIAL	1	70	,19
+20200520-57	HP 17-CD0125NF 15	4	799	,08
+20200525-25	OX484100	4	65	,36
+20200610-56	ROOMBA 113840	7	289	,05
+20200818-40	OX484100	3	65	,14
+20200919-16	KST 2	6	80	,08
+20201005-22	RA22ALG	3	100	,05
+20201012-39	KST 2	1	80	,3
+20201123-29	YY4230FD	1	30	,02
+20201214-11	50P611	6	329	,07
+20201226-17	QA510110	2	100	,26
+20210110-59	QE55Q80TATXXC	7	999	,1
+*/
+
+-- E26. Les clients qui habitent la même ville
+SELECT C1.CODCLI, C1.NOMCLI, C1.PRENCLI, C1.VILCLI, ' lives in the same city as ', C2.CODCLI, C2.NOMCLI, C2.PRENCLI, C2.VILCLI
+FROM CLIENTS C1, CLIENTS C2
+WHERE C1.VILCLI = C2.VILCLI
+AND C1.CODCLI < C2.CODCLI ;
+/*
+CODCLI	NOMCLI	PRENCLI	VILCLI	'LIVESINTHESAMECITYAS'	CODCLI	NOMCLI	PRENCLI	VILCLI
+--------------------------------------------------------------------------------------------------------------------------------
+C004	CLEMENCE	EVELYNE	EPINAY-SUR-SEINE	lives in the same city as	C006	LE BON	Clémence	EPINAY-SUR-SEINE
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C007	TRAIFOR	Alice	PARIS
+C004	CLEMENCE	EVELYNE	EPINAY-SUR-SEINE	lives in the same city as	C008	VIVANT	JEAN-BAPTISTE	EPINAY-SUR-SEINE
+C006	LE BON	Clémence	EPINAY-SUR-SEINE	lives in the same city as	C008	VIVANT	JEAN-BAPTISTE	EPINAY-SUR-SEINE
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C009	CLEMENCE	Alexandre	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C009	CLEMENCE	Alexandre	PARIS
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C010	TRAIFOR	Alexandre	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C010	TRAIFOR	Alexandre	PARIS
+C009	CLEMENCE	Alexandre	PARIS	lives in the same city as	C010	TRAIFOR	Alexandre	PARIS
+C016	obsolete	kadym	CARTHAGE	lives in the same city as	C017	RAHYM	Karym	CARTHAGE
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C019	GENIE	GENIALE	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C019	GENIE	GENIALE	PARIS
+C009	CLEMENCE	Alexandre	PARIS	lives in the same city as	C019	GENIE	GENIALE	PARIS
+C010	TRAIFOR	Alexandre	PARIS	lives in the same city as	C019	GENIE	GENIALE	PARIS
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C020	GENIe	GENIAL	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C020	GENIe	GENIAL	PARIS
+C009	CLEMENCE	Alexandre	PARIS	lives in the same city as	C020	GENIe	GENIAL	PARIS
+C010	TRAIFOR	Alexandre	PARIS	lives in the same city as	C020	GENIe	GENIAL	PARIS
+C019	GENIE	GENIALE	PARIS	lives in the same city as	C020	GENIe	GENIAL	PARIS
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C021	LAPARISIENNE	Belle	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C021	LAPARISIENNE	Belle	PARIS
+C009	CLEMENCE	Alexandre	PARIS	lives in the same city as	C021	LAPARISIENNE	Belle	PARIS
+C010	TRAIFOR	Alexandre	PARIS	lives in the same city as	C021	LAPARISIENNE	Belle	PARIS
+C019	GENIE	GENIALE	PARIS	lives in the same city as	C021	LAPARISIENNE	Belle	PARIS
+C020	GENIe	GENIAL	PARIS	lives in the same city as	C021	LAPARISIENNE	Belle	PARIS
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C022	AFRICAINE	Belle	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C022	AFRICAINE	Belle	PARIS
+C009	CLEMENCE	Alexandre	PARIS	lives in the same city as	C022	AFRICAINE	Belle	PARIS
+C010	TRAIFOR	Alexandre	PARIS	lives in the same city as	C022	AFRICAINE	Belle	PARIS
+C019	GENIE	GENIALE	PARIS	lives in the same city as	C022	AFRICAINE	Belle	PARIS
+C020	GENIe	GENIAL	PARIS	lives in the same city as	C022	AFRICAINE	Belle	PARIS
+C021	LAPARISIENNE	Belle	PARIS	lives in the same city as	C022	AFRICAINE	Belle	PARIS
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C119	UNE	Marie	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C119	UNE	Marie	PARIS
+C009	CLEMENCE	Alexandre	PARIS	lives in the same city as	C119	UNE	Marie	PARIS
+C010	TRAIFOR	Alexandre	PARIS	lives in the same city as	C119	UNE	Marie	PARIS
+C019	GENIE	GENIALE	PARIS	lives in the same city as	C119	UNE	Marie	PARIS
+C020	GENIe	GENIAL	PARIS	lives in the same city as	C119	UNE	Marie	PARIS
+C021	LAPARISIENNE	Belle	PARIS	lives in the same city as	C119	UNE	Marie	PARIS
+C022	AFRICAINE	Belle	PARIS	lives in the same city as	C119	UNE	Marie	PARIS
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C120	1	MARIE	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C120	1	MARIE	PARIS
+C009	CLEMENCE	Alexandre	PARIS	lives in the same city as	C120	1	MARIE	PARIS
+C010	TRAIFOR	Alexandre	PARIS	lives in the same city as	C120	1	MARIE	PARIS
+C019	GENIE	GENIALE	PARIS	lives in the same city as	C120	1	MARIE	PARIS
+C020	GENIe	GENIAL	PARIS	lives in the same city as	C120	1	MARIE	PARIS
+C021	LAPARISIENNE	Belle	PARIS	lives in the same city as	C120	1	MARIE	PARIS
+C022	AFRICAINE	Belle	PARIS	lives in the same city as	C120	1	MARIE	PARIS
+C119	UNE	Marie	PARIS	lives in the same city as	C120	1	MARIE	PARIS
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C121	2 PAR 2	Girard	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C121	2 PAR 2	Girard	PARIS
+C009	CLEMENCE	Alexandre	PARIS	lives in the same city as	C121	2 PAR 2	Girard	PARIS
+C010	TRAIFOR	Alexandre	PARIS	lives in the same city as	C121	2 PAR 2	Girard	PARIS
+C019	GENIE	GENIALE	PARIS	lives in the same city as	C121	2 PAR 2	Girard	PARIS
+C020	GENIe	GENIAL	PARIS	lives in the same city as	C121	2 PAR 2	Girard	PARIS
+C021	LAPARISIENNE	Belle	PARIS	lives in the same city as	C121	2 PAR 2	Girard	PARIS
+C022	AFRICAINE	Belle	PARIS	lives in the same city as	C121	2 PAR 2	Girard	PARIS
+C119	UNE	Marie	PARIS	lives in the same city as	C121	2 PAR 2	Girard	PARIS
+C120	1	MARIE	PARIS	lives in the same city as	C121	2 PAR 2	Girard	PARIS
+C122	DE PAR DE	GIRARD	PARIS	lives in the same city as	C123	DE PAR DE	GIRARD	PARIS
+C122	DE PAR DE	GIRARD	PARIS	lives in the same city as	C124	DE PAR DE	Girard	PARIS
+C123	DE PAR DE	GIRARD	PARIS	lives in the same city as	C124	DE PAR DE	Girard	PARIS
+C122	DE PAR DE	GIRARD	PARIS	lives in the same city as	C125	DE PAR DE	Girard	PARIS
+C123	DE PAR DE	GIRARD	PARIS	lives in the same city as	C125	DE PAR DE	Girard	PARIS
+C124	DE PAR DE	Girard	PARIS	lives in the same city as	C125	DE PAR DE	Girard	PARIS
+C127	SMITH	John	LONDON	lives in the same city as	C128	BIDON	Jade	LONDON
+C127	SMITH	John	LONDON	lives in the same city as	C129	STOne	Brakeur	LONDON
+C128	BIDON	Jade	LONDON	lives in the same city as	C129	STOne	Brakeur	LONDON
+C299	BIDON!	Joie	-	lives in the same city as	C296	MOUBARAK	OOObana	-
+C296	MOUBARAK	OOObana	-	lives in the same city as	C297	CLEANTOOON	Hilally	-
+C299	BIDON!	Joie	-	lives in the same city as	C297	CLEANTOOON	Hilally	-
+C296	MOUBARAK	OOObana	-	lives in the same city as	C298	TROMPE.	Ronald	-
+C297	CLEANTOOON	Hilally	-	lives in the same city as	C298	TROMPE.	Ronald	-
+C299	BIDON!	Joie	-	lives in the same city as	C298	TROMPE.	Ronald	-
+C296	MOUBARAK	OOObana	-	lives in the same city as	C300	HOBAAAMA	M'Barek	-
+C297	CLEANTOOON	Hilally	-	lives in the same city as	C300	HOBAAAMA	M'Barek	-
+C298	TROMPE.	Ronald	-	lives in the same city as	C300	HOBAAAMA	M'Barek	-
+C299	BIDON!	Joie	-	lives in the same city as	C300	HOBAAAMA	M'Barek	-
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C009	CLEMENCE	Alexandre	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C010	TRAIFOR	Alexandre	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C019	GENIE	GENIALE	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C020	GENIe	GENIAL	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C021	LAPARISIENNE	Belle	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C022	AFRICAINE	Belle	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C119	UNE	Marie	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C120	1	MARIE	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C121	2 PAR 2	Girard	PARIS	lives in the same city as	C554	ALIBABA	Mystere	PARIS
+C002	LESEUL	M@RIE	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C007	TRAIFOR	Alice	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C009	CLEMENCE	Alexandre	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C010	TRAIFOR	Alexandre	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C019	GENIE	GENIALE	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C020	GENIe	GENIAL	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C021	LAPARISIENNE	Belle	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C022	AFRICAINE	Belle	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C119	UNE	Marie	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C120	1	MARIE	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C121	2 PAR 2	Girard	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+C554	ALIBABA	Mystere	PARIS	lives in the same city as	C555	SMART	Data	PARIS
+*/
+
+-- ==== MFB =======================================================================================================================
+/*
+----->>>>>>>>>> Requêtes du type Fi (Calculs + Sous-Totaux + Unions + Intersections + Différences + Jointures) 
+----->>>>>>>>>> SELECT … FROM …PlusieursTables… WHERE … ;
+----->>>>>>>>>> SELECT … FROM … WHERE … MINUS S F W ;
+----->>>>>>>>>> SELECT … FROM … WHERE … UNION S F W ;
+----->>>>>>>>>> SELECT … FROM … WHERE … INTERSECT S F W ;
+*/
+-- ==== MFB =======================================================================================================================
+
+-- F01 : Clients ayant commandé en SEPTEMBRE 2018 -- ATTENTION AU FORMAT DE LA DATE -- SEPTEMBRE
+SELECT C.codcli, C.Nomcli, K.datcom FROM Clients C, Commandes K 
+WHERE UPPER(K.datcom) LIKE '%SEPTEMBRE-2018'
+AND C.codcli = K.codcli ;
+/*
+aucune données n'a été trouvée
+*/
+
+-- F02 : Clients ayant commandé en SEPTEMBRE 2018 -- ATTENTION AU FORMAT DE LA DATE -- septembre
+SELECT C.codcli, C.Nomcli, K.datcom FROM Clients C, Commandes K 
+WHERE K.datcom LIKE '%september-2018'
+AND C.codcli = K.codcli ;
+/*
+aucune donnée n'a été trouvée
+*/
+
+-- F03 : Clients ayant commandé en SEPTEMBRE 2018 -- ATTENTION AU FORMAT DE LA DATE -- SEPTEMBER
+SELECT C.codcli, C.Nomcli, K.datcom FROM Clients C, Commandes K 
+WHERE UPPER(K.datcom) LIKE '%SEPTEMBER-2018'
+AND C.codcli = K.codcli ;
+/*
+aucune donnée n'a été trouvée
+*/
+
+-- F04 : Montant total des Commandes de septembre 2018
+SELECT SUM(PUart*QTCom) MontantSANSREMISE, SUM(PUart*(1-Remise/100)*QTCom) MontantAVECREMISE 
+    FROM DETAILCOM WHERE NUMCOM IN 
+        (SELECT NUMCOM FROM COMMANDES WHERE DATCOM LIKE '%09/18');
+/*
+MONTANTSANSREMISE	MONTANTAVECREMISE
+----------------------------------------
+124,39	124,39
+*/
+
+-- F05. Commandes ayant des articles dont le prix de vente est supérieur à 20 (Commande, Article, PV)
+SELECT D.NUMCOM, D.REFART, A.PVART FROM Articles A JOIN DETAILCOM D ON A.REFART = D.REFART WHERE PvArt > 20;
+/*
+NUMCOM	REFART	PVART
+----------------------------------------
+20001AB	F1.001	35
+20001AB	F1.013	42,71
+20001AB	WD.001	21,29
+20002AB	F1.001	35
+20002AB	WD.001	21,29
+20002AB	WD.002	34,29
+20002AB	WD.003	22,86
+20003AB	FB.001	24,9
+20003AB	WD.002	34,29
+20003AB	WD.003	22,86
+20004AB	WD.001	21,29
+20012RB	F1.009	37,86
+20012RB	FB.003	24,9
+20031FB	F2.001	32,71
+20031FB	FB.001	24,9
+20051FB	FB.001	24,9
+20052FB	F1.001	35
+20052FB	F1.013	42,71
+20052FB	WD.001	21,29
+20052FB	WD.003	22,86
+20053FB	WD.003	22,86
+20054FB	WD.003	22,86
+20055FB	F1.009	37,86
+20055FB	F1.011	80,71
+20055FB	F2.001	32,71
+20056FB	F1.011	80,71
+20057FB	F2.001	32,71
+20061FB	FB.003	24,9
+20062FB	FB.003	24,9
+20065FB	FB.003	24,9
+20066FB	FB.003	24,9
+20067FB	FB.001	24,9
+20068FB	FB.001	24,9
+20069FB	FB.001	24,9
+20070FB	FB.001	24,9
+20071FB	FB.001	24,9
+20072FB	FB.001	24,9
+20073FB	FB.001	24,9
+20074FB	FB.001	24,9
+20181AB	FB.001	24,9
+20190922-14	YY3922FD	60
+20190923-13	STO-SB7+	30
+20190928-12	WDBU6Y0040BBK-W	101
+20191007-28	UE58TU6905	499
+20191010-18	KST 2	80
+20191010-18	MS23F300EEW	80
+20191010-18	WDBU6Y0040BBK-W	101
+20191010-18	YY4230FD	30
+20191021-15	MHCV11.CEL	140
+20191023-19	UE75TU7025	799
+20191102-33	OX484100	65
+20191113-23	PSPARTY61	50
+20191116-45	65UN8500	699
+20191116-45	HP DESKJET 4130	60
+20191116-45	LM8012_05	50
+20191116-45	MISCOOT 1S NOIR	399
+20191116-45	Tune 560 BT Noir	25
+20191116-45	V550920	70
+20191128-52	YY3922FD	60
+20191214-30	CH32G6HD-T1	99
+20191223-20	HP DESKJET 4130	60
+20200116-58	CH32G6HD-T1	99
+20200118-21	V550920	70
+20200209-48	CH32G6HD-T1	99
+20200211-53	V550920	70
+20200222-51	QA510110	100
+20200326-60	KST 2	80
+20200326-60	QE55Q80TATXXC	999
+20200326-60	UE75TU7025	799
+20200326-60	V550920	70
+20200417-31	55F501HK5110	299
+20200425-37	RA22ALG	100
+20200426-42	MHCV11.CEL	140
+20200507-49	FLIP ESSENTIAL	70
+20200509-34	S8980 13	90
+20200520-57	HP 17-CD0125NF 15	799
+20200525-25	OX484100	65
+20200528-36	DESKJET 2710	249
+20200610-56	ROOMBA 113840	289
+20200611-54	UE75TU7025	799
+20200627-55	QE55Q80TATXXC	999
+20200805-35	ROOMBA 113840	289
+20200818-40	OX484100	65
+20200829-44	50P611	329
+20200829-44	FLIP ESSENTIAL	70
+20200829-44	HP DESKJET 4130	60
+20200829-44	KST 2	80
+20200829-44	MISCOOT 1S NOIR	399
+20200829-44	PSPARTY61	50
+20200829-44	S712JA-AU216T	499
+20200829-44	YY4230FD	30
+20200919-16	KST 2	80
+20200924-24	ROOMBA 113840	289
+20201002-26	55F501HK5110	299
+20201005-22	RA22ALG	100
+20201006-46	QE55Q80TATXXC	999
+20201009-41	YY4230FD	30
+20201010-38	WDBU6Y0040BBK-W	101
+20201012-39	KST 2	80
+20201020-43	KST 2	80
+20201123-29	YY4230FD	30
+20201214-11	50P611	329
+20201215-27	YY3922FD	60
+20201226-17	QA510110	100
+20201230-32	QE55Q80TATXXC	999
+20201AB	FB.002	24,9
+20201AB	FB.003	24,9
+20210105-47	HP 17-CD0125NF 15	799
+20210105-47	UE65TU6905	599
+20210105-47	UE75TU7025	799
+20210105-47	WDBU6Y0040BBK-W	101
+20210105-47	YY4230FD	30
+20210109-50	50P611	329
+20210109-50	MS23F300EEW	80
+20210109-50	PSPARTY61	50
+20210109-50	Tune 560 BT Noir	25
+20210109-50	YY3922FD	60
+20210110-59	QE55Q80TATXXC	999
+*/
+
+-- F06. Commandes ayant des articles dont le prix de vente est supérieur à 20 (Commande, Nombre)
+SELECT D.NUMCOM, COUNT(D.NUMCOM) NOMBRE FROM Articles A JOIN DETAILCOM D ON A.REFART = D.REFART WHERE PvArt > 20 GROUP BY D.NUMCOM ORDER BY 1;
+/*
+NUMCOM	NOMBRE
+--------------------
+20001AB	3
+20002AB	4
+20003AB	3
+20004AB	1
+20012RB	2
+20031FB	2
+20051FB	1
+20052FB	4
+20053FB	1
+20054FB	1
+20055FB	3
+20056FB	1
+20057FB	1
+20061FB	1
+20062FB	1
+20065FB	1
+20066FB	1
+20067FB	1
+20068FB	1
+20069FB	1
+20070FB	1
+20071FB	1
+20072FB	1
+20073FB	1
+20074FB	1
+20181AB	1
+20190922-14	1
+20190923-13	1
+20190928-12	1
+20191007-28	1
+20191010-18	4
+20191021-15	1
+20191023-19	1
+20191102-33	1
+20191113-23	1
+20191116-45	6
+20191128-52	1
+20191214-30	1
+20191223-20	1
+20200116-58	1
+20200118-21	1
+20200209-48	1
+20200211-53	1
+20200222-51	1
+20200326-60	4
+20200417-31	1
+20200425-37	1
+20200426-42	1
+20200507-49	1
+20200509-34	1
+20200520-57	1
+20200525-25	1
+20200528-36	1
+20200610-56	1
+20200611-54	1
+20200627-55	1
+20200805-35	1
+20200818-40	1
+20200829-44	8
+20200919-16	1
+20200924-24	1
+20201AB	2
+20201002-26	1
+20201005-22	1
+20201006-46	1
+20201009-41	1
+20201010-38	1
+20201012-39	1
+20201020-43	1
+20201123-29	1
+20201214-11	1
+20201215-27	1
+20201226-17	1
+20201230-32	1
+20210105-47	5
+20210109-50	5
+20210110-59	1
+*/
+
+-- F07. Commandes ayant 4 articles dont le prix de vente est supérieur à 20
+SELECT D.NUMCOM, COUNT(D.NUMCOM) NOMBRE FROM Articles A JOIN DETAILCOM D ON A.REFART = D.REFART WHERE PvArt > 20 HAVING COUNT(D.NUMCOM)>=4 GROUP BY D.NUMCOM ORDER BY 1;
+
+/*
+>>>>>>>> Au moins 4 articles
+NUMCOM	NOMBRE
+-----------------------
+20002AB	4
+20052FB	4
+20191010-18	4
+20191116-45	6
+20200326-60	4
+20200829-44	8
+20210105-47	5
+20210109-50	5
+*/
+
+SELECT D.NUMCOM, COUNT(D.NUMCOM) NOMBRE FROM Articles A JOIN DETAILCOM D ON A.REFART = D.REFART WHERE PvArt > 20 HAVING COUNT(D.NUMCOM)=4 GROUP BY D.NUMCOM ORDER BY 1;
+/*
+>>>>>>>> 4 articles exactement
+NUMCOM	NOMBRE
+----------------------
+20002AB	4
+20052FB	4
+20191010-18	4
+20200326-60	4
+*/
+
+-- F08. Les clients de paris qui n’ont pas commandé en octobre 2011  -- NOT IN et le format de la date est MM/AAAA
+SELECT CodCli FROM Clients WHERE UPPER(VilCli) = 'PARIS'
+AND CodCli NOT IN 
+(SELECT CodCli FROM Commandes WHERE DatCom LIKE '%10/2011');
+/*
+CODCLI
+----------
+C002
+C119
+C010
+C120
+C554
+C019
+C121
+C555
+C009
+C022
+C007
+C020
+C021
+*/
+
+-- F09. Les clients de paris qui n’ont pas commandé en octobre 2011  -- NOT IN et le format de la date est MMMM/AAAA
+SELECT CodCli FROM Clients WHERE UPPER(VilCli) = 'PARIS'
+AND CodCli NOT IN 
+(SELECT CodCli FROM Commandes WHERE UPPER(DatCom) LIKE '%OCTOBER-2011');
+/*
+Même résultat que la précédente.
+*/
+
+-- F10. Les clients de paris qui n’ont pas commandé en octobre 2011  -- MINUS et le format de la date est MMMM/AAAA
+SELECT CodCli FROM Clients WHERE UPPER(VilCli) = 'PARIS'
+MINUS
+SELECT CodCli FROM Commandes WHERE UPPER(DatCom) LIKE '%OCTOBER-2011';
+/*
+>>>>> même résultat que la précédente requête masi dans un ordre d'affichage différent
+CODCLI
+---------------
+C002
+C007
+C009
+C010
+C019
+C020
+C021
+C022
+C119
+C120
+C121
+C554
+C555
+*/
+
+-- F11. Les clients de paris ou ceux ayant commandé en octobre 2011
+SELECT CodCli FROM Clients   WHERE UPPER(VilCli) = 'PARIS'
+UNION 
+SELECT CodCli FROM Commandes WHERE UPPER(DatCom) LIKE '%OCTOBER-2011';
+/*
+CODCLI
+------------
+C002
+C007
+C009
+C010
+C019
+C020
+C021
+C022
+C119
+C120
+C121
+C554
+C555
+*/
+
+-- F12. Intersection
+SELECT CodCli FROM Clients   WHERE UPPER(VilCli) = 'PARIS'
+INTERSECT
+SELECT CodCli FROM Commandes WHERE UPPER(DatCom) LIKE '%OCTOBER-2011';
+/*
+aucune donnée n'a été trouvée
+*/
+
+-- ==== MFB =======================================================================================================================
+/*
+----->>>>>>>>>> Requêtes du type Gi (Divisions) 
+----->>>>>>>>>> SELECT … FROM …PlusieursTables… WHERE … ;
+*/
+-- ==== MFB =======================================================================================================================
+
+-- G01. Articles commandés par tous les parisiens
+/*
+TTITLE CENTER 'Requete: les articles qui sont commandés par tous les parisiens' skip 1 -
+       LEFT   '=========================================================================' skip 0
+*/
+SELECT	REFART, NOMART
+FROM	ARTICLES
+WHERE	NOT EXISTS
+	(SELECT *
+	 FROM	CLIENTS
+	 WHERE	UPPER(VilCli) LIKE '%PARIS%'
+	 AND	NOT EXISTS
+		(SELECT *
+		 FROM	Commandes, DETAILCOM
+		 WHERE	Commandes.NUMCOM = DETAILCOM.NUMCOM
+		 AND	DETAILCOM.REFART = ARTICLES.REFART
+		 AND	Commandes.CODCLI = CLIENTS.CODCLI));
+
+/*
+aucune donnée n'a été trouvée
+*/
+
+/*
+REFART     NOMART                                           
+---------- --------------------------------------------------
+FB.003     DVD-SPIDER MAN 2                                  
+
+Elapsed: 00:00:00.020
+*/
+
+-- On pourrait appliquer une suite d'opérations, de l'Algèbre relationnelle, qui définissent la division !
+SELECT CodCli FROM Clients   WHERE UPPER(VilCli) = 'PARIS'
+INTERSECT
+SELECT A.NOMART FROM Commandes C JOIN DETAILCOM D ON C.NUMCOM = D.NUMCOM JOIN Articles A ON A.REFART = D.REFART;
+
+
+-- G02. Les articles qui figurent sur toutes les Commandes !
+SELECT REFART FROM ARTICLES A
+WHERE
+(SELECT COUNT(*) FROM COMMANDES)
+=
+(SELECT COUNT(*) FROM COMMANDES, DETAILCOM
+    WHERE COMMANDES.NUMCOM = DETAILCOM.NUMCOM 
+    AND DETAILCOM.REFART = A.REFART group by A.refart);
+
+/*
+aucun résultat n'a été trouvée
+*/
+
+-- G03. Les articles qui figurent sur toutes les Commandes d’une période donnée !
 SELECT DATCOM, A.REFART FROM COMMANDES C, DETAILCOM D, ARTICLES A
 WHERE
 (SELECT COUNT(*) FROM COMMANDES WHERE COMMANDES.DATCOM = C.DATCOM)
