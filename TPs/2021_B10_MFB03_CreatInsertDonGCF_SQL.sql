@@ -1384,6 +1384,43 @@ SELECT * FROM ScriptSQLInsertData_MAG;
 SELECT * FROM ScriptSQLInsertData;
 
 -- EXEC P03_CreateScriptSQLInsertData
+CREATE OR REPLACE PROCEDURE P03_CreateScriptSQLInsertData(TABLEC IN VARCHAR2, ROWC IN VARCHAR2) AS
+    SELECT_INSERT VARCHAR2(1000);
+    FORMAT_ROWC VARCHAR2(1000);
+    VIEW_FINAL VARCHAR2(1000);
+    BEGIN
+        FORMAT_ROWC := REPLACE(ROWC, ',', ' || CHR(39) || '', ''  || CHR(39) || ' );
+        SELECT_INSERT := 'SELECT ''INSERT INTO ' || TABLEC || ' VALUES('' || CHR(39) || ' || FORMAT_ROWC || ' || CHR(39) || '');'' ';
+        VIEW_FINAL := 'CREATE OR REPLACE VIEW SCRIPT AS ' || SELECT_INSERT || ' AS SCRIPT FROM ' || TABLEC;
+        DBMS_OUTPUT.PUT_LINE(FORMAT_ROWC);
+        DBMS_OUTPUT.PUT_LINE(SELECT_INSERT);
+        DBMS_OUTPUT.PUT_LINE(VIEW_FINAL);
+
+        EXECUTE IMMEDIATE VIEW_FINAL;
+    END;
+/
+
+BEGIN
+    P03_CreateScriptSQLInsertData('CLIENTS', 'CODCLI,CIVCLI,NOMCLI,PRENCLI,CATCLI,ADNCLI,ADRCLI,CPCLI,VILCLI,PAYSCLI,MAILCLI,TELCLI,DATNAISCLI,DPREMCONTACTCLI,OBSCLI, REMCLI, GENRECLI');
+END ;
+/
+
+SELECT * FROM SCRIPT;
+
+/*
+SCRIPT
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+INSERT INTO CLIENTS VALUES('C001', 'Madame', 'CLEM@ENT', 'EVE', '1', '18', 'BOULEVARD FOCH', '91000', 'EPINAY-SUR-ORGE', 'FRANCE', 'eve.clement@gmail.com', '+33777889911', '17/06/51', '12/12/12', '', '', 'F');
+INSERT INTO CLIENTS VALUES('C002', 'Madame', 'LESEUL', 'M@RIE', '1', '17', 'AVENUE D ITALIE', '75013', 'PARIS', 'FRANCE', 'marieleseul@yahoo.fr', '0617586565', '05/08/83', '05/08/83', '', '', 'F');
+INSERT INTO CLIENTS VALUES('C003', 'Madame', 'UNIQUE', 'Inès', '2', '77', 'RUE DE LA LIBERTE', '13001', 'MARCHEILLLE', 'FRANCE', 'munique@gmail.com', '+33717889922', '22/11/69', '12/12/12', '', '', 'F');
+INSERT INTO CLIENTS VALUES('C004', 'Madame', 'CLEMENCE', 'EVELYNE', '4', '8 BIS', 'FOCH', '93800', 'EPINAY-SUR-SEINE', 'FRANCE', 'clemence evelyne@gmail.com', '+33777889933', '', '', '', '', 'F');
+INSERT INTO CLIENTS VALUES('C005', 'Madam', 'FORT', 'anne marie', '3', '55', 'RUE DU JAPON', '94310', 'ORLY-VILLE', 'FRANCE', 'jfort\@hotmail.fr', '+33777889944', '11/11/00', '', '', '', 'F');
+INSERT INTO CLIENTS VALUES('C006', 'Mademoisele', 'LE BON', 'Clémence', '1', '18', 'BOULEVARD FOCH', '93800', 'EPINAY-SUR-SEINE', 'FRANCE', 'clemence.le bon@cfo.fr', '0033777889955', '16/10/96', '18/10/18', '', '', 'F');
+INSERT INTO CLIENTS VALUES('C007', 'Mademoiselle', 'TRAIFOR', 'Alice', '2', '6', ' DE LA ROSIERE', '75015', 'PARIS', 'FRANCE', 'alice.traifor@yahoo.fr', '+33777889966', '23/02/98', '', '', '', 'F');
+INSERT INTO CLIENTS VALUES('C008', 'Monsieur', 'VIVANT', 'JEAN-BAPTISTE', '1', '13', 'RUE DE LA PAIX', '93800', 'EPINAY-SUR-SEINE', 'FRANCE', 'jeanbaptiste@', '0607', '17/09/58', '17/09/00', '', '', 'F');
+INSERT INTO CLIENTS VALUES('C009', 'Monsieur', 'CLEMENCE', 'Alexandre', '1', '5', 'Rue De Belleville', '75019', 'PARIS', '', 'alexandre.clemence@up13.fr', '+33149404071', '19/09/99', '20/10/20', '', '', 'F');
+INSERT INTO CLIENTS VALUES('C010', 'Monsieur', 'TRAIFOR', 'Alexandre', '1', '17', 'AVENUE FOCH', '75016', 'PARIS', 'FRA', 'alexandre.traifor@up13.fr', '06070809', '17/07/67', '17/09/00', '', '', 'F');
+*/
 
 -- ==== MFB =======================================================================================================================
 -- Reconstruction des Insertions des données ========= FIN =================================================================
