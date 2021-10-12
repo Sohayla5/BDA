@@ -46,9 +46,9 @@
 -- ==== MFB =======================================================================================================================
 -- Binome = Groupe de Travail N° xy  : Bxy (Exemple B01, B02,... B09, B10, B11...)
 -- ==== MFB =======================================================================================================================
--- Numéro du Binôme (= GroupeDeTravail) --->>>> : B10
--- NOM1 PRENOM1                         --->>>> : Sohayla RABHI
--- NOM2 PRENOM2                         --->>>> : Hajar BOUZIANE
+-- Numéro du Binôme (= GroupeDeTravail) --->>>> : Bxy
+-- NOM1 PRENOM1                         --->>>> : np1
+-- NOM2 PRENOM2                         --->>>> : np2
 
 -- ====>>> Vos fichiers sql devront s'appeler : Bxy-NomDuFichier.sql
 -- ==== MFB =======================================================================================================================
@@ -558,7 +558,8 @@ TUNISIE	TUNIS	1465,72
 --FB12 : Analyses/Profilage/Diagnostic   pour un magasin donné des commandes et des clients
 -- ??? A QUOI CORRESPONDENT LES REQUETES (FB11...FB20) CI-DESSOUS ??? A compléter / A corriger !
 
--- FB12
+-- FB12 Requête qui, pour chaque commande, calcule le montant total de la commande, le nombre d'articles 
+-- différents qu'elle contient, la quantité totale de ces articles et enfin la moyenne des remises qui ont été appliqué sur les articles (on crée une vue)
 CREATE OR REPLACE VIEW V (NUMCOM, MTTCMD, NBRARTCMD, TOTQTCMD, MOYREM) AS
 SELECT D.NUMCOM, TRUNC(SUM((D.PUART*D.QTCOM)*(1-D.REMISE/100)),3) MTTCMD, 
 COUNT(D.REFART) NBRARTCMD, SUM(D.QTCOM) TOTQTCMD, TRUNC(AVG(D.REMISE),2) MOYREM
@@ -646,7 +647,8 @@ NUMCOM	MTTCMD	NBRARTCMD	TOTQTCMD	MOYREM
 20210110-59	6986,007	1	7	,1
 */
 
--- FB13
+-- FB13 Requête qui, pour chaque client, compte le nombre de commandes qu'il a passé, 
+-- le montant total de toutes ses commandes, la commande qui lui a coûté le moins et et le plus cher, et la moyenne des remises sur l'ensemble de ses commandes
 SELECT K.CODCLI CLIENT, COUNT(K.CODCLI) NBRCMD, TRUNC(SUM(V.MTTCMD),2) TOTMTTCMD, 
 MIN(V.MTTCMD) MINMTTCMD, MAX(V.MTTCMD) MAXMTTCMD, TRUNC(AVG(V.MTTCMD),2) MOYMTTCMD, TRUNC(AVG(V.MOYREM),2) MOYREM
 FROM COMMANDES K, V WHERE K.NUMCOM=V.NUMCOM
@@ -691,11 +693,104 @@ WHERE C.CODCLI=K.CODCLI AND K.NUMCOM=D.NUMCOM
 AND K.DATCOM >= '2010-01-01' AND K.DATCOM <= '2020-12-31'
 GROUP BY CUBE(C.PAYSCLI,C.VILCLI,C.CIVCLI) ORDER BY 1, 2, 3;
 SET TIMING OFF
+
+
+SELECT C.PAYSCLI PAYS, C.VILCLI VILLE, C.CIVCLI CIVILITE, SUM(D.QTCOM*D.PUART*(1-D.REMISE/100)) CA 
+FROM CLIENTS C, COMMANDES K, DETAILCOM D
+WHERE C.CODCLI=K.CODCLI AND K.NUMCOM=D.NUMCOM
+AND TO_CHAR(K.DATCOM , 'YYYY-MM-DD')>= '2010-01-01' AND TO_CHAR(K.DATCOM , 'YYYY-MM-DD') <= '2020-12-31'
+GROUP BY CUBE(C.PAYSCLI,C.VILCLI,C.CIVCLI) ORDER BY 1, 2, 3;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+PAYS	VILLE	CIVILITE	CA
+--------------------------------------------------------
+FRA	PARIS	Monsieur	4615,2348
+FRA	PARIS	-	4615,2348
+FRA	-	Monsieur	4615,2348
+FRA	-	-	4615,2348
+FRANCE	EPINAY SUR SEINE	Madame	18526,0703
+FRANCE	EPINAY SUR SEINE	-	18526,0703
+FRANCE	EPINAY-SUR-ORGE	Madame	6132,7543
+FRANCE	EPINAY-SUR-ORGE	-	6132,7543
+FRANCE	EPINAY-SUR-SEINE	Madame	706,5051
+FRANCE	EPINAY-SUR-SEINE	Mademoisele	2893,2784
+FRANCE	EPINAY-SUR-SEINE	Monsieur	1258,992
+FRANCE	EPINAY-SUR-SEINE	-	4858,7755
+FRANCE	MARCHEILLE	Monsiieur	8944,8804
+FRANCE	MARCHEILLE	-	8944,8804
+FRANCE	ORLY-VILLE	Madam	29,907
+FRANCE	ORLY-VILLE	-	29,907
+FRANCE	PARIS	Madame	4902,0662
+FRANCE	PARIS	Mademoiselle	3808,947216
+FRANCE	PARIS	-	8711,013416
+FRANCE	VILLETANEUSE	Monsieur	1413,823
+FRANCE	VILLETANEUSE	-	1413,823
+FRANCE	-	Madam	29,907
+FRANCE	-	Madame	30267,3959
+FRANCE	-	Mademoisele	2893,2784
+FRANCE	-	Mademoiselle	3808,947216
+FRANCE	-	Monsieur	2672,815
+FRANCE	-	Monsiieur	8944,8804
+FRANCE	-	-	48617,223916
+FRENCE	PARIS	Madame	558,914
+FRENCE	PARIS	-	558,914
+FRENCE	-	Madame	558,914
+FRENCE	-	-	558,914
+IFRIQIA	CARTHAGE	Madame	1990,8072
+IFRIQIA	CARTHAGE	-	1990,8072
+IFRIQIA	-	Madame	1990,8072
+IFRIQIA	-	-	1990,8072
+IRAQ	BAGDAD	Monsieur	2603,76
+IRAQ	BAGDAD	-	2603,76
+IRAQ	-	Monsieur	2603,76
+IRAQ	-	-	2603,76
+TUNISIE	CARTHAGE	Madame	597,9402
+TUNISIE	CARTHAGE	-	597,9402
+TUNISIE	-	Madame	597,9402
+TUNISIE	-	-	597,9402
+-	BAGDAD	Monsieur	2603,76
+-	BAGDAD	-	2603,76
+-	CARTHAGE	Madame	2588,7474
+-	CARTHAGE	-	2588,7474
+-	DAKAR	Mademoiselle	402,5456
+-	DAKAR	Mademoiselle	402,5456
+-	DAKAR	-	402,5456
+-	DAKAR	-	402,5456
+-	EPINAY SUR SEINE	Madame	18526,0703
+-	EPINAY SUR SEINE	-	18526,0703
+-	EPINAY-SUR-ORGE	Madame	6132,7543
+-	EPINAY-SUR-ORGE	-	6132,7543
+-	EPINAY-SUR-SEINE	Madame	706,5051
+-	EPINAY-SUR-SEINE	Mademoisele	2893,2784
+-	EPINAY-SUR-SEINE	Monsieur	1258,992
+-	EPINAY-SUR-SEINE	-	4858,7755
+-	MARCHEILLE	Monsiieur	8944,8804
+-	MARCHEILLE	-	8944,8804
+-	ORLY-VILLE	Madam	29,907
+-	ORLY-VILLE	-	29,907
+-	PARIS	Madame	9058,4737
+-	PARIS	Madame	3597,4935
+-	PARIS	Mademoiselle	12108,213416
+-	PARIS	Mademoiselle	8299,2662
+-	PARIS	Monsieur	7560,3394
+-	PARIS	Monsieur	2945,1046
+-	PARIS	-	28727,026516
+-	PARIS	-	14841,8643
+-	VILLETANEUSE	Monsieur	1413,823
+-	VILLETANEUSE	-	1413,823
+-	-	Madam	29,907
+-	-	Madame	37012,5508
+-	-	Madame	3597,4935
+-	-	Mademoisele	2893,2784
+-	-	Mademoiselle	12510,759016
+-	-	Mademoiselle	8701,8118
+-	-	Monsieur	12836,9144
+-	-	Monsieur	2945,1046
+-	-	Monsiieur	8944,8804
+-	-	-	15244,4099
+-	-	-	74228,290016
 */
 
--- FB15 :
+-- FB15 : Requête qui, pour chaque client, calcule les chiffres d'affaires totals de toutes les commandes
 SELECT CODCLI CLI, SUM(CA) CHIFFR
 FROM (SELECT CODCLI, numcom, TRUNC(SUM((PUART * QTCOM)*(1-REMISE/100)),3) AS CA 
 FROM Clients  NATURAL JOIN Commandes NATURAL JOIN Detailcom NATURAL JOIN Articles GROUP BY numcom, CODCLI) 
@@ -728,7 +823,7 @@ C003	359,21
 C005	29,907
 */
 
--- FB16
+-- FB16 la requête affecte un rang à chaque client en fonction de leur catégorie
 SELECT 
 (SELECT COUNT(*)+1 FROM Clients c2 WHERE c1.catcli < c2.catcli) AS rang, 
 catcli, codcli, Nomcli, catcli, vilcli, PaysCli 
@@ -783,7 +878,9 @@ RANG	CATCLI	CODCLI	NOMCLI	CATCLI	VILCLI	PAYSCLI
 45	-3	C298	TROMPE.	-3	-	-
 */
 
--- FB17
+-- FB17 
+-- la fonction OVER va récupérer toutes les catégories des clients et va les classer dans l'ordre
+-- la fonction affecte alors des rangs aux clients à partir de ces catégories classées
 SELECT RANK() OVER(ORDER BY catcli DESC) AS rang, catcli,codcli, Nomcli,catcli,vilcli,PaysCli 
 FROM Clients;
 /*
@@ -836,7 +933,7 @@ RANG	CATCLI	CODCLI	NOMCLI	CATCLI	VILCLI	PAYSCLI
 45	-3	C298	TROMPE.	-3	-	-
 */
 
--- FB18
+-- FB18 classe les clients selon leur rang
 SELECT RANK() OVER (ORDER BY catcli DESC, catcli DESC) AS rang, catcli, codcli,Nomcli, catcli,vilcli,PaysCli 
 FROM Clients;
 /*
@@ -898,58 +995,30 @@ SELECT d.NUMCOM, a.REFART, a.NOMART
 FROM   ARTICLES a, DETAILCOM d
 WHERE  a.REFART = d.REFART
 AND    d.QTCOM > 5;
+
+--Requête corrigée
+SELECT d.NUMCOM, a.REFART, a.NOMART
+FROM   ARTICLES a, DETAILCOM d
+WHERE  a.REFART = d.REFART
+AND  a.refart  NOT IN (select refart from detailcom where qtcom <= 5);
 /*
 NUMCOM	REFART	NOMART
-------------------------------------------------------------------------
-20067FB	FB.001	DVD-SPIRIT
-20068FB	FB.001	DVD-SPIRIT
-20069FB	FB.001	DVD-SPIRIT
-20070FB	FB.001	DVD-SPIRIT
-20071FB	FB.001	DVD-SPIRIT
-20072FB	FB.001	DVD-SPIRIT
-20073FB	FB.001	DVD-SPIRIT
-20074FB	FB.001	DVD-SPIRIT
-20181AB	FB.001	DVD-SPIRIT
-20201AB	FB.002	DVD-SPIDER MAN
-20201AB	FB.003	DVD-SPIDER MAN 2
+-------------------------------------------------------------------------
 20191007-28	UE58TU6905	SAMSUNG Télévisur LED 4K (146 cm)
-20200417-31	55F501HK5110	HITACHI Télévisur LED 4K (136 cm)
-20200829-44	50P611	TCL Télévisur LED 4K (125)
-20201214-11	50P611	TCL Télévisur LED 4K (125)
-20210109-50	50P611	TCL Télévisur LED 4K (125)
-20201006-46	QE55Q80TATXXC	SAMSUNG Télévisur QLED 4K (163 cm)
-20201230-32	QE55Q80TATXXC	SAMSUNG Télévisur QLED 4K (163 cm)
-20210110-59	QE55Q80TATXXC	SAMSUNG Télévisur QLED 4K (163 cm)
 20191021-15	MHCV11.CEL	SONY Enceinte Heigh Power
-20200426-42	MHCV11.CEL	SONY Enceinte Heigh Power
-20191113-23	PSPARTY61	POSS Enceinte Heigh Power
-20210109-50	PSPARTY61	POSS Enceinte Heigh Power
-20200829-44	FLIP ESSENTIAL	UBL Enceinte sans fil
-20191116-45	Tune 560 BT Noir	UBL Casque sans fil
-20210109-50	Tune 560 BT Noir	UBL Casque sans fil
-20191116-45	MISCOOT 1S NOIR	Trottinette électrique pliable
-20200829-44	HP DESKJET 4130	HP Imprimante multifonction
-20210105-47	HP 17-CD0125NF 15	HP Ordinateur portable
-20191010-18	WDBU6Y0040BBK-W	WD Disque dur Eléments 4To Noir
-20201010-38	WDBU6Y0040BBK-W	WD Disque dur Eléments 4To Noir
-20200528-36	DESKJET 2710	HP Imprimante multifonction
-20191010-18	YY4230FD	KRUPS Machine expresso Nescafé Dolce Gusto
-20200829-44	YY4230FD	KRUPS Machine expresso Nescafé Dolce Gusto
-20210105-47	YY4230FD	KRUPS Machine expresso Nescafé Dolce Gusto
-20191128-52	YY3922FD	KRUPS Nespresso Vertuo noir mat
 20191116-45	LM8012_05	PHILIPS Machine à expresso L'OR BRISTA Blanche
-20191102-33	OX484100	Moulinex Mini-four
-20200222-51	QA510110	Moulinex Robot pâtissier
+20191116-45	Tune 560 BT Noir	UBL Casque sans fil
+20200426-42	MHCV11.CEL	SONY Enceinte Heigh Power
 20200509-34	S8980 13	Rasoir électrique
+20200528-36	DESKJET 2710	HP Imprimante multifonction
 20200610-56	ROOMBA 113840	Robot Aspirateur robot connecté
 20200805-35	ROOMBA 113840	Robot Aspirateur robot connecté
+20200829-44	50P611	TCL Télévisur LED 4K (125)
 20200924-24	ROOMBA 113840	Robot Aspirateur robot connecté
-20200829-44	KST 2	KARCHER Nettoyeur vapeur
-20200919-16	KST 2	KARCHER Nettoyeur vapeur
-20201020-43	KST 2	KARCHER Nettoyeur vapeur
-20191116-45	V550920	DeLonghi Radiateur bain d'huile
-20200118-21	V550920	DeLonghi Radiateur bain d'huile
-20200211-53	V550920	DeLonghi Radiateur bain d'huile
+20201214-11	50P611	TCL Télévisur LED 4K (125)
+20201AB	FB.002	DVD-SPIDER MAN
+20210109-50	50P611	TCL Télévisur LED 4K (125)
+20210109-50	Tune 560 BT Noir	UBL Casque sans fil
 */
 
 
@@ -965,29 +1034,29 @@ WHERE	EXTRACT(YEAR FROM DATCOM) > 2004
 AND	c.NUMCOM = d.NUMCOM
 AND	d.REFART = a.REFART
 AND	d.REMISE = 0;
+
+SELECT	d.NUMCOM, a.REFART, a.NOMART, d.REMISE
+FROM	ARTICLES a, DETAILCOM d, COMMANDES c
+WHERE	EXTRACT(YEAR FROM DATCOM) > 2004
+AND	c.NUMCOM = d.NUMCOM
+AND	d.REFART = a.REFART
+AND  a.refart  NOT IN (select D.refart from detailcom D, commandes C where C.NUMCOM = D.NUMCOM and remise>0 and EXTRACT(YEAR FROM C.DATCOM) > 2004);
 /*
-NUMCOM	REFART	NOMART
--------------------------------------------------
-20051FB	F1.008	BANDE DE FERMETURE
-20052FB	F1.001	SIEGE DE TABLE
-20052FB	F1.003	BONNET PARE-CHOCS
-20052FB	WD.001	K7 VIDEO-TOY STORY
-20052FB	WD.003	K7 VIDEO-WINNIE L OURSON
-20053FB	WD.003	K7 VIDEO-WINNIE L OURSON
-20054FB	WD.003	K7 VIDEO-WINNIE L OURSON
-20055FB	F1.008	BANDE DE FERMETURE
-20055FB	F1.009	PROTECTION DE FOUR
-20055FB	F1.011	BABY PHONE
-20055FB	F2.001	BARRIERE DE PORTE, EN BOIS
-20056FB	F1.011	BABY PHONE
-20057FB	F2.001	BARRIERE DE PORTE, EN BOIS
-20069FB	FB.001	DVD-SPIRIT
-20070FB	FB.001	DVD-SPIRIT
-20071FB	FB.001	DVD-SPIRIT
-20072FB	FB.001	DVD-SPIRIT
-20073FB	FB.001	DVD-SPIRIT
-20074FB	FB.001	DVD-SPIRIT
-20181AB	FB.001	DVD-SPIRIT
+NUMCOM	REFART	NOMART	REMISE
+------------------------------------------------
+20051FB	F1.008	BANDE DE FERMETURE	0
+20052FB	F1.001	SIEGE DE TABLE	0
+20052FB	F1.003	BONNET PARE-CHOCS	0
+20052FB	WD.001	K7 VIDEO-TOY STORY	0
+20052FB	WD.003	K7 VIDEO-WINNIE L OURSON	0
+20053FB	WD.003	K7 VIDEO-WINNIE L OURSON	0
+20054FB	WD.003	K7 VIDEO-WINNIE L OURSON	0
+20055FB	F1.008	BANDE DE FERMETURE	0
+20055FB	F1.009	PROTECTION DE FOUR	0
+20055FB	F1.011	BABY PHONE	0
+20055FB	F2.001	BARRIERE DE PORTE, EN BOIS	0
+20056FB	F1.011	BABY PHONE	0
+20057FB	F2.001	BARRIERE DE PORTE, EN BOIS	0
 */
 
 -- ==== MFB =======================================================================================================================
@@ -1179,7 +1248,36 @@ LaTable, LaColonne, MotsCles, seuil (nombre de lettres différentes quand on com
 qui permet de traiter les différents cas schématisés ci-dessus et de couvrir le maximum de cas possibles et (répondre au mieux)!!
 */
 
+CREATE OR REPLACE PROCEDURE RECHERCHEAVANCEE(TABLEC IN VARCHAR2, COLONNE IN VARCHAR2, MOTSCLE IN VARCHAR2) IS
+    CONDITIONS VARCHAR2(500);
+    CONDITIONS2 VARCHAR2(500);
+    REQUETE VARCHAR2(500);
+    BEGIN
+        IF MOTSCLE LIKE '%*%' THEN
+            CONDITIONS := REPLACE(MOTSCLE, '*', '%' || CHR(39) || ' AND UPPER(KEYWORDSCLI) LIKE ' || CHR(39) || '%');
+            REQUETE := 'SELECT ' || COLONNE || ' FROM ' || TABLEC || ' WHERE UPPER(KEYWORDSCLI) LIKE ' || CHR(39) || '%' || CONDITIONS || '%''';
+            DBMS_OUTPUT.PUT_LINE(CONDITIONS);
+            DBMS_OUTPUT.PUT_LINE(REQUETE);
+        ELSIF MOTSCLE LIKE '%+%' THEN 
+            CONDITIONS := REPLACE(MOTSCLE, '+', '%' || CHR(39) || ' OR UPPER(KEYWORDSCLI) LIKE ' || CHR(39) || '%');
+            REQUETE := 'SELECT ' || COLONNE || ' FROM ' || TABLEC || ' WHERE UPPER(KEYWORDSCLI) LIKE ' || CHR(39) || '%' || CONDITIONS || '%''';
+            DBMS_OUTPUT.PUT_LINE(CONDITIONS);
+            DBMS_OUTPUT.PUT_LINE(REQUETE);
+        ELSIF MOTSCLE LIKE '%/%' THEN
+            CONDITIONS := REPLACE(MOTSCLE, '/', '%' || CHR(39) || ' AND UPPER(KEYWORDSCLI) LIKE ' || CHR(39) || '%');
+            CONDITIONS2 := REPLACE(MOTSCLE, '/', '%' || CHR(39) || ' AND UPPER(KEYWORDSCLI) NOT LIKE ' || CHR(39) || '%');
+            REQUETE := 'SELECT ' || COLONNE || ' FROM ' || TABLEC || ' WHERE UPPER(KEYWORDSCLI) NOT LIKE ' || CHR(39) || '%' || CONDITIONS || '%' || CHR(39) || ' OR UPPER(KEYWORDSCLI) LIKE ' || CHR(39) || '%' || CONDITIONS2 ||  '%''';
+            DBMS_OUTPUT.PUT_LINE(REQUETE);
+        END IF;
+        EXECUTE IMMEDIATE 'CREATE OR REPLACE VIEW RA AS ' || REQUETE;
+    END;
+/
+BEGIN
+    RECHERCHEAVANCEE('CLIENTS', 'CODCLI, KEYWORDSCLI', 'FOOT/VOYAGES');
+END;
+/
 
+SELECT * FROM RA;
 -- ==== MFB =======================================================================================================================
 -- ======= MFB = Recherches d'information avancées ============ recherche intelligente ! =================== FIN ===========
 -- Requêtes sur la BD ALBABAZONES-CLICKANDCOLLECT EN SQL 2  : Recherches d'informations avancées
@@ -1522,17 +1620,26 @@ SELECT NUMCOM FROM COMMANDES WHERE NUMCOM NOT IN (SELECT NUMCOM FROM DETAILCOM);
 SELECT NUMCOM FROM COMMANDES MINUS SELECT NUMCOM FROM DETAILCOM;
 
 -- MFB ???
-CREATE OR REPLACE PROCEDURE P04_COHERENCE_BD IS   
+CREATE OR REPLACE PROCEDURE P04_COHERENCE_BD IS  
 -- Procédure qui permet de vérifier si toutes les Commandes portent au moins sur un article 
+    CURSOR curseur IS SELECT NUMCOM FROM COMMANDES WHERE NUMCOM NOT IN (SELECT NUMCOM FROM DETAILCOM);
 BEGIN -- Début P04_COHERENCE_BD
-    --SELECT C.NUMCOM FROM COMMANDES C JOIN DETAILCOM D ON C.NUMCOM=D.NUMCOM WHERE D.QTCOM>0;
+   DBMS_OUTPUT.PUT_LINE('Le(s) numero(s) de commande(s) vide(s) sont :');
+   FOR i IN curseur LOOP
+    DBMS_OUTPUT.PUT_LINE('Commande vide n° ' || i.NUMCOM);
+	END LOOP;
 END; -- Fin P04_COHERENCE_BD
-/
-SET SERVEROUTPUT ON;
-EXECUTE P04_COHERENCE_BD;
+
+BEGIN 
+    P04_COHERENCE_BD;
+END
 
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+Le(s) numero(s) de commande(s) vide(s) sont :
+Commande vide n° 20184FB
+Commande vide n° 20011RB
+
+Instruction traitée.
 */
 
 -- ==== MFB =======================================================================================================================
@@ -1543,8 +1650,31 @@ DATNAISCLI || ' >? ' || DPREMCONTACTCLI AS DATES_BIRTH_FIRSTCONTACT
 FROM CLIENTS
 WHERE (DATNAISCLI IS NOT NULL AND DPREMCONTACTCLI IS NOT NULL)
 AND DPREMCONTACTCLI <= DATNAISCLI ; -- + x années
+
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+CODCLI	CLIENT_E	DATES_BIRTH_FIRSTCONTACT
+--------------------------------------------------
+C002	Madame LESEUL M@RIE	05/08/83 >? 05/08/83
+*/
+
+CREATE OR REPLACE PROCEDURE PR_ANOMALIE2_BD IS  
+    CURSOR curseur IS SELECT CODCLI, 
+CIVCLI || ' ' || NOMCLI || ' ' || PRENCLI AS CLIENT_E,
+DATNAISCLI || ' >? ' || DPREMCONTACTCLI AS DATES_BIRTH_FIRSTCONTACT
+FROM CLIENTS
+WHERE (DATNAISCLI IS NOT NULL AND DPREMCONTACTCLI IS NOT NULL)
+AND DPREMCONTACTCLI <= DATNAISCLI ;
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Resultat de la procedure de l''anomalie 2 :');
+    FOR i IN curseur LOOP
+        DBMS_OUTPUT.PUT_LINE('La date du premier contact avec le client n''est pas postérieure à sa date de naissance : ' || i.CODCLI || ' ' ||  i.CLIENT_E || ' ' || i.DATES_BIRTH_FIRSTCONTACT);
+    END LOOP;
+END;
+/*
+Resultat de la procedure de l'anomalie 2 :
+La date du premier contact avec le client n'est pas postérieure à sa date de naissance : C002 Madame LESEUL M@RIE 05/08/83 >? 05/08/83
+
+Instruction traitée.
 */
 
 -- ==== MFB =======================================================================================================================
@@ -1558,19 +1688,50 @@ CREATE OR REPLACE VIEW NON_VERIF_DF (VILLE, NBROCC) AS SELECT VILLE, COUNT(*) FR
 -- Les villes (occurrences) pour lesquelles le lien sémantique (la DF) n'est pas vérifié
 SELECT * FROM VP1 WHERE  VILLE IN (SELECT VILLE FROM NON_VERIF_DF) ORDER BY 1;
 /*
--- >>>>>>>>>>>>>>>>>>>>>>>>>> -- Résultat généré:
+VILLE	PAYS
+----------------------
+CARTHAGE	TUNISIE
+CARTHAGE	IFRIQIA
+PARIS	FRA
+PARIS	FRENCE
+PARIS	FRANCE
+PARIS	-
 */
 -- MFB ???
-CREATE OR REPLACE PROCEDURE P05_VerifFunctionalDependency(NOMTAB IN VARCHAR2, LEFTCOL IN VARCHAR2, RIGHTCOL IN VARCHAR2) IS
 -- La pocédure VerifFunctionalDependency permet de vérifier, dans la table de nom NOMTAB si :
 -- la colonne de nom LEFTCOL détermine fonctionnellement la colonne de nom RIGHTCOL
 -- = la colonne de nom RIGHTCOL est fonctionnellement dépendante de la colonne de nom LEFTCOL
 -- Si le nombre d'occurrences maximal est supérieur à 1 Alors la DF n'est pas vérifiée !
-BEGIN  -- Début de la procédure P05_VerifFunctionalDependency
-END; -- Fin de la procédure P05_VerifFunctionalDependency
+
+
+CREATE OR REPLACE PROCEDURE P05_VerifFunctionalDependency(NOMTAB IN VARCHAR2, LEFTCOL IN VARCHAR2, RIGHTCOL IN VARCHAR2) IS
+    BEGIN
+        EXECUTE IMMEDIATE 'CREATE OR REPLACE VIEW V0(' || LEFTCOL || ',' || RIGHTCOL ||') AS SELECT LTRIM(RTRIM(UPPER(REGEXP_REPLACE(' || LEFTCOL || ',' || CHR(39) || '( ){2,}' || CHR(39) || ', '' '')))), LTRIM(RTRIM(UPPER('||RIGHTCOL||'))) FROM ' || NOMTAB;
+        EXECUTE IMMEDIATE 'CREATE OR REPLACE VIEW V1(' || LEFTCOL || ',' || RIGHTCOL ||') AS SELECT DISTINCT * FROM V0';
+        EXECUTE IMMEDIATE 'CREATE OR REPLACE VIEW VERIF_DF (' || LEFTCOL || ',' || RIGHTCOL ||') AS SELECT ' || LEFTCOL ||', COUNT() FROM V1 GROUP BY '|| LEFTCOL || ' HAVING COUNT() > 1';
+    END;
 /
 SET SERVEROUTPUT ON;
-EXECUTE P05_VerifFunctionalDependency('CLIENTS', 'VILCLI', 'PAYSCLI');
+
+BEGIN
+    P05_VerifFunctionalDependency('CLIENTS', 'VILCLI','PAYSCLI');
+END;
+/
+
+
+SELECT * FROM VERIF_DF;
+SELECT * FROM V1 WHERE  VILCLI IN (SELECT VILCLI FROM VERIF_DF) ORDER BY 1;
+
+/*
+VILCLI    PAYSCLI
+---------------------
+CARTHAGE    TUNISIE
+CARTHAGE    IFRIQIA
+PARIS    FRA
+PARIS    FRENCE
+PARIS    FRANCE
+PARIS    -
+*/
 
 -- ==== MFB =======================================================================================================================
 -- ==== MFB =======================================================================================================================
