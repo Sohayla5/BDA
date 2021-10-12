@@ -46,9 +46,9 @@
 -- ==== MFB =======================================================================================================================
 -- Binome = Groupe de Travail N° xy  : Bxy (Exemple B01, B02,... B09, B10, B11...)
 -- ==== MFB =======================================================================================================================
--- Numéro du Binôme (= GroupeDeTravail) --->>>> : Bxy
--- NOM1 PRENOM1                         --->>>> : np1
--- NOM2 PRENOM2                         --->>>> : np2
+-- Numéro du Binôme (= GroupeDeTravail) --->>>> : B10
+-- NOM1 PRENOM1                         --->>>> : BOUZIANE Hajar
+-- NOM2 PRENOM2                         --->>>> : RABHI Sohayla
 
 -- ====>>> Vos fichiers sql devront s'appeler : Bxy-NomDuFichier.sql
 -- ==== MFB =======================================================================================================================
@@ -1947,16 +1947,79 @@ SELECT F15_VerifRegExpr('+21624801777', 'TELEPHONE_TN_I') AS resultat_verificati
 -- ==== MFB =======================================================================================================================
 CREATE OR REPLACE PROCEDURE P06_VerifRegExpr(NOMTABLE IN VARCHAR2, NOMCOLONNE IN VARCHAR2, V_SubCategoryRegex IN VARCHAR2) IS
 --AUTHID CURRENT_USER IS
--- Procédure qui permet de dire si les valeurs dans une colonne donnée vérifient une expression régulière
--- à partir de la table DD_REGULAREXPRESSIONS
--- CREATE OR REPLACE PROCEDURE P06_VerifRegExpr (NOMTABLE... NOMCOLONNE...V_SubCategoryRegex...) 
+-- Procédure qui permet d e dire si les valeurs dans une colonne donnée vérifient une expression régulière
+V_QUERY VARCHAR2(1000);
 BEGIN -- Début P06_VerifRegExpr
-  -- à compléter !
-END;  --Fin P06_VerifRegExpr
+    V_QUERY := ' CREATE OR REPLACE VIEW VueVerifCol AS SELECT '||NOMCOLONNE|| ' , F15_VerifRegExpr('||NOMCOLONNE||', '||chr(39)||V_SubCategoryRegex||chr(39)||') AS VueVerifCol FROM '||NOMTABLE;
+    EXECUTE IMMEDIATE V_QUERY;
+END; 
 /
-EXEC P06_VerifRegExpr('clients','TELCLI','TELEPHONE_FR_I');
+
+
+BEGIN
+ P06_VerifRegExpr('clients','TELCLI','TELEPHONE_FR_I');
+END
+
+
 SELECT *                        FROM VueVerifCol;
-SELECT COUNT(*) NbrTelINVALIDES FROM VueVerifCol;
+
+/*
+TELCLI	VUEVERIFCOL
+-----------------------
++33777889911	TRUE
+0617586565	FALSE
++33717889922	TRUE
++33777889933	TRUE
++33777889944	TRUE
+0033777889955	TRUE
++33777889966	TRUE
+0607	FALSE
++33149404071	TRUE
+06070809	FALSE
++33777889977	TRUE
++33149404072	TRUE
++21624801777	FALSE
+-	TRUE
+-	TRUE
+inexistant	FALSE
++21624808444	FALSE
++33777889911	TRUE
++33777889900	TRUE
+0777889900	FALSE
++33777889977	TRUE
++33777889911	TRUE
++33777889922	TRUE
++33777889911	TRUE
+0617586575	FALSE
+0617586575	FALSE
+0617586577	FALSE
+0617586577	FALSE
+0617586577	FALSE
+0617586577	FALSE
+0617586577	FALSE
+0617586577	FALSE
+-	TRUE
+-	TRUE
+-	TRUE
+-	TRUE
+-	TRUE
+-	FALSE
+-	FALSE
+-	FALSE
+-	FALSE
+-	FALSE
+-	FALSE
+0697837311	FALSE
++33755555555	TRUE
+*/
+
+SELECT COUNT(*) NbrTelINVALIDES FROM VueVerifCol WHERE VUEVERIFCOL = 'FALSE';
+
+/*
+NBRTELINVALIDES
+-----------------
+22
+*/
 
 -- ==== MFB =======================================================================================================================
 
