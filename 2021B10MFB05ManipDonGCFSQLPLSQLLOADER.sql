@@ -1070,7 +1070,7 @@ NUMCOM	REFART	NOMART	REMISE
 -- ==== MFB =======================================================================================================================
 -- ======= MFB = Recherches d'information avancées ============ recherche intelligente ! =================== DEBUT =========
 -- Requêtes sur la BD ALBABAZONES-
-CLICKANDCOLLECT EN SQL 2  : Recherches d''informations avancées
+--CLICKANDCOLLECT EN SQL 2  : Recherches d''informations avancées
 -- ==== MFB =======================================================================================================================
 
 -- ==== MFB =======================================================================================================================
@@ -1380,7 +1380,7 @@ FROM ARTICLES;
 SELECT * FROM ScriptSQLInsertData_ART;
 
 SELECT 'Commandes de re-création des commandes gérées par l''entreprise ALBABAZONES CLICKANDCOLLECT' AS MAGASINS FROM DUAL;
-ALTER SESSION SET NLS_DATE_FORMAT = 'DAY DD-MONTH-YYYY' 
+ALTER SESSION SET NLS_DATE_FORMAT = 'DAY DD-MONTH-YYYY' ;
 CREATE OR REPLACE VIEW ScriptSQLInsertData_COM(SQL_ORDER) AS
 SELECT 
 'INSERT INTO COMMANDES VALUES (' ||
